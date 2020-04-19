@@ -1,24 +1,21 @@
-import React, { useState } from "react";
-import PopupLoginSignUp from "./components/PopupLoginSignUp";
-import Button from "react-bootstrap/Button";
+import React from "react";
+import { Router, BrowserRouter } from "react-router-dom";
+import { routes } from "./browser-routes";
+import Header from "./components/Header/Header";
+import history from "./history";
+
 import "./App.css";
 
-function App() {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <Button variant="outline-primary" onClick={handleShow}>
-          Вхід
-        </Button>{" "}
-      </header>
-
-      <PopupLoginSignUp show={show} handleClose={handleClose} />
+      <BrowserRouter>
+        <Header/>
+        <Router history={history}>{routes}</Router>
+        
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

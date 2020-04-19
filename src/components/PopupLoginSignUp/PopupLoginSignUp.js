@@ -7,7 +7,7 @@ import Tabs from "react-bootstrap/Tabs";
 import Form from "react-bootstrap/Form";
 import Login from "./Login";
 import Sign from "./Sign";
-import "./scss/style.scss";
+import "./style/PopupLoginSignUp.scss";
 
 const PopupLoginSignUp = ({ show, handleClose }) => {
   return (

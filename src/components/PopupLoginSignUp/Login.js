@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./scss/style.scss";
+import "./style/PopupLoginSignUp.scss";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 function Login(props) {
