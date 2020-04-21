@@ -3,7 +3,7 @@ import React from 'react';
 const MapScreen = () => {
     return (
         <div>
-            Map
+            MapScreen
         </div>
     );
 };

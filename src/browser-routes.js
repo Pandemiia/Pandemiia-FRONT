@@ -8,6 +8,7 @@ import MapScreen from "./pages/MapScreen";
 export const routes = (
   <Switch>
     <Route path="/map" component={MapScreen} />
+    <Route path="/home" component={HomeScreen} />
     <Route path="/" component={HomeScreen} />
   </Switch>
 );
