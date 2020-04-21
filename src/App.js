@@ -4,22 +4,23 @@ import { routes } from "./browser-routes";
 import history from "./history";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import "antd/dist/antd.css";
-import "./App.css";
 import { Layout } from "antd";
+import "./App.css";
 
 const App = () => {
   const { Content } = Layout;
   return (
-    <Layout className="App">
-      <Header />
-      <Content>
+    <div className="App">
+      <Layout>
         <BrowserRouter>
-          <Router history={history}>{routes}</Router>
+          <Header />
+          <Content>
+            <Router history={history}>{routes}</Router>
+          </Content>
+          <Footer />
         </BrowserRouter>
-      </Content>
-      <Footer />
-    </Layout>
+      </Layout>
+    </div>
   );
 };
 

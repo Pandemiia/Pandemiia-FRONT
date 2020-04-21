@@ -3,7 +3,7 @@ import React from 'react';
 const NeedsScreen = () => {
     return (
         <div>
-            Map
+            Сторінка потреб
         </div>
     );
 };
