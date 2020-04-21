@@ -6,16 +6,20 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "antd/dist/antd.css";
 import "./App.css";
+import { Layout } from "antd";
 
 const App = () => {
+  const { Content } = Layout;
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Router history={history}>{routes}</Router>
-        <Footer />
-      </BrowserRouter>
-    </div>
+    <Layout className="App">
+      <Header />
+      <Content>
+        <BrowserRouter>
+          <Router history={history}>{routes}</Router>
+        </BrowserRouter>
+      </Content>
+      <Footer />
+    </Layout>
   );
 };
 
