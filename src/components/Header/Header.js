@@ -1,32 +1,24 @@
-import React, { useState } from "react";
-import { Nav, Navbar } from "react-bootstrap";
-
-import PopupLoginSignUp from "../PopupLoginSignUp";
-import Button from "react-bootstrap/Button";
+import React from "react";
+import { PageHeader, Button, Tag } from "antd";
+import logo from "./Img/logo.jpg";
+import "./style/Header.scss";
 
 const Header = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/home">Pandemia</Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="/home">Головна</Nav.Link>
-          <Nav.Link href="/map">Мапа</Nav.Link>
-          <Nav.Link href="/">Приєднатися</Nav.Link>
-        </Nav>
-        <Nav>
-          <Button variant="outline-primary" onClick={handleShow}>
-            Вхід
-          </Button>
-          <PopupLoginSignUp show={show} handleClose={handleClose} />
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <PageHeader
+      title="Pandemia"
+      className="site-page-header"
+      tags={<Tag>Home</Tag>}
+      extra={[
+        <Button key="2">Operation</Button>,
+        <Button key="1" type="primary">
+          Primary
+        </Button>,
+      ]}
+      avatar={{
+        src: { logo },
+      }}
+    ></PageHeader>
   );
 };
 

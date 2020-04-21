@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MapScreen = () => {
+const NeedsScreen = () => {
     return (
         <div>
             MapScreen
@@ -8,4 +8,4 @@ const MapScreen = () => {
     );
 };
 
-export default MapScreen;
+export default NeedsScreen;
