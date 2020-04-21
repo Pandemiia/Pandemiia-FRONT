@@ -12,8 +12,8 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Footer />
         <Router history={history}>{routes}</Router>
+        <Footer />
       </BrowserRouter>
     </div>
   );
