@@ -1,30 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Tabs, Radio } from "antd";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
+//import Tabs from "react-bootstrap/Tabs";
 import Form from "react-bootstrap/Form";
 import Login from "./Login";
 import Sign from "./Sign";
 import "./style/PopupLoginSignUp.scss";
 
+const { TabPane } = Tabs;
+
 const PopupLoginSignUp = ({ show, handleClose }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Title>
-        <Tabs
-          defaultActiveKey="login"
-          transition={false}
-          id="noanim-tab-example"
-        >
-          {" "}
-          <Tab eventKey="login" title="Авторизація">
+        <Tabs defaultActiveKey="1">
+          <TabPane tab={<span>Авторизація</span>} key="1">
             <Login />
-          </Tab>
-          <Tab eventKey="profile" title="Реєстрація">
+          </TabPane>
+          <TabPane tab={<span>Реєстрація</span>} key="2">
             <Sign />
-          </Tab>
+          </TabPane>
         </Tabs>
       </Modal.Title>
     </Modal>
