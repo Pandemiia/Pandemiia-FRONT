@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const NeedsScreen = () => {
-    return (
-        <div>
-            MapScreen
-        </div>
-    );
+  return <div>Сторінка потреб</div>;
 };
 
 export default NeedsScreen;
