@@ -1,0 +1,141 @@
+.general {
+  word-break: break-word;
+  font-weight: 300;
+}
+
+.primary {
+  color: var(--b-color-txt2);
+}
+
+.navigational {
+  color: var(--b-color-txt1);
+}
+
+.info {
+  color: var(--b-color-txt3);
+}
+
+.warning {
+  color: var(--b-color-btn2);
+}
+
+.danger {
+  color: var(--b-color-btn3);
+}
+
+.success {
+  color: var(--b-color-txt4);
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.semibold {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.base {
+  font-family: var(--baseFont);
+}
+
+.condensed {
+}
+
+.condensed-black {
+}
+
+.ellipsis {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.none {
+  text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.overline {
+  text-decoration: overline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.break-word {
+  word-break: break-word;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.keep-all {
+  word-break: keep-all;
+}
+
+.normal {
+  word-break: normal;
+}
+
+.xs {
+  font-size: var(--f10px);
+}
+
+.s {
+  font-size: var(--f14px);
+}
+
+.m {
+  font-size: var(--f18px);
+}
+
+.l {
+  font-size: var(--f24px);
+}
+
+.xl {
+  font-size: var(--f30px);
+}
+
+.xxl {
+  font-size: var(--f36px);
+}

@@ -1,0 +1,9 @@
+.page {
+  height: 100%;
+  padding: 65px var(--spaces-m) 0 var(--spaces-m);
+  box-sizing: border-box;
+}
+
+.products {
+  width: 100%;
+}

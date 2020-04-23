@@ -1,0 +1,9 @@
+{
+  "name": "@pinua/utils",
+  "version": "1.0.15",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

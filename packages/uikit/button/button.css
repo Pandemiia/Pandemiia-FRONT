@@ -1,0 +1,111 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: var(--f14px);
+  font-family: var(--baseFont);
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: var(--border-s);
+  padding: 0 var(--spaces-m);
+  color: var(--b-color-txt1);
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.3;
+}
+
+.primary {
+  background-color: var(--b-color-btn4);
+  color: var(--b-color-txt1);
+}
+
+.secondary {
+  background: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--b-color-txt3);
+  color: var(--b-color-txt3);
+}
+
+.tertiary {
+  background: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--b-color-btn1);
+  color: var(--b-color-txt4);
+}
+
+.danger {
+  background-color: var(--b-color-btn3);
+  color: var(--b-color-txt1);
+}
+
+.transparent {
+  background: transparent;
+}
+
+.s {
+  padding: var(--spaces-xs) var(--spaces-s);
+  min-height: 24px;
+  min-width: var(--button-s);
+  font-size: var(--f14px);
+  line-height: var(--f14px);
+  border-radius: var(--border-s);
+  letter-spacing: 0.6px;
+}
+
+.m {
+  padding: var(--spaces-s) var(--spaces-m);
+  min-height: 32px;
+  min-width: var(--button-m);
+  font-size: var(--f18px);
+  line-height: var(--f18px);
+  border-radius: var(--border-s);
+  letter-spacing: 0.6px;
+}
+
+.l {
+  padding: var(--spaces-m) var(--spaces-l);
+  min-height: 42px;
+  min-width: var(--button-l);
+  font-size: var(--f20px);
+  line-height: var(--f20px);
+  border-radius: var(--border-s);
+  letter-spacing: 0.6px;
+}
+
+.xl {
+  padding: var(--spaces-m) var(--spaces-xl);
+  min-height: 48px;
+  min-width: var(--button-l);
+  font-size: var(--f24px);
+  line-height: var(--f24px);
+  border-radius: var(--border-s);
+  letter-spacing: 0.6px;
+}
+
+.rounded {
+  border-radius: 40px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.noWrap {
+  white-space: nowrap;
+  overflow: hidden;
+}

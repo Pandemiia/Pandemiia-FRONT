@@ -1,0 +1,18 @@
+{
+  "name": "@pinua/api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix ."
+  },
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@pinua/presets": "^1.0.0",
+    "axios": "^0.19.2",
+    "eslint": "^5.8.0",
+    "prettier-stylelint": "^0.4.2"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@pinua/uikit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix .",
+    "lint:css": "prettier-stylelint --write '**/*.css' && stylelint --cache '**/*.css'"
+  },
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@pinua/presets": "^1.0.0",
+    "eslint": "^5.8.0",
+    "prettier-stylelint": "^0.4.2",
+    "react-icons": "^3.9.0",
+    "react-rangeslider": "^2.2.0",
+    "stylelint": "^9.1.3"
+  }
+}
