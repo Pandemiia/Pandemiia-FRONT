@@ -3,7 +3,7 @@ const Variables = require('../../config');
 
 module.exports = function(theme) {
   const globalVariables = new Variables(theme);
-  const { CSS_VARIABLES_PATH, CSS_COLOR_VARIABLES_PATH, IS_DEV_MODE, DIST_PATH } = globalVariables;
+  const { IS_DEV_MODE } = globalVariables;
   return {
     test: /\.(css|sass|scss)$/,
     use: [
@@ -19,11 +19,6 @@ module.exports = function(theme) {
       {
         loader: 'sass-loader',
         options: {
-          sassOptions: {
-            data: '@import "variables";',
-            outputStyle: 'compressed',
-            includePaths: [CSS_VARIABLES_PATH, CSS_COLOR_VARIABLES_PATH, DIST_PATH]
-          },
           sourceMap: IS_DEV_MODE
         }
       }
