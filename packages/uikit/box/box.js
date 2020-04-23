@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import _get from 'lodash/get';
 
-import styles from './box.css';
+import styles from './box.scss';
 
 const columns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const sizes = ['xs', 's', 'm', 'ms', 'l', 'xl', 'xxl'];

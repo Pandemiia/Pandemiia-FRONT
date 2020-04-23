@@ -5,10 +5,10 @@ const { ACTIVE_THEME } = process.env;
 const globalVariables = new Variables(ACTIVE_THEME);
 
 /** MODULES **/
-const postCssLoader = require('./modules/postcss-loader-module');
+const sassLoader = require('./modules/sass-loader-module');
 
 /** PLUGINS **/
-const postCssPlugin = require('./plugins/postcss-loader-plugin');
+const cssPlugin = require('./plugins/css-loader-plugin');
 const htmlWebpackPlugin = require('./plugins/html-webpack-plugin');
 
 const devConfig = Object.assign({}, baseConfig, {
@@ -21,14 +21,10 @@ const devConfig = Object.assign({}, baseConfig, {
   },
 
   module: {
-    rules: [...baseConfig.module.rules, postCssLoader(ACTIVE_THEME)]
+    rules: [...baseConfig.module.rules, sassLoader(ACTIVE_THEME)]
   },
 
-  plugins: [
-    ...baseConfig.plugins,
-    postCssPlugin(ACTIVE_THEME),
-    htmlWebpackPlugin(ACTIVE_THEME)
-  ],
+  plugins: [...baseConfig.plugins, cssPlugin(ACTIVE_THEME), htmlWebpackPlugin(ACTIVE_THEME)],
 
   devServer: {
     contentBase: globalVariables.DIST_PATH,

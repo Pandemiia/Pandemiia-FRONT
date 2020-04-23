@@ -9,7 +9,7 @@ import { MdClose } from 'react-icons/md';
 
 import i18n from 'i18n';
 
-import styles from './menu.css';
+import styles from './menu.scss';
 
 const Menu = ({ path, links, isOpen, onClose, ...props }) => {
   const renderItems = item => (

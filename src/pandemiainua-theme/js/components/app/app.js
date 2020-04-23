@@ -4,7 +4,7 @@ import { Header, Menu } from '@pinua/common/components';
 
 import i18n from 'i18n';
 
-import styles from './app.css';
+import styles from './app.scss';
 
 class App extends PureComponent {
   static propTypes = {

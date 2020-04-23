@@ -9,7 +9,7 @@ import { reducers } from './modules';
 import mainStore from './store';
 import { Pages } from './pages';
 
-import './main.css';
+import './main.scss';
 
 const { store, persistor } = mainStore(reducers);
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { Box } from '@pinua/uikit';
 
-import styles from './sidebar.css';
+import styles from './sidebar.scss';
 
 const SideBar = ({ isOpen, position, className, children, ...props }) => {
   return (

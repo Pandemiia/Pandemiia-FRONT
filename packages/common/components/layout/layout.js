@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import styles from './layout.css';
+import styles from './layout.scss';
 
 const columns = [1, 2, 3];
 

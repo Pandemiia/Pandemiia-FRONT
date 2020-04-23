@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Text } from '@pinua/uikit';
 
-import styles from './header.css';
+import styles from './header.scss';
 
 const Header = ({ title, onMenuClick, onCartClick, total, ...props }) => {
   return (

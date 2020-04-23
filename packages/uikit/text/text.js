@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import styles from './text.css';
+import styles from './text.scss';
 
 const sizes = ['xs', 's', 'm', 'l', 'xl', 'xxl'];
 const types = ['primary', 'info', 'navigational', 'success', 'warning', 'danger'];

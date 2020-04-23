@@ -4,7 +4,7 @@ import _omit from 'lodash/omit';
 import cn from 'classnames';
 import Box from '../box';
 
-import styles from './button.css';
+import styles from './button.scss';
 
 export const intents = ['primary', 'secondary', 'tertiary', 'transparent', 'danger'];
 export const sizes = ['s', 'm', 'l', 'xl'];

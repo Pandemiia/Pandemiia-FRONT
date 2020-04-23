@@ -3,12 +3,12 @@ const baseConfig = require('./base.config');
 const Variables = require('../config');
 
 /** MODULES **/
-const postCssLoader = require('./modules/postcss-loader-module');
+const sassLoader = require('./modules/sass-loader-module');
 
 /** PLUGINS **/
 const cleanWebpackPlugin = require('./plugins/clean-webpack-plugin');
 const uglifyJsPlugin = require('./plugins/teaser-js-plugin');
-const postCssPlugin = require('./plugins/postcss-loader-plugin');
+const cssPlugin = require('./plugins/css-loader-plugin');
 const optimizeCSSAssetsPlugin = require('./plugins/optiomize-css-assets-plugin');
 const htmlWebpackPlugin = require('./plugins/html-webpack-plugin');
 const compressionWebpackPlugin = require('./plugins/compression-webpack-plugin');
@@ -42,13 +42,13 @@ const config = THEMES_LIST.map(function(theme) {
     },
 
     module: {
-      rules: [...baseConfig.module.rules, postCssLoader(theme)]
+      rules: [...baseConfig.module.rules, sassLoader(theme)]
     },
 
     plugins: [
       cleanWebpackPlugin(theme),
       ...baseConfig.plugins,
-      postCssPlugin(theme),
+      cssPlugin(theme),
       htmlWebpackPlugin(theme),
       compressionWebpackPlugin
     ],
