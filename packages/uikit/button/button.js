@@ -2,20 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _omit from 'lodash/omit';
 import cn from 'classnames';
-import Box from '../box';
+import Box from '@pinua/uikit/box';
+import _get from 'lodash/get';
 
 import styles from './button.scss';
 
-export const intents = ['primary', 'secondary', 'tertiary', 'transparent', 'danger'];
+export const colors = ['primary', 'secondary', 'tertiary', 'transparent', 'danger'];
 export const sizes = ['s', 'm', 'l', 'xl'];
+const sizesValue = {
+  s: 8,
+  m: 16,
+  ms: 24,
+  l: 32,
+  xl: 64,
+  xxl: 128
+};
 
 export const actionTypes = ['navigational', 'danger', 'success', 'neutral'];
 
 const Button = ({
+  top,
+  left,
+  right,
+  bottom,
   circle,
   className,
   contentClass,
-  intent,
+  color,
   rounded,
   premium,
   size,
@@ -37,7 +50,7 @@ const Button = ({
   const type = Component === 'button' ? 'button' : null;
   const isDisabled = loading || disabled;
 
-  const classes = cn(styles.button, styles[intent], styles[size], styles[actionType], className, {
+  const classes = cn(styles.button, styles[color], styles[size], styles[actionType], className, {
     [styles.disabled]: isDisabled,
     [styles.circle]: circle,
     [styles.rounded]: rounded,
@@ -50,10 +63,23 @@ const Button = ({
     [styles.iconOnly]: iconOnly
   });
 
+  const inlineStyles = {
+    marginTop: _get(sizesValue, top),
+    marginBottom: _get(sizesValue, bottom),
+    marginLeft: _get(sizesValue, left),
+    marginRight: _get(sizesValue, right)
+  };
+
   const iconBefore = iconLeft || iconTop;
 
   return (
-    <Component className={classes} type={type} disabled={isDisabled} {..._omit(props, 'highlighted')}>
+    <Component
+      className={classes}
+      style={inlineStyles}
+      type={type}
+      disabled={isDisabled}
+      {..._omit(props, 'highlighted')}
+    >
       {iconBefore && (
         <Box
           component="span"
@@ -82,8 +108,12 @@ const Button = ({
 Button.propTypes = {
   className: PropTypes.string,
   contentClass: PropTypes.string,
+  top: PropTypes.oneOf(sizes),
+  bottom: PropTypes.oneOf(sizes),
+  left: PropTypes.oneOf(sizes),
+  right: PropTypes.oneOf(sizes),
   circle: PropTypes.bool,
-  intent: PropTypes.oneOf(intents),
+  color: PropTypes.oneOf(colors),
   rounded: PropTypes.bool,
   premium: PropTypes.bool,
   size: PropTypes.oneOf(sizes),
@@ -104,7 +134,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   circle: false,
-  intent: 'primary',
+  color: 'primary',
   rounded: false,
   size: 'm',
   component: 'button',

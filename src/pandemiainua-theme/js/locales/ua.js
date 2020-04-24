@@ -1,3 +1,17 @@
 export default {
-  header: {}
+  header: {
+    login: 'Особистий кабінет',
+    register: 'Заповнити заявку'
+  },
+  sidebar: {
+    home: 'Головна',
+    needs: 'Потреби',
+    goods: 'Каталог рішень',
+    about: 'Про проект',
+    contacts: 'Контакти',
+    intro: 'Ласкаво просимо на сайт pandemiia.in.ua'
+  },
+  common: {
+    close: 'Закрити'
+  }
 };

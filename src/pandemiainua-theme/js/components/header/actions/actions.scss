@@ -1,0 +1,33 @@
+@import "~@pinua/themes/variables";
+
+.button:first-child {
+  margin-right: $spaces-s;
+}
+
+@media screen and (max-width: $tablet-min-width) {
+  .buttons {
+    margin-bottom: $spaces-l;
+  }
+
+  .button {
+    margin-bottom: $spaces-s;
+  }
+}
+
+@media screen and (min-width: $tablet-min-width) {
+  .buttons {
+    margin-top: $spaces-s;
+  }
+
+  .button {
+    padding: $spaces-s $spaces-m;
+    min-height: 24px;
+    min-width: $button-s;
+    font-size: $font-14px;
+    line-height: $font-14px;
+    border-radius: $border-s;
+    letter-spacing: 0.6px;
+    margin-right: 0;
+    margin-bottom: $spaces-s;
+  }
+}

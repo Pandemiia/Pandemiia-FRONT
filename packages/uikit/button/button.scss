@@ -10,9 +10,8 @@
   font-size: $font-14px;
   font-family: $base-font;
   font-weight: 300;
-  text-transform: uppercase;
   border-radius: $border-s;
-  padding: 0 $spaces-m;
+  padding: $spaces-s $spaces-m;
   color: $b-color-txt1;
   cursor: pointer;
   outline: none;
@@ -30,29 +29,33 @@
 }
 
 .primary {
-  background-color: $b-color-btn4;
-  color: $b-color-txt1;
+  background-color: $b-color-btn3;
+  color: $b-color-txt5;
+
+  &:hover {
+    opacity: 1;
+    background-color: darken($b-color-btn3, 10%);
+  }
 }
 
 .secondary {
   background: transparent;
   border-width: 1px;
   border-style: solid;
-  border-color: $b-color-txt3;
-  color: $b-color-txt3;
+  border-color: $b-color-btn3;
+  color: $b-color-txt2;
 }
 
 .tertiary {
-  background: transparent;
+  background: $b-color-btn4;
   border-width: 1px;
   border-style: solid;
-  border-color: $b-color-btn1;
-  color: $b-color-txt4;
+  color: $b-color-txt1;
 }
 
 .danger {
-  background-color: $b-color-btn3;
-  color: $b-color-txt1;
+  background-color: $b-color-btn5;
+  color: $b-color-txt5;
 }
 
 .transparent {
@@ -60,7 +63,7 @@
 }
 
 .s {
-  padding: $spaces-xs $spaces-s;
+  padding: $spaces-s $spaces-m;
   min-height: 24px;
   min-width: $button-s;
   font-size: $font-14px;
@@ -70,7 +73,7 @@
 }
 
 .m {
-  padding: $spaces-s $spaces-m;
+  padding: $spaces-m $spaces-l;
   min-height: 32px;
   min-width: $button-m;
   font-size: $font-18px;
