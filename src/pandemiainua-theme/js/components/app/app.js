@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Header, Menu } from '@pinua/common/components';
-
 import i18n from 'i18n';
-
+import { Header, Menu } from '@pinua/common/components';
+import Footer from '../footer/index';
 import styles from './app.scss';
 
 class App extends PureComponent {
@@ -29,6 +28,7 @@ class App extends PureComponent {
         <Header title={i18n.t('home.title')} onMenuClick={this.toggleMenu(true)} />
         <Menu path={pathname} onClose={this.toggleMenu(false)} isOpen={isMenuOpen} links={links} />
         {children}
+        <Footer />
       </div>
     );
   }
