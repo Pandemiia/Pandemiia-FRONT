@@ -29,7 +29,7 @@ module.exports = {
                         sourceMap: true
                     }
                 }],
-            include: path.resolve(__dirname, '../packages'),
+            include: [path.resolve(__dirname, '../packages'), path.resolve(__dirname, '../src')],
         });
 
         config.module.rules.push({
