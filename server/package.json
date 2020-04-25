@@ -1,5 +1,5 @@
 {
-    "name": "server",
+    "name": "@pinua/server",
     "version": "1.0.0",
     "license": "UNLICENSED",
     "scripts": {
