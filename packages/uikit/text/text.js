@@ -5,7 +5,7 @@ import _get from 'lodash/get';
 
 import styles from './text.scss';
 
-const sizes = ['xs', 's', 'm', 'l', 'xl', 'xxl'];
+export const sizes = ['xs', 's', 'm', 'l', 'xl', 'xxl'];
 const sizesValue = {
   xs: 4,
   s: 8,
@@ -16,7 +16,7 @@ const sizesValue = {
   xxl: 128
 };
 
-const types = ['primary', 'secondary', 'info', 'navigational', 'success', 'danger'];
+export const types = ['primary', 'secondary', 'info', 'navigational', 'success', 'danger'];
 
 const Text = ({
   component: Component,

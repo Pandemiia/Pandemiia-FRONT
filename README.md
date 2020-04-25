@@ -38,6 +38,7 @@ $ yarn start
 |-- /server                             # base Nodejs server
 |   |--/bin                             # main server folder
 |   |--/routes                          # server routes
+|-- |--/static                          # Compiled application static files
 
 |-- /src                                 # Application source code 
 |-- |-- /pandemiainua-theme              # Project Theme name
@@ -50,8 +51,6 @@ $ yarn start
 |   |   |--main.js                       # Main app file
 |   |   |--index.html                    # Main HTML page container for app
 
-|-- /static                              # Compiled application static files
-
 |-- /webpack                             # Webpack configs folder
 |   |--/modules                          # Webpack modules folder
 |   |--/plugins                          # Webpack plugins folder
@@ -62,54 +61,30 @@ $ yarn start
 
 ## Styles
 We are using CSS naming map at the webpack config.
-Also you can make default css variables configuration at the css-color-variables.js and this variables will be used across all your application  
+Also you can make default css variables configuration at the css-color-variables.scss and this variables will be used across all your application  
 
 ```javascript
 const globalVariables = require('../config/global.variables.webpack');
 
 module.exports = {
-     test: /\.css/,
-        use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [{
-                loader: 'css-loader',
-                options: {
-                    importLoaders: 1,
-                    modules: true,
-                    localIdentName: globalVariables.IS_DEV_MODE ? '[name]__[local]___[hash:base64:5]' : '[hash:base64:5]'
+    test: /\.(css|sass|scss)$/,
+    use: [
+            MinCssExtractLoader.loader,
+            {
+                 loader: 'css-loader',
+                 options: {
+                   importLoaders: 1,
+                   modules: true,
+                   localIdentName: IS_DEV_MODE ? '[name]__[local]___[hash:base64:5]' : '[hash:base64:5]'
+                 }
+            },
+            {
+                 loader: 'sass-loader',
+                 options: {
+                    sourceMap: IS_DEV_MODE
                 }
-            }, {
-                loader: 'postcss-loader',
-                options:
-                    {
-                        ident: 'postcss',
-                        plugins: (loader) => [
-                            require('postcss-import')({root: loader.resourcePath}),
-                            require('postcss-cssnext')({
-                                browsers: [
-                                    '>1%',
-                                    'last 4 versions',
-                                    'Firefox ESR'
-                                ],
-                                flexbox: 'no-2009',
-                                features: {
-                                    customProperties: {
-                                        variables: Object.assign({},
-                                            require(path.join(globalVariables.CSS_VARIABLES_PATH, `/${globalVariables.ACTIVE_THEME_NAME}/css-color-variables`)),
-                                            require(path.join(globalVariables.CSS_VARIABLES_PATH, '/globals/css-font-sizes')),
-                                            require(path.join(globalVariables.CSS_VARIABLES_PATH, '/globals/css-sizes'))
-                                        )
-                                    }
-                                }
-                            }),
-                            require('cssnano')(),
-                            require('postcss-nested')(),
-                            require('postcss-flexbugs-fixes')()
-                        ]
-                    }
             }
-            ]
-        })
+         ]
 }
            
 ```
