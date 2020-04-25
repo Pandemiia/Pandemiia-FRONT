@@ -13,6 +13,8 @@
     "lint:js": "eslint --fix packages src -c ./.eslintrc.js",
     "lint:scss": "stylelint --fix --config ./.stylelintrc --cache './src/**/**/*.scss'",
     "storybook": "start-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "build-storybook": "build-storybook -s public",
     "test": "jest --coverage -u -c=./webpack/jest.config.js"
   },
   "dependencies": {
