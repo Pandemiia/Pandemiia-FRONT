@@ -7,7 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { App } from './components';
 import { reducers } from './modules';
 import mainStore from './store';
-import { Pages } from './pages';
+import { Pages, routes } from './pages';
 
 import './main.scss';
 
@@ -17,7 +17,7 @@ render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <Router>
-        <App store={store}>
+        <App store={store} links={routes}>
           <Pages />
         </App>
       </Router>

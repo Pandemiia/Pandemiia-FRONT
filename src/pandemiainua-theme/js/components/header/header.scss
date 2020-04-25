@@ -1,0 +1,11 @@
+@import "~@pinua/themes/variables";
+
+.tabletButtons {
+  display: flex;
+}
+
+@media screen and (max-width: $tablet-min-width) {
+  .tabletButtons {
+    display: none;
+  }
+}

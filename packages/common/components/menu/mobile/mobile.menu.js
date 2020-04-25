@@ -1,17 +1,18 @@
 import React, { memo } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 import SideBar from '@pinua/common/components/sidebar';
 import { Box, Text } from '@pinua/uikit';
-import { Link } from 'react-router-dom';
-import { IconContext } from 'react-icons';
-import { MdClose } from 'react-icons/md';
 
 import i18n from 'i18n';
 
-import styles from './menu.scss';
+import styles from './mobile.menu.scss';
 
-const Menu = ({ path, links, isOpen, onClose, ...props }) => {
+const MobileMenu = ({ path, links, isOpen, onClose, children, ...props }) => {
   const renderItems = item => (
     <Link
       key={item.name}
@@ -31,18 +32,17 @@ const Menu = ({ path, links, isOpen, onClose, ...props }) => {
     <SideBar isOpen={isOpen}>
       <Box direction="column" padding="m">
         <Box className={styles.close} justify="end" align="center" onClick={onClose}>
-          <Text size="s" intent="navigational">
+          <Text size="s" color="primary" right="s">
             {i18n.t('common.close')}
           </Text>
-          <IconContext.Provider value={{ className: styles.icon }}>
-            <MdClose />
-          </IconContext.Provider>
+          <FontAwesomeIcon className={styles.icon} icon={faTimes} />
         </Box>
         <Box className={styles.title} direction="column" justify="center" align="center">
-          <Text size="l" intent="navigational" align="center">
-            {i18n.t('menu.intro')}
+          <Text size="m" intent="navigational" align="center">
+            {i18n.t('sidebar.intro')}
           </Text>
         </Box>
+        {children}
         <Box direction="column" justify="center" align="center">
           {items}
         </Box>
@@ -51,16 +51,16 @@ const Menu = ({ path, links, isOpen, onClose, ...props }) => {
   );
 };
 
-Menu.propTypes = {
+MobileMenu.propTypes = {
   isOpen: PropTypes.bool,
   links: PropTypes.array,
   onClose: PropTypes.func,
   path: PropTypes.string
 };
 
-Menu.defaultProps = {
+MobileMenu.defaultProps = {
   isOpen: false,
   links: []
 };
 
-export default memo(Menu);
+export default memo(MobileMenu);

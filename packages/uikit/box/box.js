@@ -33,6 +33,7 @@ const Box = props => {
     inject,
     flex,
     wrap,
+    fullWidth,
     width,
     maxWidth,
     flexGrow,
@@ -49,6 +50,7 @@ const Box = props => {
     [styles[`justify_${justify}`]]: !!justify,
     [styles[`align_${align}`]]: !!align,
     [styles.wrap]: !!wrap,
+    [styles.fullWidth]: !!fullWidth,
     [styles[`width_${width}`]]: !!width,
     [styles[`maxWidth_${maxWidth}`]]: !!maxWidth,
     [styles[`columns_${columns}`]]: !!columns
@@ -133,6 +135,7 @@ Box.propTypes = {
   flexGrow: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   flexBasis: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   flexShrink: PropTypes.number,
+  fullWidth: PropTypes.bool,
   inject: PropTypes.bool,
   danger: PropTypes.bool,
   wrap: PropTypes.bool,
@@ -140,7 +143,8 @@ Box.propTypes = {
 };
 
 Box.defaultProps = {
-  component: 'div'
+  component: 'div',
+  fullWidth: false
 };
 
 export default Box;

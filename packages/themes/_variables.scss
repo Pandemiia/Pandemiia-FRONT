@@ -1,6 +1,7 @@
 @import "font-sizes";
 @import "pandemiainua-theme/css-color-variables";
 
+$button-xs: 100px;
 $button-s: 120px;
 $button-m: 160px;
 $button-l: 200px;
@@ -36,10 +37,17 @@ $column-2xl: 480px;
 $column-3xl: 576px;
 $column-4xl: 672px;
 $column-5xl: 768px;
+$column-6xl: 960px;
+$column-7xl: 1020px;
+$column-8xl: 1180px;
 
 $index-s: 10;
 $index-m: 100;
 $index-l: 1000;
 $index-xl: 10000;
+
+$mobile-min-width: 320px;
+$tablet-min-width: 720px;
+$desktop-min-width: 1024px;
 
 $base-font: "Roboto",sans-serif;

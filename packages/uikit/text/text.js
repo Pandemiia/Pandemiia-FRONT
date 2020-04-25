@@ -1,15 +1,30 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import _get from 'lodash/get';
 
 import styles from './text.scss';
 
 const sizes = ['xs', 's', 'm', 'l', 'xl', 'xxl'];
-const types = ['primary', 'info', 'navigational', 'success', 'warning', 'danger'];
+const sizesValue = {
+  xs: 4,
+  s: 8,
+  m: 16,
+  ms: 24,
+  l: 32,
+  xl: 64,
+  xxl: 128
+};
+
+const types = ['primary', 'secondary', 'info', 'navigational', 'success', 'danger'];
 
 const Text = ({
   component: Component,
-  intent,
+  top,
+  left,
+  right,
+  bottom,
+  color,
   size,
   className,
   align,
@@ -24,7 +39,7 @@ const Text = ({
   ...props
 }) => {
   const classes = classNames(className, styles[typeface], styles.general, {
-    [styles[intent]]: !!intent,
+    [styles[color]]: !!color,
     [styles[size]]: !!size,
     [styles[align]]: !!align,
     [styles.bold]: !!bold,
@@ -34,6 +49,13 @@ const Text = ({
     [styles[overflow]]: !!overflow
   });
 
+  const inlineStyles = {
+    marginTop: _get(sizesValue, top),
+    marginBottom: _get(sizesValue, bottom),
+    marginLeft: _get(sizesValue, left),
+    marginRight: _get(sizesValue, right)
+  };
+
   if (inject) {
     return React.cloneElement(props.children, {
       className: classes
@@ -42,16 +64,21 @@ const Text = ({
 
   if (danger) {
     const { children, ...rest } = props;
-    return <Component {...rest} dangerouslySetInnerHTML={{ __html: children }} className={classes} />;
+    return (
+      <Component style={inlineStyles} {...rest} dangerouslySetInnerHTML={{ __html: children }} className={classes} />
+    );
   }
 
-  return <Component {...props} className={classes} />;
+  return <Component style={inlineStyles} {...props} className={classes} />;
 };
 
 Text.propTypes = {
-  intent: PropTypes.oneOf(types),
-  color: PropTypes.string,
+  color: PropTypes.oneOf(types),
   size: PropTypes.oneOf(sizes),
+  top: PropTypes.oneOf(sizes),
+  bottom: PropTypes.oneOf(sizes),
+  left: PropTypes.oneOf(sizes),
+  right: PropTypes.oneOf(sizes),
   transform: PropTypes.oneOf(['capitalize', 'lowercase', 'uppercase']),
   decoration: PropTypes.oneOf(['none', 'underline', 'overline', 'line-through']),
   component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
