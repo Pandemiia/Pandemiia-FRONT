@@ -13,5 +13,8 @@ export default {
   },
   common: {
     close: 'Закрити'
+  },
+  footer: {
+    copyright: '© Pandemia, 2020-2021'
   }
 };
