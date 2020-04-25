@@ -8,32 +8,37 @@ import Button, { colors, sizes } from './button';
 import ButtonReadme from './README.md';
 
 const styles = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    height: '350px'
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  height: '350px'
 };
 
 storiesOf('Uikit/Button', module)
-    .addDecorator(withKnobs)
-    .addDecorator(jsxDecorator)
-    .add('default', () => (
-        <div style={styles}>
-            <Button top={select('marginTop', sizes, 's')}
-                right={select('marginRight', sizes, 's')}
-                bottom={select('marginBottom', sizes, 's')}
-                left={select('marginLeft', sizes, 's')}
-                color={select('color', colors, 'primary')}
-                size={select('sizes', sizes, 'm')}
-                onClick={() => action('onClick')('clicked')}>
-                Button
-            </Button>
-        </div>
-    ), {
-        readme: {
-            sidebar: ButtonReadme,
-            codeTheme: 'github'
-        }
-    });
-
+  .addDecorator(withKnobs)
+  .addDecorator(jsxDecorator)
+  .add(
+    'default',
+    () => (
+      <div style={styles}>
+        <Button
+          top={select('marginTop', sizes, 's')}
+          right={select('marginRight', sizes, 's')}
+          bottom={select('marginBottom', sizes, 's')}
+          left={select('marginLeft', sizes, 's')}
+          color={select('color', colors, 'primary')}
+          size={select('sizes', sizes, 'm')}
+          onClick={() => action('onClick')('clicked')}
+        >
+          Button
+        </Button>
+      </div>
+    ),
+    {
+      readme: {
+        sidebar: ButtonReadme,
+        codeTheme: 'github'
+      }
+    }
+  );
