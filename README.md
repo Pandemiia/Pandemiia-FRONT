@@ -1,5 +1,7 @@
 # Pandemiia-FRONT
 
+![Node.js CI](https://github.com/Pandemiia/Pandemiia-FRONT/workflows/Node.js%20CI/badge.svg?branch=dev)
+
 ## Installation
 
 ```bash
