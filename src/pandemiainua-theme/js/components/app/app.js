@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import i18n from 'i18n';
-import { Header, Menu } from '@pinua/common/components';
-import Footer from '../footer/index';
+import { Header, Menu, Footer } from '@pinua/common/components';
 import styles from './app.scss';
 
 class App extends PureComponent {
