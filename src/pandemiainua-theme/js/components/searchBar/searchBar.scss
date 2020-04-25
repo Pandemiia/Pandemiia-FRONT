@@ -1,0 +1,22 @@
+.searchBarWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.counterResult {
+  color: #000;
+}
+
+.show,
+.counterResult {
+  //font-family: e-Ukraine;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+  color: #8c8c8c;
+}
+
+.show {
+  margin-right: 10px;
+}

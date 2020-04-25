@@ -1,9 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .page {
+  flex-direction: column;
   height: 100%;
   padding: 65px var(--spaces-m) 0 var(--spaces-m);
   box-sizing: border-box;
+  padding-top: 100px;
 }
 
 .products {
   width: 100%;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: row;
+}
+
+.columnLeft {
+  flex: 25%;
+}
+
+.columnRight {
+  flex: 75%;
 }
