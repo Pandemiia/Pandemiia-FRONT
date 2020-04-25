@@ -1,30 +1,28 @@
+@import "~@pinua/themes/variables";
+
 .general {
   word-break: break-word;
   font-weight: 300;
 }
 
 .primary {
-  color: var(--b-color-txt2);
+  color: $b-color-txt1;
+}
+
+.secondary {
+  color: $b-color-txt5;
 }
 
 .navigational {
-  color: var(--b-color-txt1);
+  color: $b-color-txt2;
 }
 
 .info {
-  color: var(--b-color-txt3);
-}
-
-.warning {
-  color: var(--b-color-btn2);
+  color: $b-color-txt3;
 }
 
 .danger {
-  color: var(--b-color-btn3);
-}
-
-.success {
-  color: var(--b-color-txt4);
+  color: $b-color-txt4;
 }
 
 .left {
@@ -64,7 +62,7 @@
 }
 
 .base {
-  font-family: var(--baseFont);
+  font-family: $base-font;
 }
 
 .condensed {
@@ -117,25 +115,25 @@
 }
 
 .xs {
-  font-size: var(--f10px);
+  font-size: $font-10px;
 }
 
 .s {
-  font-size: var(--f14px);
+  font-size: $font-14px;
 }
 
 .m {
-  font-size: var(--f18px);
+  font-size: $font-18px;
 }
 
 .l {
-  font-size: var(--f24px);
+  font-size: $font-24px;
 }
 
 .xl {
-  font-size: var(--f30px);
+  font-size: $font-30px;
 }
 
 .xxl {
-  font-size: var(--f36px);
+  font-size: $font-36px;
 }

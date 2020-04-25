@@ -4,6 +4,7 @@ import Home from './home';
 import Needs from './needs';
 import Goods from './goods';
 import About from './about';
+import Contacts from './contacts';
 
 const routes = [
   {
@@ -29,6 +30,12 @@ const routes = [
     name: i18n.t('sidebar.about'),
     permission: ['guest'],
     component: About
+  },
+  {
+    path: '/contacts',
+    name: i18n.t('sidebar.contacts'),
+    permission: ['guest'],
+    component: Contacts
   }
 ];
 
