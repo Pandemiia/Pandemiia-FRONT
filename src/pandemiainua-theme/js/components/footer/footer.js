@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 import { Box, Text } from '@pinua/uikit';
 import i18n from 'i18n';
 import styles from './footer.scss';
@@ -8,7 +7,7 @@ import styles from './footer.scss';
 const Footer = ({ title, children, ...props }) => {
   return (
     <footer>
-      <Box className={cn(styles.footer, styles.red)} justify="center" align="center">
+      <Box className={styles.footer} justify="center" align="center">
         <Text>{i18n.t('footer.copyright')}</Text>
       </Box>
     </footer>
