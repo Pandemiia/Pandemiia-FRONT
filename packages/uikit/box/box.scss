@@ -1,3 +1,5 @@
+@import "~@pinua/themes/variables";
+
 .box {
   display: flex;
   box-sizing: border-box;
@@ -53,4 +55,41 @@
 }
 .fullWidth {
   width: 100%;
+}
+
+$columns: (
+s: $column-s,
+m: $column-m,
+l: $column-l,
+xl: $column-xl,
+2xl: $column-2xl,
+3xl: $column-3xl,
+4xl: $column-4xl,
+5xl: $column-5xl,
+6xl: $column-6xl,
+7xl: $column-7xl,
+8xl: $column-8xl
+);
+
+@each $size, $value in $columns {
+  .width_#{$size} {
+    width: $value;
+  }
+}
+
+/* Storybook Styles */
+
+.storybookWrapper {
+  min-width: 100px;
+  height: 300px;
+}
+
+.storybookWrapper,
+.storybookItem {
+  border: 1px solid black;
+}
+
+.storybookItem {
+  padding: $spaces-s;
+  margin: 0 $spaces-s;
 }

@@ -5,9 +5,9 @@ import { Box, Button } from '@pinua/uikit';
 
 import i18n from 'i18n';
 
-import styles from './actions.scss';
+import styles from './buttons.scss';
 
-const HeaderActions = ({ size, direction, onLogin, onRegister, className, ...props }) => {
+const HeaderButtons = ({ size, direction, onLogin, onRegister, className, ...props }) => {
   return (
     <Box className={cn(styles.buttons, className)} justify="end" direction={direction}>
       <Button className={styles.button} size={size} color="secondary" onClick={onLogin}>
@@ -20,7 +20,7 @@ const HeaderActions = ({ size, direction, onLogin, onRegister, className, ...pro
   );
 };
 
-HeaderActions.propTypes = {
+HeaderButtons.propTypes = {
   size: PropTypes.oneOf(['xs', 's', 'm']),
   direction: PropTypes.oneOf(['column', 'row']),
   className: PropTypes.string,
@@ -28,4 +28,4 @@ HeaderActions.propTypes = {
   onRegister: PropTypes.func
 };
 
-export default memo(HeaderActions);
+export default memo(HeaderButtons);

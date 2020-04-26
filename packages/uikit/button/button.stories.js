@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { jsxDecorator } from 'storybook-addon-jsx';
 
@@ -29,6 +29,8 @@ storiesOf('Uikit/Button', module)
           left={select('marginLeft', sizes, 's')}
           color={select('color', colors, 'primary')}
           size={select('sizes', sizes, 'm')}
+          circle={boolean('circle', false)}
+          rounded={boolean('rounded', false)}
           onClick={() => action('onClick')('clicked')}
         >
           Button

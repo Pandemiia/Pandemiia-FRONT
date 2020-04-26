@@ -4,7 +4,7 @@ import Media from 'react-media';
 import { Box } from '@pinua/uikit';
 import { Header, DesktopMenu, Logo, MobileMenu } from '@pinua/common/components';
 
-import HeaderActions from './actions';
+import HeaderButtons from './buttons';
 
 import styles from './header.scss';
 
@@ -30,7 +30,7 @@ const MainHeader = ({ location: { pathname }, links, onClose, isMenuOpen, toggle
             showBurgerMenu
             onBurgerMenuPress={toggleMobileMenu(true)}
             right={
-              <HeaderActions
+              <HeaderButtons
                 sizes="s"
                 direction="row"
                 onLogin={handleLogin}
@@ -44,7 +44,7 @@ const MainHeader = ({ location: { pathname }, links, onClose, isMenuOpen, toggle
                 <Logo />
               </Box>
               <MobileMenu path={pathname} onClose={toggleMobileMenu(false)} isOpen={isMenuOpen} links={links}>
-                <HeaderActions sizes="s" direction="column" onLogin={handleLogin} onRegister={handleSignUp} />
+                <HeaderButtons sizes="s" direction="column" onLogin={handleLogin} onRegister={handleSignUp} />
               </MobileMenu>
             </>
           </Header>
@@ -52,7 +52,7 @@ const MainHeader = ({ location: { pathname }, links, onClose, isMenuOpen, toggle
           <Box top="m">
             <Header
               left={<Logo />}
-              right={<HeaderActions sizes="s" direction="row" onLogin={handleLogin} onRegister={handleSignUp} />}
+              right={<HeaderButtons sizes="s" direction="row" onLogin={handleLogin} onRegister={handleSignUp} />}
             >
               <DesktopMenu path={pathname} links={links} />
             </Header>

@@ -5,8 +5,11 @@ import _get from 'lodash/get';
 
 import styles from './box.scss';
 
-const columns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const sizes = ['xs', 's', 'm', 'ms', 'l', 'xl', 'xxl'];
+export const justifies = ['center', 'left', 'right', 'around', 'between', 'start', 'end'];
+export const directions = ['row', 'column', 'row-reverse', 'column-reverse'];
+export const aligns = ['center', 'start', 'end', 'baseline'];
+export const columns = ['s', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl'];
+export const sizes = ['xs', 's', 'm', 'ms', 'l', 'xl', 'xxl'];
 const sizesValue = {
   xs: 4,
   s: 8,
@@ -35,11 +38,9 @@ const Box = props => {
     wrap,
     fullWidth,
     width,
-    maxWidth,
     flexGrow,
     flexBasis,
     flexShrink,
-    columns,
     order,
     style: propStyles,
     children,
@@ -51,9 +52,7 @@ const Box = props => {
     [styles[`align_${align}`]]: !!align,
     [styles.wrap]: !!wrap,
     [styles.fullWidth]: !!fullWidth,
-    [styles[`width_${width}`]]: !!width,
-    [styles[`maxWidth_${maxWidth}`]]: !!maxWidth,
-    [styles[`columns_${columns}`]]: !!columns
+    [styles[`width_${width}`]]: !!width
   });
 
   const inlineStyles = {
@@ -124,13 +123,11 @@ Box.propTypes = {
   left: PropTypes.oneOf(sizes),
   right: PropTypes.oneOf(sizes),
   width: PropTypes.oneOf(columns),
-  columns: PropTypes.oneOf(columns),
-  maxWidth: PropTypes.oneOf(columns),
-  justify: PropTypes.oneOf(['center', 'left', 'right', 'around', 'between', 'start', 'end']),
-  align: PropTypes.oneOf(['center', 'start', 'end', 'baseline']),
+  justify: PropTypes.oneOf(justifies),
+  align: PropTypes.oneOf(aligns),
   padding: PropTypes.string,
   margin: PropTypes.string,
-  direction: PropTypes.oneOf(['row', 'column', 'row-reverse', 'column-reverse']),
+  direction: PropTypes.oneOf(directions),
   flex: PropTypes.string,
   flexGrow: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   flexBasis: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
