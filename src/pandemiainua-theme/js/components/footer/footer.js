@@ -4,7 +4,7 @@ import { Box, Text } from '@pinua/uikit';
 import i18n from 'i18n';
 import styles from './footer.scss';
 
-const Footer = ({ title, children, ...props }) => {
+const Footer = ({ title, children }) => {
   return (
     <footer>
       <Box className={styles.footer} justify="center" align="center">
