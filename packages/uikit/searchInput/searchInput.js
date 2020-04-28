@@ -1,33 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Box from '@pinua/uikit/box';
+
 import styles from './searchInput.scss';
 
-// const searchInput = ({ label, ...props }) => {
-//   return (
-//     <label className={styles.searchInputWrapper}>
-//       {label && <span>{label}</span>}
-//       <input {...props} type="text" name="" placeholder="Пошук серед закладів" />
-//     </label>
-//   );
-// };
-
-const searchInput = () => {
+const searchInput = ({ label, id, ...props }) => {
+  const localId = id || 'search-input';
   return (
-    <label className={styles.searchInputWrapper}>
-      <input type="text" name="" placeholder="Пошук серед закладів" />
-    </label>
+    <Box className={styles.searchInputWrapper}>
+      {label && <label htmlFor={localId}>{label}</label>}
+      <input {...props} id={localId} type="text" placeholder="Пошук серед закладів" />
+    </Box>
   );
 };
-// const searchInput = ({ label, ...props }) => {
-//     return (
-//       <label className={styles.searchInputWrapper}>
-//         {label && <span>{label}</span>}
-//         <input {...props} type="text" name="" placeholder="Пошук серед закладів" />
-//       </label>
-//     );
-//   };
+
 searchInput.propTypes = {
-  label: PropTypes.string
+  label: PropTypes.string,
+  id: PropTypes.string
 };
 
 export default searchInput;

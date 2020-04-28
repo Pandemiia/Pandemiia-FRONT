@@ -21,7 +21,7 @@ const searchBar = ({ total, handleChange }) => {
         {total} результатів
       </p>
       <Select options={optionsList} />
-      <SearchInput />
+      <SearchInput id="search-result" />
       {/* <Box className={styles.search}>
         <input type="text" name="" placeholder="Пошук серед закладів" onChange={handleChange} />
         <button type="submit" name="" value="">
