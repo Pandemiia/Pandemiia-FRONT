@@ -11,6 +11,12 @@ export default {
     contacts: 'Контакти',
     intro: 'Ласкаво просимо на сайт pandemiia.in.ua'
   },
+  needs: {
+    title: 'Актуальні потреби'
+  },
+  goods: {
+    title: 'Каталог рішень'
+  },
   common: {
     close: 'Закрити'
   },

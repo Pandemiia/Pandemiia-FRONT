@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`uikit/checkbox-group should renders correctly 1`] = `
+<div
+  className="checkboxGroup inline disabled"
+  data-role="CheckboxGroup"
+>
+  <label
+    className="checkboxWrapper"
+    key="val1"
+  >
+    <Checkbox
+      disabled={true}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      value={true}
+    />
+    <Text
+      align="left"
+      className="label"
+      component="p"
+      intent="primary"
+      size="m"
+      typeface="base"
+    >
+      Value1
+    </Text>
+  </label>
+  <label
+    className="checkboxWrapper"
+    key="val2"
+  >
+    <Checkbox
+      disabled={true}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      value={true}
+    />
+    <Text
+      align="left"
+      className="label"
+      component="p"
+      intent="primary"
+      size="m"
+      typeface="base"
+    >
+      Value2
+    </Text>
+  </label>
+</div>
+`;

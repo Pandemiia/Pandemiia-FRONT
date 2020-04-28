@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`uikit/checkbox should renders correctly 1`] = `
+<span
+  class="dt-checkbox dt-checkbox-checked"
+>
+  <input
+    checked=""
+    class="dt-checkbox-input"
+    type="checkbox"
+  />
+  <span
+    class="dt-checkbox-inner"
+  />
+</span>
+`;

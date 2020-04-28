@@ -70,6 +70,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^5.1.2",
     "react-test-renderer": "^15.6.1",
+    "recompose": "^0.30.0",
     "redux": "^3.7.2",
     "redux-actions": "^2.6.4",
     "redux-devtools-extension": "^2.13.8",
