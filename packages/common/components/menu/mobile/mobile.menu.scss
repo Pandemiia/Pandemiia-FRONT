@@ -4,19 +4,19 @@
   color: $b-color-txt1;
   font-size: $font-16px;
   margin: $spaces-m 0;
+  text-decoration: none;
 
   &:hover {
-    color: $b-color-txt4;
+    color: $b-color-txt2;
   }
 }
 
 .title {
-  border-bottom: 1px solid $b-color-txt1;
   margin-bottom: $spaces-m;
 }
 
 .active {
-  color: $b-color-txt4;
+  color: $b-color-txt2;
 }
 
 .close {

@@ -20,3 +20,36 @@
 .show {
   margin-right: 10px;
 }
+
+.searchForm {
+  background: url(./img/layout.png) !important;
+  background-repeat: no-repeat;
+  left: 8.33%;
+  right: 7.03%;
+  top: 8.33%;
+  bottom: 7.03%;
+  height: 350px;
+  width: 350px;
+  //background: #8c8c8c;
+}
+
+.search {
+  width: 300px; /* Ширина поля с кнопкой */
+  border: 1px solid #000; /* Параметры рамки */
+  min-height: 20px; /* Минимальная высота */
+}
+
+input[type='search'] {
+  border: none; /* Убираем рамку */
+  outline: none; /* Убираем свечение в Chrome и Safari */
+  -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+  width: 274px; /* Ширина поля */
+  vertical-align: middle; /* Выравнивание по середине */
+}
+
+// input[type='submit'] {
+//   width: 20px; /* Ширина кнопки */
+//   height: 20px; /* Высота кнопки */
+//   border: none; /* Убираем рамку */
+//   background: url(images/video.png) no-repeat 50% 50%; /* Параметры фона */
+// }

@@ -1,3 +1,5 @@
+@import '~@pinua/themes/variables';
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,7 @@
 .page {
   flex-direction: column;
   height: 100%;
-  padding: 65px var(--spaces-m) 0 var(--spaces-m);
+  padding: 65px $spaces-m 0 $spaces-m;
   box-sizing: border-box;
   padding-top: 100px;
 }

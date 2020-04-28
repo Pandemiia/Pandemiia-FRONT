@@ -5,7 +5,7 @@ module.exports = function(activeThemeName) {
   const IS_DEV_MODE = process.env.NODE_ENV === 'development';
   const THEME = activeThemeName || 'pandemiainua-theme';
   const APP_PATH = path.join(__dirname, `../src/${THEME}`);
-  const DIST_PATH = path.join(__dirname, IS_DEV_MODE ? `../src/${THEME}` : `../static/${THEME}`);
+  const DIST_PATH = path.join(__dirname, IS_DEV_MODE ? `../src/${THEME}` : `../server/static/${THEME}`);
 
   /** CSS VARIABLES **/
   const CSS_COLOR_VARIABLES_PATH = path.join(__dirname, `../packages/themes/${THEME}/`);

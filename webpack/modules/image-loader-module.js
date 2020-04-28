@@ -1,5 +1,5 @@
 module.exports = {
-  test: /\.(jpg|gif|png|woff|woff2|eot|ttf|svg)$/,
+  test: /\.(jpg|gif|png|woff|woff2|eot|ttf)$/,
   use: {
     loader: 'url-loader',
     options: {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './titlePage.scss';
 
-function TitlePage({ title, counter, counterLabel }) {
+const TitlePage = ({ title, counter, counterLabel }) => {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>{title}</h1>
@@ -11,7 +11,7 @@ function TitlePage({ title, counter, counterLabel }) {
       </p>
     </div>
   );
-}
+};
 
 TitlePage.propTypes = {
   title: PropTypes.string.isRequired,
