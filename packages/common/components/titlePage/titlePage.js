@@ -5,7 +5,7 @@ import styles from './titlePage.scss';
 
 const TitlePage = ({ title, counter }) => {
   return (
-    <Box className={styles.wrapper} flex-direction="row">
+    <Box className={styles.wrapper}>
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.titleCounter}> {counter} закладів</p>
     </Box>
