@@ -1,11 +1,7 @@
 import { handleActions } from 'redux-actions';
 
-import { toggleMenu, loadHospitalRegions, loadHospitalCategories, loadHospitalNeedsCategories } from './app.actions';
-import {
-  normalizeHospitalRegions,
-  normalizeHospitalCategories,
-  normalizeHospitalNeedsCategories
-} from './app.normalizers';
+import { toggleMenu, loadHospitalRegions, loadHospitalTypes, loadHospitalNeedsCategories } from './app.actions';
+import { normalizeHospitalRegions, normalizeHospitalTypes, normalizeHospitalNeedsCategories } from './app.normalizers';
 
 export const initialState = {
   menuOpen: false,
@@ -33,12 +29,12 @@ const handleHospitalRegions = (state, { payload }) => {
   };
 };
 
-const handleHospitalCategories = (state, { payload }) => {
+const handleHospitalTypes = (state, { payload }) => {
   return {
     ...state,
     hospitals: {
       ...state.hospitals,
-      categories: normalizeHospitalCategories(payload)
+      categories: normalizeHospitalTypes(payload)
     }
   };
 };
@@ -48,7 +44,7 @@ const handleHospitalNeedsCategories = (state, { payload }) => {
     ...state,
     hospitals: {
       ...state.hospitals,
-      categories: normalizeHospitalNeedsCategories(payload)
+      needs: normalizeHospitalNeedsCategories(payload)
     }
   };
 };
@@ -57,7 +53,7 @@ export default handleActions(
   {
     [toggleMenu]: handleToggleMenu,
     [loadHospitalRegions]: handleHospitalRegions,
-    [loadHospitalCategories]: handleHospitalCategories,
+    [loadHospitalTypes]: handleHospitalTypes,
     [loadHospitalNeedsCategories]: handleHospitalNeedsCategories
   },
   initialState

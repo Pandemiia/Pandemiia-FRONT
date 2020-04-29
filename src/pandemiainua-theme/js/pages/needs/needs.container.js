@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 import Needs from './needs';
 
-const { loadHospitalRegions } = appActions;
+const { loadHospitalRegions, loadHospitalNeedsCategories, loadHospitalTypes } = appActions;
 const { getHospitalRegions } = appSelectors;
 
 const mapStateToProps = state => ({
@@ -13,7 +13,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProp = {
-  loadHospitalRegions
+  loadHospitalRegions,
+  loadHospitalNeedsCategories,
+  loadHospitalTypes
 };
 
 const enhance = compose(withRouter, connect(mapStateToProps, mapDispatchToProp));
