@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Header, Footer } from 'components';
+import { Header, Footer, Pagination } from 'components';
 
 import styles from './app.scss';
 
@@ -17,6 +17,7 @@ class App extends PureComponent {
       <div className={styles.wrapper}>
         <Header links={links} />
         {children}
+        <Pagination />
         <Footer />
       </div>
     );
