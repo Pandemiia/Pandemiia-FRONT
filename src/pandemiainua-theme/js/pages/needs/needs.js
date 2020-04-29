@@ -7,7 +7,7 @@ import styles from './needs.scss';
 const Needs = () => {
   return (
     <Layout className={styles.page}>
-      <TitlePage title="Актуальні потреби" counter="1,087" counterLabel="закладів" />
+      <TitlePage title="Актуальні потреби" counter="1,087" />
       <div className={styles.infoBlock}>
         <div className={styles.columnLeft}>колонkа области</div>
         <div className={styles.columnRight}>
