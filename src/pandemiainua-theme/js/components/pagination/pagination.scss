@@ -2,17 +2,23 @@
 @mixin pagination-li {
   margin-right: 5px;
   box-sizing: border-box;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #000;
   font-size: $font-14px;
-  font-weight: bold;
-  border: 1px solid #aaaaaa;  
+  font-weight: bold;   
 }
 @mixin pagination-links {  
-  padding: 5px 10px;
+  padding: 6px 10px;
+  border-radius: 4px;
   display: block;
   outline: none;
   cursor: pointer;
+  border: 1px solid #F0F0F0; 
+}
+@mixin vector-img {  
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 15px;
 }
 
 .pagination {
@@ -23,19 +29,10 @@
   padding: 0; 
 }
 .paginationPage { 
-  margin-right: 5px;
-  box-sizing: border-box;
-  border-radius: 2px;
-  color: #000;
-  font-size: $font-14px;
-  font-weight: bold;
-  border: 1px solid #aaaaaa;   
+  @include pagination-li;  
 }
 .paginationPageLink {
-  padding: 5px 10px;
-  display: block;
-  outline: none;
-  cursor: pointer;    
+  @include pagination-links;  
 }
 .paginationPageLink:hover {
   background-color: #c9ecffba;
@@ -43,23 +40,30 @@
 .paginationPageLinkActive {
   background-color: #0083ff;
 }
-.previousBtn {
-  @include pagination-li;
-  margin-right: 15px; 
+.previousBtn {  
+  margin-right: 15px;  
 }
-.nextBtn {
-  @include pagination-li; 
+.nextBtn {  
   margin-right: 0px;
   margin-left: 10px;  
+  
 }
-.previousLink {
-  @include pagination-links;  
+.previousLink {  
+  @include pagination-links;
+  @include vector-img;
+  background-image: url(./img/left_vector.png);  
+}
+.nextLink {  
+  @include pagination-links; 
+  @include vector-img;
+  background-image: url(./img/right_vector.png);  
 }
 .brake {
   @include pagination-li; 
   border: none;
 }
 .brakeLink {
-  @include pagination-links; 
-  padding: 3px;  
+  @include pagination-links;   
 }
+
+

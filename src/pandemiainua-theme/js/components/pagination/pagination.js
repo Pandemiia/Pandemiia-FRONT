@@ -18,8 +18,8 @@ class Pagination extends Component {
     return (
       <div>
         <ReactPaginate
-          previousLabel={'<'}
-          nextLabel={'>'}
+          previousLabel={''}
+          nextLabel={''}
           breakLabel={'...'}
           breakLinkClassName={styles.brakeLink}
           breakClassName={styles.brake}
@@ -34,7 +34,7 @@ class Pagination extends Component {
           previousClassName={styles.previousBtn}
           nextClassName={styles.nextBtn}
           previousLinkClassName={styles.previousLink}
-          nextLinkClassName={styles.previousLink}
+          nextLinkClassName={styles.nextLink}
           activeClassName={'active'}
         />
       </div>
