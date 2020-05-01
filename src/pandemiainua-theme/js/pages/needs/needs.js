@@ -1,8 +1,9 @@
 import React from 'react';
 import { Layout, TitlePage, ShowResult } from '@pinua/common/components';
-// import Search from '@pinua/uikit/Search';
+
 import DropdownList from '@pinua/uikit/DropdownList';
 import { optionsList } from './constants';
+
 import styles from './needs.scss';
 
 const Needs = () => {
@@ -12,7 +13,6 @@ const Needs = () => {
       <ShowResult total="366" />
 
       <DropdownList options={optionsList} />
-      {/* <Search /> */}
     </Layout>
   );
 };

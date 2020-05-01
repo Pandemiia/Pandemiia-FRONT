@@ -7,6 +7,7 @@
 /packages/api/node_modules/
 /packages/common/node_modules/
 /packages/presets/node_modules/
+server/node_modules/
 /.pnp
 .pnp.js
 

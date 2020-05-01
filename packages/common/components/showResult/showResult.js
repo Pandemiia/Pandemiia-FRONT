@@ -13,7 +13,7 @@ const ShowResult = ({ total }) => {
 };
 
 ShowResult.propTypes = {
-  total: PropTypes.number
+  total: PropTypes.string
 };
 
 export default ShowResult;
