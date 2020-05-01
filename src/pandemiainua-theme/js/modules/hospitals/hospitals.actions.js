@@ -14,7 +14,7 @@ export const loadHospitalNeedsCategories = createAction('LOAD_HOSPITAL_NEEDS_CAT
 });
 
 export const loadHospitals = createAction('LOAD_HOSPITALS', ({ regions, types } = {}) => ({ client }) => {
-  return client.get(`/hospitals/?${stringify({ region: regions, categories_in: types })}`);
+  return client.get(`/hospitals/?${stringify({ region: regions, categories: types })}`);
 });
 
 export default {
