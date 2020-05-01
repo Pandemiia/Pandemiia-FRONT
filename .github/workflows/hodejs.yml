@@ -26,6 +26,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn
       - run: yarn lint
-      - run: yarn deploy-storybook
         env:
           CI: true
