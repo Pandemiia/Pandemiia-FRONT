@@ -93,4 +93,4 @@ module.exports = {
 
 ### Check our components here
 
-[Storybook](https://pandemiia.github.io/Pandemiia-FRONT])
+[Storybook](https://pandemiia.github.io/Pandemiia-FRONT/?path=/story/uikit-box--default)
