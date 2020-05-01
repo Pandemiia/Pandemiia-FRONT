@@ -19,6 +19,7 @@ process.noDeprecation = true;
 const globalVariables = new Variables(ACTIVE_THEME);
 
 module.exports = {
+
   context: globalVariables.APP_PATH,
 
   entry: {

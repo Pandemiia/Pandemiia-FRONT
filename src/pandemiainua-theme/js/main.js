@@ -13,6 +13,10 @@ import './main.scss';
 
 const { store, persistor } = mainStore(reducers);
 
+if (process.env.NODE_ENV === 'development') {
+  window.store = store;
+}
+
 render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>

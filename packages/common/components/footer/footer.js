@@ -1,23 +1,18 @@
 import React, { memo } from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
-import { Box } from '@pinua/uikit';
-
+import { Box, Text } from '@pinua/uikit';
+import i18n from 'i18n';
 import styles from './footer.scss';
 
-const Footer = ({ title, children, ...props }) => {
+const Footer = ({ children, ...props }) => {
   return (
     <footer>
       <Box className={cn(styles.footer)} justify="center" align="center">
+        <Text>{i18n.t('footer.copyright')}</Text>
         {children}
       </Box>
     </footer>
   );
-};
-
-Footer.propTypes = {
-  title: PropTypes.string,
-  total: PropTypes.number
 };
 
 export default memo(Footer);

@@ -7,7 +7,7 @@ import _get from 'lodash/get';
 
 import styles from './button.scss';
 
-export const colors = ['primary', 'secondary', 'tertiary', 'transparent', 'danger'];
+export const colors = ['primary', 'secondary', 'tertiary', 'transparent', 'info', 'warn', 'danger'];
 export const sizes = ['s', 'm', 'l', 'xl'];
 const sizesValue = {
   s: 8,

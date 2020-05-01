@@ -1,0 +1,145 @@
+@import "~@pinua/themes/variables";
+
+:global {
+  .pin-checkbox {
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    position: relative;
+    line-height: 1;
+    vertical-align: middle;
+    height: 16px;
+  }
+
+  .pin-checkbox-radio {
+    overflow: hidden;
+    border-radius: 50%;
+
+    .pin-checkbox-inner {
+      border-radius: 50%;
+    }
+  }
+
+  .pin-checkbox:hover .pin-checkbox-inner,
+  .pin-checkbox-input:focus + .pin-checkbox-inner {
+    border-color: $b-color-btn3;
+  }
+
+  .pin-checkbox-inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: $checkbox-m;
+    height: $checkbox-m;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: $b-color-ui7;
+    background-color: $b-color-ui1;
+    transition:
+      border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+      background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  .pin-checkbox-inner::after {
+    transform: rotate(45deg) scale(0);
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    display: table;
+    width: 4px;
+    height: 8px;
+    border: 2px solid $b-color-ui1;
+    border-top: 0;
+    border-left: 0;
+    content: "";
+    transition: transform 0.2s;
+  }
+
+  .pin-checkbox-input {
+    position: absolute;
+    left: 0;
+    z-index: $index-xl;
+    cursor: pointer;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .pin-checkbox-checked:hover .pin-checkbox-inner {
+    border-color: $b-color-btn3;
+  }
+
+  .pin-checkbox-checked .pin-checkbox-inner {
+    border-color: $b-color-btn3;
+    background-color: $b-color-btn3;
+  }
+
+  .pin-checkbox-checked .pin-checkbox-inner::after {
+    transform: rotate(45deg) scale(1);
+  }
+
+  .pin-checkbox-disabled.pin-checkbox-checked:hover .pin-checkbox-inner {
+    border-color: $b-color-ui7;
+  }
+
+  .pin-checkbox-disabled.pin-checkbox-checked .pin-checkbox-inner {
+    background-color: $b-color-ui7;
+    border-color: $b-color-ui7;
+  }
+
+  .pin-checkbox-disabled.pin-checkbox-checked .pin-checkbox-inner::after {
+    animation-name: none;
+    border-color: #ccc;
+  }
+
+  .pin-checkbox-disabled:hover .pin-checkbox-inner {
+    border-color: $b-color-ui7;
+  }
+
+  .pin-checkbox-disabled .pin-checkbox-inner {
+    border-color: $b-color-ui7;
+    background-color: $b-color-ui8;
+  }
+
+  .pin-checkbox-disabled .pin-checkbox-inner::after {
+    animation-name: none;
+    border-color: $b-color-ui8;
+  }
+
+  .pin-checkbox-disabled,
+  .pin-checkbox-disabled .pin-checkbox-input {
+    cursor: default;
+  }
+
+  @keyframes amCheckboxIn {
+    0% {
+      opacity: 0;
+      transform-origin: 50% 50%;
+      transform: scale(0, 0) rotate(45deg);
+    }
+
+    100% {
+      opacity: 1;
+      transform-origin: 50% 50%;
+      transform: scale(1, 1) rotate(45deg);
+    }
+  }
+
+  @keyframes amCheckboxOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .pin-checkbox-rounded .pin-checkbox-inner {
+    border-radius: 50%;
+  }
+}

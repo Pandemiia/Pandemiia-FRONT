@@ -5,14 +5,32 @@ export default {
   },
   sidebar: {
     home: 'Головна',
-    needs: 'Потреби',
-    goods: 'Каталог рішень',
+    hospitals: 'Потреби',
+    solutions: 'Каталог рішень',
     about: 'Про проект',
     contacts: 'Контакти',
     intro: 'Ласкаво просимо на сайт pandemiia.in.ua'
   },
+  hospitals: {
+    title: 'Актуальні потреби'
+  },
+  solutions: {
+    title: 'Каталог рішень'
+  },
   common: {
-    close: 'Закрити'
+    close: 'Закрити',
+    clear: 'Очистити',
+    selectAll: 'Обрати всі',
+    showMore: 'Показати всі',
+    showLess: 'Згорнути'
+  },
+  filter: {
+    types: 'ТИП ЗАКЛАДУ',
+    categories: 'КАТЕГОРІЯ',
+    materials: 'МАТЕРІАЛ',
+    tools: 'ІНСТРУМЕНТИ',
+    regions: 'ОБЛАСТЬ',
+    needs: 'ТИП ПОТРЕБИ'
   },
   footer: {
     copyright: '© Pandemia, 2020-2021'
