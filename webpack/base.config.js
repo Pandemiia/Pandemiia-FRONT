@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const Variables = require('../config');
+const Dotenv = require('dotenv-webpack');
 
 /** MODULES **/
 const babelLoader = require('./modules/babel-loader-module');
@@ -88,6 +89,8 @@ module.exports = {
     new webpack.DefinePlugin({
       IS_DEV_MODE: globalVariables.IS_DEV_MODE
     }),
+
+    new Dotenv(),
 
     new webpack.EnvironmentPlugin(['NODE_ENV']),
 
