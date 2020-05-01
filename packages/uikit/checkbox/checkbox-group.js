@@ -6,6 +6,8 @@ import Text from '../text';
 
 import styles from './checkbox-group.scss';
 
+export const sizes = ['xs', 's', 'm', 'l', 'xl', 'xxl'];
+
 class CheckboxGroup extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
@@ -16,14 +18,8 @@ class CheckboxGroup extends PureComponent {
     inline: PropTypes.bool,
     disabled: PropTypes.bool,
     radio: PropTypes.bool,
+    size: PropTypes.oneOf(sizes),
     options: PropTypes.arrayOf(PropTypes.object)
-  };
-
-  static defaultProps = {
-    value: [],
-    onFocus() {},
-    onBlur() {},
-    inline: true
   };
 
   handleChange = optionValue => event => {
@@ -57,12 +53,12 @@ class CheckboxGroup extends PureComponent {
   };
 
   render() {
-    const { disabled, options, value, inline, radio } = this.props;
+    const { disabled, options, value, inline, radio, size } = this.props;
     const wrapperClasses = classNames(styles.checkboxGroup, inline && styles.inline, disabled && styles.disabled);
 
     return (
       <div className={wrapperClasses}>
-        {options.map(({ label, imageLabel, ...option }) => (
+        {options.map(({ label, children, ...option }) => (
           <label key={option.value} className={styles.checkboxWrapper}>
             <Checkbox
               {...option}
@@ -73,17 +69,25 @@ class CheckboxGroup extends PureComponent {
               onFocus={this.onFocus}
               onBlur={this.onBlur}
             />
-            {imageLabel}
             {label && (
-              <Text intent="primary" className={styles.label}>
+              <Text size={size} color="primary" className={styles.label}>
                 {label}
               </Text>
             )}
+            {children}
           </label>
         ))}
       </div>
     );
   }
 }
+
+CheckboxGroup.defaultProps = {
+  value: [],
+  onFocus() {},
+  onBlur() {},
+  inline: true,
+  size: 's'
+};
 
 export default CheckboxGroup;

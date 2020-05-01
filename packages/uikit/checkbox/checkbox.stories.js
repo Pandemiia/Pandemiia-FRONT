@@ -2,10 +2,10 @@ import React from 'react';
 import { withState } from 'recompose';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import { jsxDecorator } from 'storybook-addon-jsx';
 
-import Checkbox from './checkbox';
+import Checkbox, { sizes } from './checkbox';
 import CheckboxGroup from './checkbox-group';
 
 const ControlledCheckboxGroup = withState(
@@ -17,6 +17,7 @@ const ControlledCheckboxGroup = withState(
     name="main"
     disabled={boolean('disabled', false)}
     inline={boolean('inline', true)}
+    size={select('size', sizes, 's')}
     value={value}
     options={[
       { value: 'some', label: 'Some' },
@@ -40,6 +41,7 @@ const ControlledCheckbox = withState(
     label="Region"
     rounded={boolean('rounded', false)}
     disabled={boolean('disabled', false)}
+    size={select('size', sizes, 's')}
     value={value}
     onChange={e => {
       action('Change')(e);

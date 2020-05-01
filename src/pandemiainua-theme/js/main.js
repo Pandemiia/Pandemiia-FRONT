@@ -13,7 +13,9 @@ import './main.scss';
 
 const { store, persistor } = mainStore(reducers);
 
-window.store = store;
+if (process.env.NODE_ENV === 'development') {
+  window.store = store;
+}
 
 render(
   <Provider store={store}>

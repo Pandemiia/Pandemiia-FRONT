@@ -1,3 +1,20 @@
-.filter {
+@import "~@pinua/themes/variables";
 
+.filter {
+    min-width: $column-s;
+}
+
+.title {
+    width: 50%;
+}
+
+.regions {
+    height: 100%;
+}
+
+.total {
+    background-color: $b-color-btn1;
+    width: $spaces-l;
+    height: $spaces-m;
+    border-radius: $border-m;
 }

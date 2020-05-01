@@ -1,6 +1,19 @@
+const normalizeHospital = ({ address, categories, description, email, id, name, region, company_code }) => {
+  return {
+    id,
+    address,
+    categories,
+    description,
+    email,
+    name,
+    region,
+    companyCode: company_code
+  };
+};
+
 const normalizeHospitalRegion = ({ key, name, hospitals_in_region }) => {
   return {
-    key,
+    id: key,
     name,
     total: hospitals_in_region
   };
@@ -10,28 +23,28 @@ const normalizeHospitalType = ({ id, name, related_hospitals_number }) => {
   return {
     id,
     name,
-    related_hospitals_number
+    total: related_hospitals_number
   };
 };
 
-const normalizeHospitalCategory = ({ id, name }) => {
+const normalizeHospitalNeed = ({ id, name }) => {
   return {
     id,
     name
   };
 };
 
-export const normalizeHospitalRegions = ({ data }) => {
+export const normalizeHospitalRegions = ({ data = [] }) => {
   return data.reduce(
     (memo, current) => {
-      const { key, ...rest } = normalizeHospitalRegion(current);
+      const { id, ...rest } = normalizeHospitalRegion(current);
 
       const { items } = memo;
-      memo[key] = {
-        key,
+      memo[id] = {
+        id,
         ...rest
       };
-      memo.items = [...items, key];
+      memo.items = [...items, id];
 
       return memo;
     },
@@ -64,7 +77,7 @@ export const normalizeHospitalTypes = ({ data }) => {
 export const normalizeHospitalNeedsCategories = ({ data }) => {
   return data.reduce(
     (memo, current) => {
-      const { id, ...rest } = normalizeHospitalCategory(current);
+      const { id, ...rest } = normalizeHospitalNeed(current);
 
       const { items } = memo;
       memo[id] = {
@@ -79,4 +92,13 @@ export const normalizeHospitalNeedsCategories = ({ data }) => {
       items: []
     }
   );
+};
+
+export const normalizeHospitals = ({ data = {} }) => {
+  const { results } = data;
+  return results.reduce((memo, current) => {
+    const hospital = normalizeHospital(current);
+    memo = [...memo, hospital];
+    return memo;
+  }, []);
 };

@@ -7,17 +7,20 @@ import { Box, Text } from '@pinua/uikit';
 
 import './checkbox.scss';
 
+export const sizes = ['xs', 's', 'm', 'l', 'xl', 'xxl'];
+
 class Checkbox extends PureComponent {
   static propTypes = {
     rounded: PropTypes.bool,
     label: PropTypes.node,
     value: PropTypes.bool,
     radio: PropTypes.bool,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    size: PropTypes.oneOf(sizes)
   };
 
   render() {
-    const { className, rounded, value, label, radio, ...props } = this.props;
+    const { className, rounded, value, label, radio, size, ...props } = this.props;
     const classes = cn(className, {
       'pin-checkbox-rounded': rounded,
       'pin-checkbox-radio': radio
@@ -33,7 +36,7 @@ class Checkbox extends PureComponent {
           {checkbox}
           {typeof label === 'string' ? (
             <Box inject left="s">
-              <Text size="s">{label}</Text>
+              <Text size={size}>{label}</Text>
             </Box>
           ) : (
             label
@@ -45,5 +48,9 @@ class Checkbox extends PureComponent {
     return checkbox;
   }
 }
+
+Checkbox.defaultProps = {
+  size: 's'
+};
 
 export default Checkbox;
