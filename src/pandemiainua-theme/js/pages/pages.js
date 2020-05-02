@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useCallback } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import routes from './pages.config';
@@ -6,19 +6,22 @@ import routes from './pages.config';
 /** ROUTES **/
 import NotFound from './404';
 
-export default class Pages extends PureComponent {
-  getRoutes = (route, idx) => (
-    <Route key={`rout-${idx}-${route.name}`} exact path={route.path} component={route.component} />
+const Pages = ({ ...props }) => {
+  const getRoutes = useCallback(
+    (route, idx) => <Route key={`rout-${idx}-${route.name}`} exact path={route.path} component={route.component} />,
+    []
   );
 
-  render() {
-    const navRoutes = routes.map(this.getRoutes);
+  const renderRoute = useCallback(props => <NotFound {...props} />, []);
 
-    return (
-      <Switch>
-        {navRoutes}
-        <Route render={props => <NotFound {...props} />} />
-      </Switch>
-    );
-  }
-}
+  const navRoutes = routes.map(getRoutes);
+
+  return (
+    <Switch>
+      {navRoutes}
+      <Route render={renderRoute} />
+    </Switch>
+  );
+};
+
+export default Pages;

@@ -51,6 +51,22 @@
   color: $b-color-txt1;
 }
 
+.info {
+  background: $b-color-btn2;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $b-color-btn6;
+  color: $b-color-txt2;
+}
+
+.warn {
+  background: $b-color-btn4;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $b-color-btn7;
+  color: $b-color-txt4;
+}
+
 .danger {
   background-color: $b-color-btn5;
   color: $b-color-txt5;

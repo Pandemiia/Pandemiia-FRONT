@@ -1,8 +1,8 @@
 const path = require('path');
-
+const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = {
-    stories: ['../src/**/*.stories.js', '../packages/**/*.stories.js'],
+    stories: ['../src/**/*.stories.(js|mdx)', '../packages/**/*.stories.(js|mdx)'],
     webpackFinal: async (config, { configType }) => {
         // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
         // You can change the configuration based on that.
@@ -33,13 +33,22 @@ module.exports = {
         });
 
         config.module.rules.push({
-            test: /\.md$/,
+            test: /\.(stories|story)\.mdx$/,
             use: [
                 {
-                    loader: 'markdown-loader',
-                }
-            ]
-        })
+                    loader: 'babel-loader',
+                    options: {
+                        plugins: ['@babel/plugin-transform-react-jsx'],
+                    },
+                },
+                {
+                    loader: '@mdx-js/loader',
+                    options: {
+                        compilers: [createCompiler({})],
+                    },
+                },
+            ],
+        });
 
         // Return the altered config
         return config;
