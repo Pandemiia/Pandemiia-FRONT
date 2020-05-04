@@ -1,8 +1,12 @@
 import React, { memo, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { Box, Text } from '@pinua/uikit';
+import { Box, Text, Button } from '@pinua/uikit';
 import { Card } from '@pinua/common/components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
+
+import i18n from 'i18n';
 
 import Contacts, { contactsPropTypes } from './contacts';
 import Address, { addressPropTypes } from './address';
@@ -36,8 +40,22 @@ const HospitalCard = ({ name, contacts, address, categories, className, needs, .
           <Address city={city} line1={line1} region={region} zipCode={zipCode} bottom="m" />
           {renderContacts()}
         </Box>
-        <Box className={styles.needs} component="ul" direction="column">
-          {renderNeeds()}
+        <Box className={styles.needs} direction="column" fullWidth>
+          <Box className={styles.list} component="ul" direction="column">
+            {renderNeeds()}
+          </Box>
+          <Box fullWidth justify="end" align="center">
+            {needs.length >= 3 && (
+              <Button
+                className={styles.fullList}
+                color="transparent"
+                size="s"
+                iconRight={<FontAwesomeIcon className={styles.icon} icon={faLongArrowAltRight} />}
+              >
+                {i18n.t('common.fullList')}
+              </Button>
+            )}
+          </Box>
         </Box>
       </Box>
     </Card>

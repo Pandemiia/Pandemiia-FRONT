@@ -13,9 +13,25 @@
   width: 50%;
 }
 
+.list {
+  height: 100%;
+}
+
 .icon {
-  color: $b-color-txt3;
-  margin-right: $spaces-s;
+  margin-left: $spaces-s;
+}
+
+.fullList {
+  border-radius: 0;
+  padding: 0;
+  color: $b-color-txt2;
+  min-width: auto;
+  border-bottom: 1px dashed $b-color-txt2;
+
+  &:hover {
+    border-bottom: none;
+    opacity: 1;
+  }
 }
 
 @media screen  and (min-width: $tablet-min-width) {
