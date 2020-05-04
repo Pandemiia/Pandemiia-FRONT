@@ -1,0 +1,32 @@
+@import "~@pinua/themes/variables";
+
+$bold-font: bold;
+.page {
+    display: flex;
+    height: 100%;
+    padding: 65px $spaces-m 0 $spaces-m;
+    box-sizing: border-box;
+  }
+  .title {
+      margin-bottom: 5px;
+      font-size: 10em;
+      font-weight: $bold-font; 
+  }
+  .subtext {
+      margin-bottom: 40px;
+      font-size: 1.2em;
+      font-weight: $bold-font; 
+  }
+  .button {
+      padding: 10px 24px;
+      min-width: 220px;
+      border-radius: 60px;
+      font-size: $font-12px;
+      font-weight: $bold-font;      
+  }
+  .link {
+      outline: none;
+      color: #fff;
+      text-decoration: none;      
+      text-transform: uppercase;
+  }
