@@ -1,8 +1,9 @@
 import React, { memo, useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Layout, Filter } from '@pinua/common/components';
-import { Pagination } from 'components';
+import { Cards, HospitalCard } from 'components';
 import { Box, Text } from '@pinua/uikit';
+
 import i18n from 'i18n';
 
 import styles from './hospitals.scss';
@@ -40,25 +41,14 @@ const Hospitals = ({
     [loadHospitals, params]
   );
 
-  const renderHospitals = useCallback(({ id, description, email, name }) => {
-    return (
-      <Box left="l" padding="m" key={id} direction="column">
-        <Text>id: {id}</Text>
-        <Text>description: {description}</Text>
-        <Text>email: {email}</Text>
-        <Text>name: {name}</Text>
-      </Box>
-    );
-  }, []);
-
   return (
     <Layout className={styles.page}>
       <Box direction="column" fullWidth>
-        <Box>
+        <Box top="l" bottom="l">
           <Text size="l">{i18n.t('hospitals.title')}</Text>
         </Box>
         <Box fullWidth>
-          <Box direction="column">
+          <Box direction="column" right="m">
             <Filter title={i18n.t('filter.regions')} data={regions} onChange={handleFilterChange(0)} />
             <Box top="l" direction="column">
               <Filter title={i18n.t('filter.types')} data={types} itemsLength={5} onChange={handleFilterChange(1)} />
@@ -67,8 +57,9 @@ const Hospitals = ({
               <Filter title={i18n.t('filter.needs')} data={needs} itemsLength={5} onChange={handleFilterChange(2)} />
             </Box>
           </Box>
-          <Box>{hospitals.map(renderHospitals)}</Box>
-          <Pagination />
+          <Box direction="column" fullWidth>
+            <Cards items={hospitals} card={HospitalCard} />
+          </Box>
         </Box>
       </Box>
     </Layout>

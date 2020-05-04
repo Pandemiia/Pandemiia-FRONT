@@ -1,0 +1,25 @@
+@import "~@pinua/themes/variables";
+
+.hospitalCard,
+.categories {
+  width: 100%;
+}
+
+.main {
+}
+
+.info,
+.needs {
+  width: 50%;
+}
+
+.icon {
+  color: $b-color-txt3;
+  margin-right: $spaces-s;
+}
+
+@media screen  and (min-width: $tablet-min-width) {
+  .hospitalCard {
+    min-width: $column-4xl;
+  }
+}

@@ -24,7 +24,7 @@ const Solutions = ({
   return (
     <Layout className={styles.page}>
       <Box direction="column" fullWidth>
-        <Box>
+        <Box top="l" bottom="l">
           <Text size="l">{i18n.t('solutions.title')}</Text>
         </Box>
         <Box direction="column">

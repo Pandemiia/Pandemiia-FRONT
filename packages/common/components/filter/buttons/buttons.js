@@ -1,4 +1,6 @@
 import React, { useCallback, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLongArrowAltUp, faLongArrowAltDown } from '@fortawesome/free-solid-svg-icons';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { Box, Button } from '@pinua/uikit';
@@ -62,11 +64,23 @@ export const ToggleScrollButtons = ({ className, onShow, onHide, isOpen, ...prop
   return (
     <Box className={cn(styles.scrollButtons, className)} fullWidth>
       {open ? (
-        <Button className={styles.less} color="warn" onClick={handleHide} size="s">
+        <Button
+          className={styles.less}
+          color="warn"
+          onClick={handleHide}
+          size="s"
+          iconRight={<FontAwesomeIcon className={styles.arrow} icon={faLongArrowAltUp} />}
+        >
           {i18n.t('common.showLess')}
         </Button>
       ) : (
-        <Button className={styles.more} color="info" onClick={handleShow} size="s">
+        <Button
+          className={styles.more}
+          color="info"
+          onClick={handleShow}
+          size="s"
+          iconRight={<FontAwesomeIcon className={styles.arrow} icon={faLongArrowAltDown} />}
+        >
           {i18n.t('common.showMore')}
         </Button>
       )}

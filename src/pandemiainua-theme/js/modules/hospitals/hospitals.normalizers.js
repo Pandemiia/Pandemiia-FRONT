@@ -1,12 +1,40 @@
-const normalizeHospital = ({ address, categories, description, email, id, name, region, company_code }) => {
+const normalizeHospital = ({
+  address,
+  categories,
+  contacts,
+  description,
+  email,
+  id,
+  name,
+  region,
+  company_code,
+  need_types
+}) => {
+  const contactsFormatted = contacts.reduce((memo, contact) => {
+    const { email, full_name, phone, position, ...rest } = contact;
+    memo = [
+      ...memo,
+      {
+        ...rest,
+        email,
+        fullName: full_name,
+        phone,
+        position
+      }
+    ];
+    return memo;
+  }, []);
+
   return {
     id,
     address,
     categories,
+    contacts: contactsFormatted,
     description,
     email,
     name,
     region,
+    needs: need_types,
     companyCode: company_code
   };
 };

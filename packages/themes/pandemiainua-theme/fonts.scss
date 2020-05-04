@@ -1,0 +1,9 @@
+$fontNames: e-Ukraine-Bold, e-Ukraine-Light, e-Ukraine-Medium, e-Ukraine-Regular, e-Ukraine-Thin, e-Ukraine-UltraLight;
+
+@each $font in $fontNames {
+    @font-face {
+        font-family: $font;
+        src: url('~@pinua/themes/fonts/e-Ukraine/web/#{$font}.woff') format('woff'),
+        url('~@pinua/themes/fonts/e-Ukraine/web/#{$font}.ttf') format('truetype');
+    }
+}
