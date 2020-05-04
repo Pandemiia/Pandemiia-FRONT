@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Header, Footer, Pagination } from 'components';
+import { Header } from 'components';
+import { Footer } from '@pinua/common/components';
+import { Text } from '@pinua/uikit';
+import i18n from 'i18n';
 
 import styles from './app.scss';
 
@@ -17,8 +20,9 @@ class App extends PureComponent {
       <div className={styles.wrapper}>
         <Header links={links} />
         {children}
-        <Pagination />
-        <Footer />
+        <Footer>
+          <Text>{i18n.t('footer.copyright')}</Text>
+        </Footer>
       </div>
     );
   }

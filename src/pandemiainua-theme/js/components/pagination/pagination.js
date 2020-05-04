@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactPaginate from 'react-paginate';
+import { Box } from '@pinua/uikit';
 import styles from './pagination.scss';
 
 class Pagination extends Component {
@@ -16,7 +17,7 @@ class Pagination extends Component {
   };
   render() {
     return (
-      <div>
+      <Box direction="row" justify="center">
         <ReactPaginate
           previousLabel={''}
           nextLabel={''}
@@ -37,7 +38,7 @@ class Pagination extends Component {
           nextLinkClassName={styles.nextLink}
           activeClassName={'active'}
         />
-      </div>
+      </Box>
     );
   }
 }

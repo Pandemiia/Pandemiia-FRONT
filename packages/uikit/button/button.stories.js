@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 import { jsxDecorator } from 'storybook-addon-jsx';
 
 import Button, { colors, sizes } from './button';
-import ButtonReadme from './README.md';
 
 const styles = {
   display: 'flex',
@@ -18,29 +17,20 @@ const styles = {
 storiesOf('Uikit/Button', module)
   .addDecorator(withKnobs)
   .addDecorator(jsxDecorator)
-  .add(
-    'default',
-    () => (
-      <div style={styles}>
-        <Button
-          top={select('marginTop', sizes, 's')}
-          right={select('marginRight', sizes, 's')}
-          bottom={select('marginBottom', sizes, 's')}
-          left={select('marginLeft', sizes, 's')}
-          color={select('color', colors, 'primary')}
-          size={select('sizes', sizes, 'm')}
-          circle={boolean('circle', false)}
-          rounded={boolean('rounded', false)}
-          onClick={() => action('onClick')('clicked')}
-        >
-          Button
-        </Button>
-      </div>
-    ),
-    {
-      readme: {
-        sidebar: ButtonReadme,
-        codeTheme: 'github'
-      }
-    }
-  );
+  .add('default', () => (
+    <div style={styles}>
+      <Button
+        top={select('marginTop', sizes, 's')}
+        right={select('marginRight', sizes, 's')}
+        bottom={select('marginBottom', sizes, 's')}
+        left={select('marginLeft', sizes, 's')}
+        color={select('color', colors, 'primary')}
+        size={select('sizes', sizes, 'm')}
+        circle={boolean('circle', false)}
+        rounded={boolean('rounded', false)}
+        onClick={() => action('onClick')('clicked')}
+      >
+        Button
+      </Button>
+    </div>
+  ));

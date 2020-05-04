@@ -1,69 +1,87 @@
 @import '~@pinua/themes/variables';
-@mixin pagination-li {
-  margin-right: 5px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  color: #000;
-  font-size: $font-14px;
-  font-weight: bold;   
-}
-@mixin pagination-links {  
-  padding: 6px 10px;
-  border-radius: 4px;
-  display: block;
-  outline: none;
-  cursor: pointer;
-  border: 1px solid #F0F0F0; 
-}
-@mixin vector-img {  
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 15px;
-}
 
 .pagination {
   display: flex;
   justify-content: center;
   list-style: none;
-  color: #000; 
-  padding: 0; 
+  color: #000;
+  padding: 0;
 }
-.paginationPage { 
-  @include pagination-li;  
+
+.paginationPage {
+  margin-right: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #000;
+  font-size: $font-14px;
+  font-weight: bold;
 }
+
 .paginationPageLink {
-  @include pagination-links;  
+  padding: 6px 10px;
+  border-radius: 4px;
+  display: block;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #f0f0f0;
 }
+
 .paginationPageLink:hover {
   background-color: #c9ecffba;
 }
+
 .paginationPageLinkActive {
   background-color: #0083ff;
 }
-.previousBtn {  
-  margin-right: 15px;  
+
+.previousBtn {
+  margin-right: 15px;
 }
-.nextBtn {  
-  margin-right: 0px;
-  margin-left: 10px;  
-  
+
+.nextBtn {
+  margin-right: 0;
+  margin-left: 10px;
 }
-.previousLink {  
-  @include pagination-links;
-  @include vector-img;
-  background-image: url(./img/left_vector.png);  
+
+.previousLink {
+  padding: 15px;
+  border-radius: 4px;
+  display: block;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #f0f0f0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./img/left_vector.png);
 }
-.nextLink {  
-  @include pagination-links; 
-  @include vector-img;
-  background-image: url(./img/right_vector.png);  
+
+.nextLink {
+  border-radius: 4px;
+  display: block;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #f0f0f0;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 15px;
+  background-image: url(./img/right_vector.png);
 }
+
 .brake {
-  @include pagination-li; 
+  margin-right: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #000;
+  font-size: $font-14px;
+  font-weight: bold;
   border: none;
 }
+
 .brakeLink {
-  @include pagination-links;   
+  padding: 6px 10px;
+  border-radius: 4px;
+  display: block;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #f0f0f0;
 }
-
-

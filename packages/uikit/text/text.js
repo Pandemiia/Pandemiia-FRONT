@@ -16,7 +16,8 @@ const sizesValue = {
   xxl: 128
 };
 
-export const types = ['primary', 'secondary', 'info', 'navigational', 'success', 'danger'];
+export const colors = ['primary', 'secondary', 'info', 'navigational', 'success', 'danger'];
+export const types = ['title', 'body', 'subtext'];
 
 const Text = ({
   component: Component,
@@ -73,7 +74,7 @@ const Text = ({
 };
 
 Text.propTypes = {
-  color: PropTypes.oneOf(types),
+  color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(sizes),
   top: PropTypes.oneOf(sizes),
   bottom: PropTypes.oneOf(sizes),
