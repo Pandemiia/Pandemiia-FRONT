@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@pinua/uikit/box';
 
-import styles from './Search.scss';
+import styles from './search.scss';
 
 const Search = ({ label, id, ...props }) => {
   const localId = id || 'search-input';
