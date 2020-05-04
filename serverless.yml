@@ -1,0 +1,29 @@
+service: pandemiia-app
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-central-1
+
+plugins:
+  - serverless-s3-deploy
+
+custom:
+  assets:
+    targets:
+      - bucket:
+          Ref: PandemiiaAppBucket
+        files:
+          - source: ./server/static/pandemiainua-theme/
+            globs: '**/*'
+
+resources:
+  # AWS CloudFormation Template
+  Resources:
+    PandemiiaAppBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        AccessControl: PublicRead
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          ErrorDocument: index.html
