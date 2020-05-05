@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Cards, HospitalCard } from 'components';
 import { Layout, Filter, MobileTopFilter, MobileSidebarFilter } from '@pinua/common/components';
-import { Box, Text } from '@pinua/uikit';
+import { Box, Text, Search } from '@pinua/uikit';
 import { Media, TABLET_MAX_WIDTH } from '@pinua/utils';
 
 import i18n from 'i18n';
@@ -29,6 +29,34 @@ const Hospitals = ({
   }, [loadHospitalRegions, loadHospitalNeedsCategories, loadHospitalTypes]);
 
   const [params, setParams] = useState([]);
+  const [data, setHospitals] = useState(hospitals);
+  const [regionsData, setRegions] = useState(regions);
+
+  useEffect(() => {
+    setHospitals(hospitals);
+  }, [hospitals]);
+
+  useEffect(() => {
+    setRegions(regions);
+  }, [regions]);
+
+  const handleRegionsSearch = useCallback(
+    ({ target }) => {
+      const { value } = target;
+      const filteredRegions = regions.filter(el => el.label.includes(value));
+      setRegions(filteredRegions);
+    },
+    [regions]
+  );
+
+  const handleSearch = useCallback(
+    ({ target }) => {
+      const { value } = target;
+      const filteredHospitals = hospitals.filter(el => el.name.includes(value));
+      setHospitals(filteredHospitals);
+    },
+    [hospitals]
+  );
 
   const handleCloseFilter = useCallback(() => {
     toggleFilter(false);
@@ -51,7 +79,16 @@ const Hospitals = ({
   const renderFilters = useCallback(() => {
     return (
       <Box direction="column" right="m">
-        <Filter title={i18n.t('filter.regions')} data={regions} onChange={handleFilterChange(0)} />
+        <Filter title={i18n.t('filter.regions')} data={regionsData} onChange={handleFilterChange(0)}>
+          <Box fullWidth bottom="m" top="m">
+            <Search
+              onChange={handleRegionsSearch}
+              className={styles.filterSearch}
+              placeholder={i18n.t('search.regions')}
+              id="filter"
+            />
+          </Box>
+        </Filter>
         <Box top="l" direction="column">
           <Filter title={i18n.t('filter.types')} data={types} itemsLength={5} onChange={handleFilterChange(1)} />
         </Box>
@@ -60,7 +97,7 @@ const Hospitals = ({
         </Box>
       </Box>
     );
-  }, [regions, handleFilterChange, types, needs]);
+  }, [handleRegionsSearch, regionsData, handleFilterChange, types, needs]);
 
   return (
     <Layout className={styles.page}>
@@ -75,7 +112,10 @@ const Hospitals = ({
                 <>
                   <Box fullWidth direction="column">
                     <MobileTopFilter filterStatus={filterOpen} onFilterClick={toggleFilter} />
-                    <Cards top="m" items={hospitals} card={HospitalCard} />
+                    <Box fullWidth bottom="m">
+                      <Search onChange={handleSearch} className={styles.search} />
+                    </Box>
+                    <Cards top="m" items={data} card={HospitalCard} />
                   </Box>
                   <MobileSidebarFilter isOpen={filterOpen} onClose={handleCloseFilter}>
                     {renderFilters()}
@@ -85,7 +125,14 @@ const Hospitals = ({
                 <>
                   {renderFilters()}
                   <Box direction="column" fullWidth>
-                    <Cards items={hospitals} card={HospitalCard} />
+                    <Box fullWidth bottom="m" justify="end" align="center">
+                      <Search
+                        onChange={handleSearch}
+                        className={styles.search}
+                        placeholder={i18n.t('search.hospitals')}
+                      />
+                    </Box>
+                    <Cards items={data} card={HospitalCard} />
                   </Box>
                 </>
               )

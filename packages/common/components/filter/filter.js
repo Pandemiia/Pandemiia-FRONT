@@ -78,7 +78,7 @@ const Filter = ({ className, title, children, width, data, onChange, itemsLength
         </Text>
         {renderActions()}
       </Box>
-      <Box>
+      <Box direction="column">
         <>
           {children}
           <Box direction="column">
