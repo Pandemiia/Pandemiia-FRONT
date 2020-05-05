@@ -58,5 +58,10 @@ export default {
   },
   footer: {
     copyright: '© Pandemia, 2020-2021'
+  },
+  notfaund: {
+    error: '404',
+    sorry: 'Сторінку не знайдено...',
+    gohome: 'На головну'
   }
 };
