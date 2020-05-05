@@ -22,7 +22,8 @@ export default {
     clear: 'Очистити',
     selectAll: 'Обрати всі',
     showMore: 'Показати всі',
-    showLess: 'Згорнути'
+    showLess: 'Згорнути',
+    fullList: 'Повний список'
   },
   filter: {
     types: 'ТИП ЗАКЛАДУ',

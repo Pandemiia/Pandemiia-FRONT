@@ -10,11 +10,11 @@ export const loadHospitalTypes = createAction('LOAD_HOSPITAL_TYPES', () => ({ cl
 });
 
 export const loadHospitalNeedsCategories = createAction('LOAD_HOSPITAL_NEEDS_CATEGORIES', () => ({ client }) => {
-  return client.get('/hospitals/needs_categories/');
+  return client.get('/hospitals/needs-categories/');
 });
 
-export const loadHospitals = createAction('LOAD_HOSPITALS', ({ regions, types } = {}) => ({ client }) => {
-  return client.get(`/hospitals/?${stringify({ region: regions, categories: types })}`);
+export const loadHospitals = createAction('LOAD_HOSPITALS', ({ regions, types, needs } = {}) => ({ client }) => {
+  return client.get(`/hospitals/?${stringify({ region: regions, categories: types, needs_categories: needs })}`);
 });
 
 export default {

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState, useEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { Box, CheckboxGroup, Text } from '@pinua/uikit';
@@ -8,11 +8,17 @@ import { ToggleScrollButtons, ToggleSelection } from './buttons';
 import styles from './filter.scss';
 
 const Filter = ({ className, title, children, width, data, onChange, itemsLength, isOpen, ...props }) => {
-  const items = data.length > itemsLength ? [...data].splice(0, itemsLength) : data;
+  const setDefaultItems = useCallback(() => {
+    return data.length > itemsLength ? [...data].splice(0, itemsLength) : data;
+  }, [data, itemsLength]);
 
-  const [itemsData, setItems] = useState(items);
+  const [itemsData, setItems] = useState(data);
   const [value, setValue] = useState([]);
   const [open, setShowAll] = useState(isOpen);
+
+  useEffect(() => {
+    setItems(setDefaultItems());
+  }, [setDefaultItems]);
 
   const handleChange = useCallback(
     e => {
@@ -31,9 +37,9 @@ const Filter = ({ className, title, children, width, data, onChange, itemsLength
   }, [data]);
 
   const handleHide = useCallback(() => {
-    setItems(items);
+    setItems(setDefaultItems());
     setShowAll(false);
-  }, [items]);
+  }, [setDefaultItems]);
 
   const handleSelectAll = useCallback(() => {
     const value = data.map(({ value }) => value);

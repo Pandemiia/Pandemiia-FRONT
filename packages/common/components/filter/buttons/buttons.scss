@@ -31,6 +31,10 @@
 
 .scrollButtons {
 
+    .arrow {
+        margin-left: $spaces-s;
+    }
+
     .less,
     .more {
         margin-top: $spaces-m;
