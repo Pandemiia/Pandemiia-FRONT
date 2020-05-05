@@ -1,14 +1,14 @@
 import React, { memo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import Media from 'react-media';
 import { Box } from '@pinua/uikit';
+import { Media, TABLET_MAX_WIDTH } from '@pinua/utils';
 import { Header, DesktopMenu, Logo, MobileMenu } from '@pinua/common/components';
 
 import HeaderButtons from './buttons';
 
 import styles from './header.scss';
 
-const MainHeader = ({ location: { pathname }, links, onClose, isMenuOpen, toggleMenu, ...props }) => {
+const MainHeader = ({ history, location: { pathname }, links, onClose, isMenuOpen, toggleMenu, ...props }) => {
   const toggleMobileMenu = toggle => () => {
     toggleMenu(toggle);
     onClose && onClose();
@@ -22,8 +22,12 @@ const MainHeader = ({ location: { pathname }, links, onClose, isMenuOpen, toggle
     console.log('sign up pressed');
   }, []);
 
+  const handleNavigateHome = useCallback(() => {
+    history.push('/');
+  }, [history]);
+
   return (
-    <Media query={{ maxWidth: 980 }}>
+    <Media query={{ maxWidth: TABLET_MAX_WIDTH }}>
       {matches =>
         matches ? (
           <Header
@@ -41,7 +45,7 @@ const MainHeader = ({ location: { pathname }, links, onClose, isMenuOpen, toggle
           >
             <>
               <Box fullWidth justify="center" align="center">
-                <Logo />
+                <Logo onClick={handleNavigateHome} />
               </Box>
               <MobileMenu path={pathname} onClose={toggleMobileMenu(false)} isOpen={isMenuOpen} links={links}>
                 <HeaderButtons sizes="s" direction="column" onLogin={handleLogin} onRegister={handleSignUp} />
@@ -65,6 +69,7 @@ const MainHeader = ({ location: { pathname }, links, onClose, isMenuOpen, toggle
 
 MainHeader.propTypes = {
   location: PropTypes.object,
+  history: PropTypes.object,
   links: PropTypes.array,
   onClose: PropTypes.func,
   isMenuOpen: PropTypes.bool,

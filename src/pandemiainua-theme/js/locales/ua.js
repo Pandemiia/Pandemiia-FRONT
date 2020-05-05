@@ -23,7 +23,8 @@ export default {
     selectAll: 'Обрати всі',
     showMore: 'Показати всі',
     showLess: 'Згорнути',
-    fullList: 'Повний список'
+    fullList: 'Повний список',
+    apply: 'Застосувати'
   },
   filter: {
     types: 'ТИП ЗАКЛАДУ',
@@ -31,7 +32,11 @@ export default {
     materials: 'МАТЕРІАЛ',
     tools: 'ІНСТРУМЕНТИ',
     regions: 'ОБЛАСТЬ',
-    needs: 'ТИП ПОТРЕБИ'
+    needs: 'ТИП ПОТРЕБИ',
+    mobile: {
+      sort: 'Сортування',
+      filter: 'Фільтр'
+    }
   },
   footer: {
     copyright: '© Pandemia, 2020-2021'

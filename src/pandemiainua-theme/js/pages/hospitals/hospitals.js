@@ -1,8 +1,9 @@
 import React, { memo, useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Layout, Filter } from '@pinua/common/components';
 import { Cards, HospitalCard } from 'components';
+import { Layout, Filter, MobileTopFilter, MobileSidebarFilter } from '@pinua/common/components';
 import { Box, Text } from '@pinua/uikit';
+import { Media, TABLET_MAX_WIDTH } from '@pinua/utils';
 
 import i18n from 'i18n';
 
@@ -17,6 +18,8 @@ const Hospitals = ({
   loadHospitalRegions,
   loadHospitalNeedsCategories,
   loadHospitalTypes,
+  filterOpen,
+  toggleFilter,
   ...props
 }) => {
   useEffect(() => {
@@ -26,6 +29,10 @@ const Hospitals = ({
   }, [loadHospitalRegions, loadHospitalNeedsCategories, loadHospitalTypes]);
 
   const [params, setParams] = useState([]);
+
+  const handleCloseFilter = useCallback(() => {
+    toggleFilter(false);
+  }, [toggleFilter]);
 
   const handleFilterChange = useCallback(
     number => value => {
@@ -41,6 +48,20 @@ const Hospitals = ({
     [loadHospitals, params]
   );
 
+  const renderFilters = useCallback(() => {
+    return (
+      <Box direction="column" right="m">
+        <Filter title={i18n.t('filter.regions')} data={regions} onChange={handleFilterChange(0)} />
+        <Box top="l" direction="column">
+          <Filter title={i18n.t('filter.types')} data={types} itemsLength={5} onChange={handleFilterChange(1)} />
+        </Box>
+        <Box top="l" direction="column">
+          <Filter title={i18n.t('filter.needs')} data={needs} itemsLength={5} onChange={handleFilterChange(2)} />
+        </Box>
+      </Box>
+    );
+  }, [regions, handleFilterChange, types, needs]);
+
   return (
     <Layout className={styles.page}>
       <Box direction="column" fullWidth>
@@ -48,18 +69,28 @@ const Hospitals = ({
           <Text size="l">{i18n.t('hospitals.title')}</Text>
         </Box>
         <Box fullWidth>
-          <Box direction="column" right="m">
-            <Filter title={i18n.t('filter.regions')} data={regions} onChange={handleFilterChange(0)} />
-            <Box top="l" direction="column">
-              <Filter title={i18n.t('filter.types')} data={types} itemsLength={5} onChange={handleFilterChange(1)} />
-            </Box>
-            <Box top="l" direction="column">
-              <Filter title={i18n.t('filter.needs')} data={needs} itemsLength={5} onChange={handleFilterChange(2)} />
-            </Box>
-          </Box>
-          <Box direction="column" fullWidth>
-            <Cards items={hospitals} card={HospitalCard} />
-          </Box>
+          <Media query={{ maxWidth: TABLET_MAX_WIDTH }}>
+            {matches =>
+              matches ? (
+                <>
+                  <Box fullWidth direction="column">
+                    <MobileTopFilter filterStatus={filterOpen} onFilterClick={toggleFilter} />
+                    <Cards top="m" items={hospitals} card={HospitalCard} />
+                  </Box>
+                  <MobileSidebarFilter isOpen={filterOpen} onClose={handleCloseFilter}>
+                    {renderFilters()}
+                  </MobileSidebarFilter>
+                </>
+              ) : (
+                <>
+                  {renderFilters()}
+                  <Box direction="column" fullWidth>
+                    <Cards items={hospitals} card={HospitalCard} />
+                  </Box>
+                </>
+              )
+            }
+          </Media>
         </Box>
       </Box>
     </Layout>
@@ -78,10 +109,12 @@ Hospitals.propTypes = {
   hospitals: PropTypes.array,
   types: PropTypes.array,
   needs: PropTypes.array,
+  filterOpen: PropTypes.bool,
   loadHospitals: PropTypes.func,
   loadHospitalRegions: PropTypes.func,
   loadHospitalNeedsCategories: PropTypes.func,
-  loadHospitalTypes: PropTypes.func
+  loadHospitalTypes: PropTypes.func,
+  toggleFilter: PropTypes.func
 };
 
 export default memo(Hospitals);

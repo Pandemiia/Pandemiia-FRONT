@@ -1,9 +1,10 @@
 import { handleActions } from 'redux-actions';
 
-import { toggleMenu } from './app.actions';
+import { toggleMenu, toggleFilter } from './app.actions';
 
 export const initialState = {
-  menuOpen: false
+  menuOpen: false,
+  filterOpen: false
 };
 
 const handleToggleMenu = (state, { payload }) => {
@@ -13,9 +14,17 @@ const handleToggleMenu = (state, { payload }) => {
   };
 };
 
+const handleToggleFilter = (state, { payload }) => {
+  return {
+    ...state,
+    filterOpen: payload
+  };
+};
+
 export default handleActions(
   {
-    [toggleMenu]: handleToggleMenu
+    [toggleMenu]: handleToggleMenu,
+    [toggleFilter]: handleToggleFilter
   },
   initialState
 );
