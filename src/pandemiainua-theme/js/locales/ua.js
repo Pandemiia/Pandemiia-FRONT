@@ -12,7 +12,9 @@ export default {
     intro: 'Ласкаво просимо на сайт pandemiia.in.ua'
   },
   hospitals: {
-    title: 'Актуальні потреби'
+    title: 'Актуальні потреби',
+    results: 'результат(ов)',
+    count: 'Показано:'
   },
   solutions: {
     title: 'Каталог рішень'

@@ -29,7 +29,7 @@ const Hospitals = ({
   }, [loadHospitalRegions, loadHospitalNeedsCategories, loadHospitalTypes]);
 
   const [params, setParams] = useState([]);
-  const [data, setHospitals] = useState(hospitals);
+  const [dataHospitals, setHospitals] = useState(hospitals);
   const [regionsData, setRegions] = useState(regions);
 
   useEffect(() => {
@@ -113,9 +113,13 @@ const Hospitals = ({
                   <Box fullWidth direction="column">
                     <MobileTopFilter filterStatus={filterOpen} onFilterClick={toggleFilter} />
                     <Box fullWidth bottom="m">
-                      <Search onChange={handleSearch} className={styles.search} />
+                      <Search
+                        onChange={handleSearch}
+                        className={styles.search}
+                        placeholder={i18n.t('search.hospitals')}
+                      />
                     </Box>
-                    <Cards top="m" items={data} card={HospitalCard} />
+                    <Cards top="m" items={dataHospitals} card={HospitalCard} />
                   </Box>
                   <MobileSidebarFilter isOpen={filterOpen} onClose={handleCloseFilter}>
                     {renderFilters()}
@@ -125,14 +129,22 @@ const Hospitals = ({
                 <>
                   {renderFilters()}
                   <Box direction="column" fullWidth>
-                    <Box fullWidth bottom="m" justify="end" align="center">
+                    <Box fullWidth bottom="m" justify="between" align="center">
+                      <Box>
+                        <Text size="s" color="info">
+                          {i18n.t('hospitals.count')}
+                        </Text>
+                        <Text left="s" size="s" color="primary">
+                          {dataHospitals.length} {i18n.t('hospitals.results')}
+                        </Text>
+                      </Box>
                       <Search
                         onChange={handleSearch}
                         className={styles.search}
                         placeholder={i18n.t('search.hospitals')}
                       />
                     </Box>
-                    <Cards items={data} card={HospitalCard} />
+                    <Cards items={dataHospitals} card={HospitalCard} />
                   </Box>
                 </>
               )
