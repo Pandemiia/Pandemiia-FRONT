@@ -9,7 +9,6 @@
     "start": "cross-env NODE_ENV=production && node ./server/bin/www.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack --progress -p",
-    "deploy": "./deploy/deploy.sh",
     "deploy:packages": "lerna publish",
     "lint": "run-p lint:js lint:scss",
     "lint:js": "eslint --fix packages src -c ./.eslintrc.js",
