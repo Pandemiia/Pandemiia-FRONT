@@ -2,7 +2,8 @@ import React, { memo, useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Layout, Filter } from '@pinua/common/components';
 import { Pagination } from 'components';
-import { Box, Text } from '@pinua/uikit';
+import { Box, Text, Chip } from '@pinua/uikit';
+
 import i18n from 'i18n';
 
 import styles from './hospitals.scss';
@@ -69,6 +70,9 @@ const Hospitals = ({
           </Box>
           <Box>{hospitals.map(renderHospitals)}</Box>
           <Pagination />
+        </Box>
+        <Box>
+          <Chip />
         </Box>
       </Box>
     </Layout>
