@@ -1,4 +1,13 @@
 ./static/**/
-./server.log
+..log
 /node_modules/
-/static/pandemiainua-theme/
+/static/pandemiainua-theme/index.html
+/static/pandemiainua-theme/index.html.gz
+/static/pandemiainua-theme/vendors.min.*.js
+/static/pandemiainua-theme/vendors.min.*.js.gz
+/static/pandemiainua-theme/main.*.css
+/static/pandemiainua-theme/main.*.css.gz
+/static/pandemiainua-theme/main.min.*.js
+/static/pandemiainua-theme/main.min.*.js.gz
+/static/pandemiainua-theme/vendors.min.*.js.LICENSE.txt
+/static/pandemiainua-theme/vendors.min.*.js.LICENSE.txt.gz

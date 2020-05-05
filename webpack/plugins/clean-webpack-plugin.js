@@ -7,6 +7,7 @@ module.exports = function(theme) {
   return new CleanWebpackPlugin([globalVariables.DIST_PATH], {
     root: path.resolve(__dirname, '../../'),
     verbose: true,
-    beforeEmit: true
+    beforeEmit: true,
+    exclude: ['favicon.ico', 'logo192.png', 'logo512.png', 'manifest.json', 'robots.txt']
   });
 };
