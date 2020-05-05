@@ -107,9 +107,6 @@ const Solutions = ({
                     </Box>
                     <Cards top="m" items={dataSolutions} card={SolutionCard} />
                   </Box>
-                  <Box fullWidth direction="column">
-                    <MobileTopFilter filterStatus={filterOpen} onFilterClick={toggleFilter} />
-                  </Box>
                   <MobileSidebarFilter isOpen={filterOpen} onClose={handleCloseFilter}>
                     {renderFilters()}
                   </MobileSidebarFilter>
