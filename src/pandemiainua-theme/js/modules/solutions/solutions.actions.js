@@ -1,4 +1,5 @@
 import { createAction } from 'redux-actions';
+import { stringify } from '@pinua/utils';
 
 export const loadSolutionsMaterials = createAction('LOAD_SOLUTIONS_MATERIALS', () => ({ client }) => {
   return client.get('/solutions/materials/');
@@ -12,7 +13,12 @@ export const loadSolutionsTools = createAction('LOAD_SOLUTIONS_TOOLS', () => ({ 
   return client.get('/solutions/tools/');
 });
 
+export const loadSolutions = createAction('LOAD_SOLUTIONS', ({ categories, materials, tools } = {}) => ({ client }) => {
+  return client.get(`/solutions/?${stringify({ solution_type: categories, materials, tools })}`);
+});
+
 export default {
+  loadSolutions,
   loadSolutionsMaterials,
   loadSolutionsTools,
   loadSolutionsCategories

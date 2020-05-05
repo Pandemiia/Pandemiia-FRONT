@@ -17,11 +17,21 @@ export default {
     count: 'Показано:'
   },
   solutions: {
-    title: 'Каталог рішень'
+    title: 'Каталог рішень',
+    results: 'результат(ов)',
+    count: 'Показано:',
+    definition: 'ПОТРЕБА',
+    description: 'ОПИС',
+    instruction: 'ВАРІАНТИ ВИГОТОВЛЕННЯ',
+    materials: 'Матеріал',
+    approved: 'Затвержено',
+    instruments: 'Інструменти',
+    comment: 'Коментар'
   },
   search: {
     hospitals: 'Пошук серед закладів',
-    regions: 'Пошук по областях'
+    regions: 'Пошук по областях',
+    solutions: 'Пошук за каталогом'
   },
   common: {
     close: 'Закрити',
@@ -30,7 +40,9 @@ export default {
     showMore: 'Показати всі',
     showLess: 'Згорнути',
     fullList: 'Повний список',
-    apply: 'Застосувати'
+    apply: 'Застосувати',
+    source: 'Джерело',
+    download: 'Завантажити'
   },
   filter: {
     types: 'ТИП ЗАКЛАДУ',

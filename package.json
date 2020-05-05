@@ -74,6 +74,7 @@
     "react-paginate": "^6.3.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^5.1.2",
+    "react-stack-grid": "^0.7.1",
     "react-test-renderer": "^15.6.1",
     "recompose": "^0.30.0",
     "redux": "^3.7.2",

@@ -1,0 +1,7 @@
+@import "~@pinua/themes/variables";
+
+.block {
+  &:nth-child(even) {
+    background-color: $b-color-ui2;
+  }
+}

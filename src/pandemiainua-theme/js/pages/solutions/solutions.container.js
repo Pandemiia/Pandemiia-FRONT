@@ -9,11 +9,12 @@ import Solutions from './solutions';
 const { toggleFilter } = appActions;
 const { getFilterStatus } = appSelectors;
 
-const { loadSolutionsTools, loadSolutionsCategories, loadSolutionsMaterials } = solutionsActions;
-const { getDataToArray } = solutionsSelectors;
+const { loadSolutionsTools, loadSolutionsCategories, loadSolutionsMaterials, loadSolutions } = solutionsActions;
+const { getDataToArray, getSolutions } = solutionsSelectors;
 
 const mapStateToProps = state => ({
   filterOpen: getFilterStatus(state),
+  solutions: getSolutions(state),
   tools: getDataToArray(state, 'tools'),
   categories: getDataToArray(state, 'categories'),
   materials: getDataToArray(state, 'materials')
@@ -21,6 +22,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProp = {
   toggleFilter,
+  loadSolutions,
   loadSolutionsTools,
   loadSolutionsCategories,
   loadSolutionsMaterials
