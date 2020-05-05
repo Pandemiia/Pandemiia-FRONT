@@ -1,8 +1,9 @@
 import _get from 'lodash/get';
 
-export const getHospitalRegions = state => state.hospitals.regions;
-export const getHospitalCategories = state => state.hospitals.categories;
-export const getHospitalNeeds = state => state.hospitals.needs;
+export const getSolutions = state => state.solutions.solutions;
+export const getSolutionsCategories = state => state.solutions.categories;
+export const getSolutionsMaterials = state => state.solutions.materials;
+export const getSolutionsTools = state => state.hospitals.tools;
 
 export const getDataToArray = (state, type) => {
   const data = _get(state, `solutions.${type}`) || {};
@@ -26,8 +27,9 @@ export const getDataToArray = (state, type) => {
 };
 
 export default {
-  getHospitalRegions,
-  getHospitalCategories,
-  getHospitalNeeds,
+  getSolutions,
+  getSolutionsCategories,
+  getSolutionsMaterials,
+  getSolutionsTools,
   getDataToArray
 };

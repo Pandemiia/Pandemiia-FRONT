@@ -10,3 +10,15 @@
 .products {
   width: 100%;
 }
+
+.search {
+  width: 100%;
+  max-width: $column-xl;
+}
+
+@media screen and (max-width: $desktop-min-width) {
+  .search {
+    max-width: 100%;
+    margin-top: $spaces-m;
+  }
+}

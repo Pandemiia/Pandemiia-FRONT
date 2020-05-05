@@ -55,7 +55,7 @@ const MainHeader = ({ history, location: { pathname }, links, onClose, isMenuOpe
         ) : (
           <Box top="m">
             <Header
-              left={<Logo />}
+              left={<Logo onClick={handleNavigateHome} />}
               right={<HeaderButtons sizes="s" direction="row" onLogin={handleLogin} onRegister={handleSignUp} />}
             >
               <DesktopMenu path={pathname} links={links} />

@@ -4,6 +4,7 @@ import { Cards, HospitalCard } from 'components';
 import { Layout, Filter, MobileTopFilter, MobileSidebarFilter } from '@pinua/common/components';
 import { Box, Text, Search } from '@pinua/uikit';
 import { Media, TABLET_MAX_WIDTH } from '@pinua/utils';
+import _toLower from 'lodash/toLower';
 
 import i18n from 'i18n';
 
@@ -26,7 +27,8 @@ const Hospitals = ({
     loadHospitalRegions();
     loadHospitalNeedsCategories();
     loadHospitalTypes();
-  }, [loadHospitalRegions, loadHospitalNeedsCategories, loadHospitalTypes]);
+    loadHospitals();
+  }, [loadHospitals, loadHospitalRegions, loadHospitalNeedsCategories, loadHospitalTypes]);
 
   const [params, setParams] = useState([]);
   const [dataHospitals, setHospitals] = useState(hospitals);
@@ -43,7 +45,10 @@ const Hospitals = ({
   const handleRegionsSearch = useCallback(
     ({ target }) => {
       const { value } = target;
-      const filteredRegions = regions.filter(el => el.label.includes(value));
+      const filteredRegions = regions.filter(el => {
+        const { label } = el;
+        return _toLower(label).includes(_toLower(value));
+      });
       setRegions(filteredRegions);
     },
     [regions]
@@ -52,7 +57,10 @@ const Hospitals = ({
   const handleSearch = useCallback(
     ({ target }) => {
       const { value } = target;
-      const filteredHospitals = hospitals.filter(el => el.name.includes(value));
+      const filteredHospitals = hospitals.filter(el => {
+        const { name } = el;
+        return _toLower(name).includes(_toLower(value));
+      });
       setHospitals(filteredHospitals);
     },
     [hospitals]

@@ -1,3 +1,39 @@
+const normalizeSolution = ({
+  id,
+  solution_type,
+  code,
+  name,
+  definition,
+  need_description,
+  images,
+  main_image,
+  attachment,
+  instruction,
+  materials,
+  tools,
+  source,
+  comment,
+  approved_by
+}) => {
+  return {
+    id,
+    name,
+    definition,
+    description: need_description,
+    solutionType: solution_type,
+    code,
+    mainImage: main_image,
+    images,
+    attachment,
+    instruction,
+    materials,
+    tools,
+    source,
+    comment,
+    approvedBy: approved_by
+  };
+};
+
 const normalizeMaterial = ({ id, name }) => {
   return {
     id,
@@ -77,4 +113,14 @@ export const normalizeSolutionsCategories = ({ data }) => {
       items: []
     }
   );
+};
+
+export const normalizeSolutions = ({ data }) => {
+  const { results } = data;
+  return results.reduce((memo, current) => {
+    const id = memo.length;
+    const solution = normalizeSolution({ ...current, id });
+    memo = [...memo, solution];
+    return memo;
+  }, []);
 };

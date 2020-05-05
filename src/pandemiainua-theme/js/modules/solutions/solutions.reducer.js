@@ -1,7 +1,13 @@
 import { handleActions } from 'redux-actions';
 
-import { loadSolutionsMaterials, loadSolutionsTools, loadSolutionsCategories } from './solutions.actions';
 import {
+  loadSolutionsMaterials,
+  loadSolutionsTools,
+  loadSolutionsCategories,
+  loadSolutions
+} from './solutions.actions';
+import {
+  normalizeSolutions,
   normalizeSolutionsMaterials,
   normalizeSolutionsTools,
   normalizeSolutionsCategories
@@ -10,7 +16,8 @@ import {
 export const initialState = {
   materials: {},
   categories: {},
-  tools: {}
+  tools: {},
+  solutions: []
 };
 
 const handleSolutionsMaterials = (state, { payload }) => {
@@ -34,8 +41,16 @@ const handleSolutionsTools = (state, { payload }) => {
   };
 };
 
+const handleSolutions = (state, { payload }) => {
+  return {
+    ...state,
+    solutions: normalizeSolutions(payload)
+  };
+};
+
 export default handleActions(
   {
+    [loadSolutions]: handleSolutions,
     [loadSolutionsMaterials]: handleSolutionsMaterials,
     [loadSolutionsTools]: handleSolutionsTools,
     [loadSolutionsCategories]: handleSolutionsCategories
