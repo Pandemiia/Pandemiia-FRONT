@@ -17,6 +17,10 @@ export default {
   solutions: {
     title: 'Каталог рішень'
   },
+  search: {
+    hospitals: 'Пошук серед закладів',
+    regions: 'Пошук по областях'
+  },
   common: {
     close: 'Закрити',
     clear: 'Очистити',
