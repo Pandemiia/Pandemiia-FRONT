@@ -10,7 +10,8 @@
 
 .info,
 .needs {
-  width: 50%;
+  width: 100%;
+  flex-direction: row;
 }
 
 .list {
@@ -37,5 +38,11 @@
 @media screen  and (min-width: $tablet-min-width) {
   .hospitalCard {
     min-width: $column-4xl;
+  }
+
+  .info,
+  .needs {
+    width: 50%;
+    flex-direction: column;
   }
 }

@@ -32,7 +32,7 @@ const HospitalCard = ({ name, contacts, address, categories, className, needs, .
   return (
     <Card className={cn(styles.hospitalCard, className)} direction="column" padding="m" bottom="s">
       <Box className={styles.categories} fullWidth></Box>
-      <Box className={styles.main} fullWidth>
+      <Box className={styles.main} fullWidth wrap>
         <Box className={styles.info} direction="column">
           <Text bold size="m" color="primary" bottom="m">
             {name}
@@ -40,22 +40,22 @@ const HospitalCard = ({ name, contacts, address, categories, className, needs, .
           <Address city={city} line1={line1} region={region} zipCode={zipCode} bottom="m" />
           {renderContacts()}
         </Box>
-        <Box className={styles.needs} direction="column" fullWidth>
-          <Box className={styles.list} component="ul" direction="column">
+        <Box className={styles.needs} fullWidth>
+          <Box className={styles.list} component="ul" direction="column" fullWidth>
             {renderNeeds()}
           </Box>
-          <Box fullWidth justify="end" align="center">
-            {needs.length >= 3 && (
-              <Button
-                className={styles.fullList}
-                color="transparent"
-                size="s"
-                iconRight={<FontAwesomeIcon className={styles.icon} icon={faLongArrowAltRight} />}
-              >
-                {i18n.t('common.fullList')}
-              </Button>
-            )}
-          </Box>
+        </Box>
+        <Box fullWidth justify="end" align="center">
+          {needs.length >= 3 && (
+            <Button
+              className={styles.fullList}
+              color="transparent"
+              size="s"
+              iconRight={<FontAwesomeIcon className={styles.icon} icon={faLongArrowAltRight} />}
+            >
+              {i18n.t('common.fullList')}
+            </Button>
+          )}
         </Box>
       </Box>
     </Card>

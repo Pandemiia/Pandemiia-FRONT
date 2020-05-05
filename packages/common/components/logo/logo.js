@@ -6,8 +6,8 @@ import MainLogo from './img/logo.svg';
 
 import styles from './logo.scss';
 
-const Logo = ({ size, ...props }) => {
-  return <img className={cn(styles.logo, styles[size])} src={MainLogo} alt="Logo" {...props} />;
+const Logo = ({ size, onClick, ...props }) => {
+  return <img onClick={onClick} className={cn(styles.logo, styles[size])} src={MainLogo} alt="Logo" {...props} />;
 };
 
 Logo.defaultProps = {
@@ -15,7 +15,8 @@ Logo.defaultProps = {
 };
 
 Logo.propTypes = {
-  size: PropTypes.oneOf(['s', 'm', 'l'])
+  size: PropTypes.oneOf(['s', 'm', 'l']),
+  onClick: PropTypes.func
 };
 
 export default memo(Logo);
