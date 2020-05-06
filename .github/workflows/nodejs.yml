@@ -1,11 +1,8 @@
 name: Develop Build
 on:
-  push:
-    branches:
-      - dev
   pull_request:
     branches:
-      - dev
+      - master
     
 jobs:
   build:
