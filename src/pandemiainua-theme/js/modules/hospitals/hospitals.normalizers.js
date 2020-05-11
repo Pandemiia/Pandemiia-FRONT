@@ -1,4 +1,4 @@
-const normalizeHospital = ({
+export const normalizeHospital = ({
   address,
   categories,
   contacts,

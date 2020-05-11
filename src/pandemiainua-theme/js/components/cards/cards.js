@@ -7,7 +7,7 @@ import styles from './cards.scss';
 
 const Cards = ({ items, card: Component, className, ...props }) => {
   const renderCards = useCallback(() => {
-    return items.map(({ id, ...rest }) => <Component key={`card-${id}`} {...rest} />);
+    return items.map(({ id, ...rest }) => <Component key={`card-${id}`} id={id} {...rest} />);
   }, [items]);
 
   return (

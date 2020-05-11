@@ -4,9 +4,11 @@ import {
   loadHospitalRegions,
   loadHospitalTypes,
   loadHospitalNeedsCategories,
-  loadHospitals
+  loadHospitals,
+  loadHospital
 } from './hospitals.actions';
 import {
+  normalizeHospital,
   normalizeHospitals,
   normalizeHospitalRegions,
   normalizeHospitalTypes,
@@ -17,7 +19,8 @@ export const initialState = {
   regions: {},
   types: {},
   needs: {},
-  hospitals: []
+  hospitals: [],
+  selected: {}
 };
 
 const handleHospitalRegions = (state, { payload }) => {
@@ -48,8 +51,16 @@ const handleHospitals = (state, { payload }) => {
   };
 };
 
+const handleHospital = (state, { payload }) => {
+  return {
+    ...state,
+    selected: normalizeHospital(payload)
+  };
+};
+
 export default handleActions(
   {
+    [loadHospital]: handleHospital,
     [loadHospitals]: handleHospitals,
     [loadHospitalRegions]: handleHospitalRegions,
     [loadHospitalTypes]: handleHospitalTypes,

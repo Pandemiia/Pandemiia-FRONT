@@ -2,10 +2,13 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { Box, Text } from '@pinua/uikit';
+import { textTrimmer } from '@pinua/utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './title.scss';
+
+const MAX_WORDS_LENGTH = 250;
 
 const CardTitle = ({ className, open, name, image, code, onClick, ...props }) => {
   return (
@@ -15,9 +18,9 @@ const CardTitle = ({ className, open, name, image, code, onClick, ...props }) =>
       </Box>
       <Box className={styles.infoWrapper} direction="column" justify="start" align="start">
         <Text color="info" size="s" align="left">
-          {code}
+          {textTrimmer(code, MAX_WORDS_LENGTH)}
         </Text>
-        <Text align="left">{name}</Text>
+        <Text align="left">{textTrimmer(name, MAX_WORDS_LENGTH)}</Text>
       </Box>
       <Box className={styles.arrow} justify="center" align="center">
         <FontAwesomeIcon icon={open ? faChevronDown : faChevronRight} />

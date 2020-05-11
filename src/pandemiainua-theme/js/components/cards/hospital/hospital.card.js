@@ -5,6 +5,7 @@ import { Box, Text, Button } from '@pinua/uikit';
 import { Card } from '@pinua/common/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 import i18n from 'i18n';
 
@@ -14,7 +15,7 @@ import Needs, { needsPropTypes } from './needs';
 
 import styles from './hospital.card.scss';
 
-const HospitalCard = ({ name, contacts, address, categories, className, needs, ...props }) => {
+const HospitalCard = ({ id, name, contacts, address, categories, className, needs, ...props }) => {
   const { city, line1, region, zipCode } = address;
 
   const renderContacts = useCallback(() => {
@@ -34,7 +35,7 @@ const HospitalCard = ({ name, contacts, address, categories, className, needs, .
       <Box className={styles.categories} fullWidth></Box>
       <Box className={styles.main} fullWidth wrap>
         <Box className={styles.info} direction="column">
-          <Text bold size="m" color="primary" bottom="m">
+          <Text component={Link} bold size="m" color="primary" bottom="m" to={`/hospitlas/${id}/`}>
             {name}
           </Text>
           <Address city={city} line1={line1} region={region} zipCode={zipCode} bottom="m" />
@@ -48,10 +49,12 @@ const HospitalCard = ({ name, contacts, address, categories, className, needs, .
         <Box fullWidth justify="end" align="center">
           {needs.length >= 3 && (
             <Button
+              component={Link}
               className={styles.fullList}
               color="transparent"
               size="s"
               iconRight={<FontAwesomeIcon className={styles.icon} icon={faLongArrowAltRight} />}
+              to={`/hospitlas/${id}/`}
             >
               {i18n.t('common.fullList')}
             </Button>
@@ -71,6 +74,7 @@ HospitalCard.defaultProps = {
 HospitalCard.propTypes = {
   className: PropTypes.string,
   categories: PropTypes.array,
+  id: PropTypes.number,
   name: PropTypes.string,
   address: PropTypes.shape(addressPropTypes),
   contacts: PropTypes.arrayOf(PropTypes.shape(contactsPropTypes)),

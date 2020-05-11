@@ -1,5 +1,6 @@
 import _get from 'lodash/get';
 
+export const getHospital = state => state.hospitals.selected;
 export const getHospitals = state => state.hospitals.hospitals;
 export const getHospitalRegions = state => state.hospitals.regions;
 export const getHospitalCategories = state => state.hospitals.categories;
@@ -27,6 +28,7 @@ export const getDataToArray = (state, type) => {
 };
 
 export default {
+  getHospital,
   getHospitals,
   getHospitalRegions,
   getHospitalCategories,
