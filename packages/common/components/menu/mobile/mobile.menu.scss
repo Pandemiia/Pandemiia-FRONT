@@ -1,0 +1,34 @@
+@import "~@pinua/themes/variables";
+
+.link {
+  color: $b-color-txt1;
+  font-size: $font-16px;
+  margin: $spaces-m 0;
+  text-decoration: none;
+
+  &:hover {
+    color: $b-color-txt2;
+  }
+}
+
+.title {
+  margin-bottom: $spaces-m;
+}
+
+.active {
+  color: $b-color-txt2;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.icon {
+  color: $b-color-txt1;
+  font-size: $font-28px;
+  transition: all 300ms;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@pinua/common",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix components",
+    "lint:css": "prettier-stylelint --write '**/*.css' && stylelint --cache '**/*.css'"
+  },
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@pinua/presets": "^1.0.0",
+    "@pinua/uikit": "^1.0.0",
+    "@pinua/themes": "^1.0.0",
+    "eslint": "^5.8.0",
+    "prettier-stylelint": "^0.4.2",
+    "react-modal": "^3.11.2",
+    "stylelint": "^9.1.3"
+  }
+}

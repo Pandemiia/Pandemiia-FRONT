@@ -1,0 +1,39 @@
+@import "~@pinua/themes/variables";
+
+.menu {
+    text-align: center;
+}
+
+.link {
+    color: $b-color-txt1;
+    font-size: $font-14px;
+    padding: $spaces-s $spaces-m;
+    text-decoration: none;
+    text-align: center;
+    margin-right: $spaces-s;
+
+    &:hover {
+        color: $b-color-txt2;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.title {
+    border-bottom: 1px solid $b-color-txt1;
+    margin-bottom: $spaces-m;
+}
+
+.active {
+    color: $b-color-txt2;
+    background-color: $b-color-ui2;
+    border-radius: $border-l;
+}
+
+@media screen and (max-width: 1150px){
+    .link {
+        padding: $spaces-s $spaces-s;
+    }
+}

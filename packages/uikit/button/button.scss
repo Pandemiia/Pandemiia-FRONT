@@ -1,0 +1,130 @@
+@import "~@pinua/themes/variables";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: $font-14px;
+  font-family: $base-font;
+  font-weight: 300;
+  border-radius: $border-s;
+  padding: $spaces-s $spaces-m;
+  color: $b-color-txt1;
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.3;
+}
+
+.primary {
+  background-color: $b-color-btn3;
+  color: $b-color-txt5;
+
+  &:hover {
+    opacity: 1;
+    background-color: darken($b-color-btn3, 10%);
+  }
+}
+
+.secondary {
+  background: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $b-color-btn3;
+  color: $b-color-txt2;
+}
+
+.tertiary {
+  background: $b-color-btn4;
+  color: $b-color-txt1;
+}
+
+.info {
+  background: $b-color-btn2;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $b-color-btn6;
+  color: $b-color-txt2;
+}
+
+.warn {
+  background: $b-color-btn4;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $b-color-btn7;
+  color: $b-color-txt4;
+}
+
+.danger {
+  background-color: $b-color-btn5;
+  color: $b-color-txt5;
+}
+
+.transparent {
+  background: transparent;
+}
+
+.s {
+  padding: $spaces-s $spaces-m;
+  min-height: 24px;
+  min-width: $button-s;
+  font-size: $font-14px;
+  line-height: $font-14px;
+  border-radius: $border-s;
+  letter-spacing: 0.6px;
+}
+
+.m {
+  padding: $spaces-m $spaces-l;
+  min-height: 32px;
+  min-width: $button-m;
+  font-size: $font-18px;
+  line-height: $font-18px;
+  border-radius: $border-s;
+  letter-spacing: 0.6px;
+}
+
+.l {
+  padding: $spaces-m $spaces-l;
+  min-height: 42px;
+  min-width: $button-l;
+  font-size: $font-20px;
+  line-height: $font-20px;
+  border-radius: $border-s;
+  letter-spacing: 0.6px;
+}
+
+.xl {
+  padding: $spaces-m $spaces-xl;
+  min-height: 48px;
+  min-width: $button-l;
+  font-size: $font-24px;
+  line-height: $font-24px;
+  border-radius: $border-s;
+  letter-spacing: 0.6px;
+}
+
+.rounded {
+  border-radius: 40px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.noWrap {
+  white-space: nowrap;
+  overflow: hidden;
+}

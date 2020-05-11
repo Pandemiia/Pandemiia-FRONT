@@ -1,0 +1,139 @@
+@import "~@pinua/themes/variables";
+
+.general {
+  word-break: break-word;
+  font-weight: 300;
+}
+
+.primary {
+  color: $b-color-txt1;
+}
+
+.secondary {
+  color: $b-color-txt5;
+}
+
+.navigational {
+  color: $b-color-txt2;
+}
+
+.info {
+  color: $b-color-txt3;
+}
+
+.danger {
+  color: $b-color-txt4;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.semibold {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.base {
+  font-family: $base-font;
+}
+
+.condensed {
+}
+
+.condensed-black {
+}
+
+.ellipsis {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.none {
+  text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.overline {
+  text-decoration: overline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.break-word {
+  word-break: break-word;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.keep-all {
+  word-break: keep-all;
+}
+
+.normal {
+  word-break: normal;
+}
+
+.xs {
+  font-size: $font-10px;
+}
+
+.s {
+  font-size: $font-14px;
+}
+
+.m {
+  font-size: $font-18px;
+}
+
+.l {
+  font-size: $font-24px;
+}
+
+.xl {
+  font-size: $font-30px;
+}
+
+.xxl {
+  font-size: $font-36px;
+}

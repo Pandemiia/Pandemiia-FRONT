@@ -1,0 +1,44 @@
+@import "~@pinua/themes/variables";
+
+.selectionButtons {
+
+    width: 50%;
+
+    .clear,
+    .select {
+        padding: 0;
+        min-width: auto;
+        height: $spaces-m;
+        border-radius: 0;
+    }
+
+    .clear {
+        color: $b-color-txt4;
+        border-bottom: 1px dashed $b-color-txt4;
+    }
+
+    .select {
+        color: $b-color-txt2;
+        border-bottom: 1px dashed $b-color-txt2;
+    }
+
+    .select:hover,
+    .clear:hover {
+        border-bottom: none;
+        opacity: 1;
+    }
+}
+
+.scrollButtons {
+
+    .arrow {
+        margin-left: $spaces-s;
+    }
+
+    .less,
+    .more {
+        margin-top: $spaces-m;
+        height: $spaces-xl;
+    }
+
+}

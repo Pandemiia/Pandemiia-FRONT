@@ -1,0 +1,24 @@
+@import "~@pinua/themes/variables";
+
+.page {
+  height: 100%;
+  min-height: 100vh;
+  padding: 0 $spaces-m 0 $spaces-m;
+  box-sizing: border-box;
+}
+
+.products {
+  width: 100%;
+}
+
+.search {
+  width: 100%;
+  max-width: $column-xl;
+}
+
+@media screen and (max-width: $desktop-min-width) {
+  .search {
+    max-width: 100%;
+    margin-top: $spaces-m;
+  }
+}

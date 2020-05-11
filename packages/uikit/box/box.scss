@@ -1,0 +1,95 @@
+@import "~@pinua/themes/variables";
+
+.box {
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.justify_left {
+  justify-content: flex-start;
+}
+
+.justify_right {
+  justify-content: flex-end;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.justify_around {
+  justify-content: space-around;
+}
+
+.justify_between {
+  justify-content: space-between;
+}
+
+.justify_start {
+  justify-content: flex-start;
+}
+
+.justify_end {
+  justify-content: flex-end;
+}
+
+.align_start {
+  align-items: flex-start;
+}
+
+.align_end {
+  align-items: flex-end;
+}
+
+.align_center {
+  align-items: center;
+}
+
+.align_baseline {
+  align-items: baseline;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+.fullWidth {
+  width: 100%;
+}
+
+$columns: (
+s: $column-s,
+m: $column-m,
+l: $column-l,
+xl: $column-xl,
+2xl: $column-2xl,
+3xl: $column-3xl,
+4xl: $column-4xl,
+5xl: $column-5xl,
+6xl: $column-6xl,
+7xl: $column-7xl,
+8xl: $column-8xl
+);
+
+@each $size, $value in $columns {
+  .width_#{$size} {
+    width: $value;
+  }
+}
+
+/* Storybook Styles */
+
+.storybookWrapper {
+  min-width: 100px;
+  height: 300px;
+}
+
+.storybookWrapper,
+.storybookItem {
+  border: 1px solid black;
+}
+
+.storybookItem {
+  padding: $spaces-s;
+  margin: 0 $spaces-s;
+}
