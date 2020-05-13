@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { Box, Text, Button } from '@pinua/uikit';
+import { Box, Text, Button, Chip } from '@pinua/uikit';
 import { Card } from '@pinua/common/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
@@ -18,6 +18,14 @@ import styles from './hospital.card.scss';
 const HospitalCard = ({ id, name, contacts, address, categories, className, needs, ...props }) => {
   const { city, line1, region, zipCode } = address;
 
+  const renderCategories = useCallback(() => {
+    return categories.map(({ name, id }) => (
+      <Chip key={`category-${id}`} id={id} right="s" className={styles.chip}>
+        {name}
+      </Chip>
+    ));
+  }, [categories]);
+
   const renderContacts = useCallback(() => {
     return contacts.map(({ phone, fullName, position, email, id }) => (
       <Contacts key={`contacts-${id}`} id={id} phone={phone} email={email} fullName={fullName} position={position} />
@@ -32,10 +40,12 @@ const HospitalCard = ({ id, name, contacts, address, categories, className, need
 
   return (
     <Card className={cn(styles.hospitalCard, className)} direction="column" padding="m" bottom="s">
-      <Box className={styles.categories} fullWidth></Box>
+      <Box className={styles.categories} fullWidth bottom="m" wrap>
+        {renderCategories()}
+      </Box>
       <Box className={styles.main} fullWidth wrap>
         <Box className={styles.info} direction="column">
-          <Text component={Link} bold size="m" color="primary" bottom="m" to={`/hospitlas/${id}/`}>
+          <Text component={Link} bold size="m" color="primary" bottom="m" to={`/hospitals/${id}/`}>
             {name}
           </Text>
           <Address city={city} line1={line1} region={region} zipCode={zipCode} bottom="m" />
@@ -54,7 +64,7 @@ const HospitalCard = ({ id, name, contacts, address, categories, className, need
               color="transparent"
               size="s"
               iconRight={<FontAwesomeIcon className={styles.icon} icon={faLongArrowAltRight} />}
-              to={`/hospitlas/${id}/`}
+              to={`/hospitals/${id}/`}
             >
               {i18n.t('common.fullList')}
             </Button>
