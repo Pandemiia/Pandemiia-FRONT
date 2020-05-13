@@ -24,9 +24,9 @@ export default {
     description: 'ОПИС',
     instruction: 'ВАРІАНТИ ВИГОТОВЛЕННЯ',
     materials: 'Матеріал',
-    approved: 'Затвержено',
+    approved: 'Затверджено',
     instruments: 'Інструменти',
-    comment: 'Коментар'
+    comment: 'КОМЕНТАР'
   },
   search: {
     hospitals: 'Пошук серед закладів',

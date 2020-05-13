@@ -74,11 +74,13 @@ const SolutionCard = ({
           </Box>
           <Box className={styles.right} direction="column">
             <Description description={description} definition={description} instruction={instruction} />
-            <Box padding="s">
-              <Text size="m" bold right="s">
-                {i18n.t('solutions.comment')}:
+            <Box fullWidth bottom="m" justify="start" align="start" direction="column" padding="s">
+              <Text size="m" bold align="left" bottom="s">
+                {i18n.t('solutions.comment')}
               </Text>
-              <Text size="s">{comment}</Text>
+              <Text color="info" size="s" align="left">
+                {comment}
+              </Text>
             </Box>
           </Box>
         </Box>
