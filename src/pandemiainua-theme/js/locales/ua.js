@@ -42,7 +42,8 @@ export default {
     fullList: 'Повний список',
     apply: 'Застосувати',
     source: 'Джерело',
-    download: 'Завантажити'
+    download: 'Завантажити',
+    showPhone: 'Переглянути номер телефону'
   },
   filter: {
     types: 'ТИП ЗАКЛАДУ',

@@ -4,8 +4,23 @@
 
 }
 
+.position {
+  max-width: 150px;
+}
+
 .phone {
   text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.closed {
+    font-weight: 300;
+    border-bottom: 1px dashed $b-color-txt2;
+  }
+
+  &.closed:hover {
+    border-bottom-color: transparent;
+  }
 }
 
 .icon {
