@@ -24,9 +24,9 @@ export default {
     description: 'ОПИС',
     instruction: 'ВАРІАНТИ ВИГОТОВЛЕННЯ',
     materials: 'Матеріал',
-    approved: 'Затвержено',
+    approved: 'Затверджено',
     instruments: 'Інструменти',
-    comment: 'Коментар'
+    comment: 'КОМЕНТАР'
   },
   search: {
     hospitals: 'Пошук серед закладів',
@@ -42,7 +42,8 @@ export default {
     fullList: 'Повний список',
     apply: 'Застосувати',
     source: 'Джерело',
-    download: 'Завантажити'
+    download: 'Завантажити',
+    showPhone: 'Переглянути номер телефону'
   },
   filter: {
     types: 'ТИП ЗАКЛАДУ',

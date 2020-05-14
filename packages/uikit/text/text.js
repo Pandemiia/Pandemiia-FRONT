@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import cn from 'classnames';
 import _get from 'lodash/get';
 
 import styles from './text.scss';
@@ -39,7 +39,7 @@ const Text = ({
   danger,
   ...props
 }) => {
-  const classes = classNames(className, styles[typeface], styles.general, {
+  const classes = cn(className, styles[typeface], styles.general, {
     [styles[color]]: !!color,
     [styles[size]]: !!size,
     [styles[align]]: !!align,
@@ -82,7 +82,7 @@ Text.propTypes = {
   right: PropTypes.oneOf(sizes),
   transform: PropTypes.oneOf(['capitalize', 'lowercase', 'uppercase']),
   decoration: PropTypes.oneOf(['none', 'underline', 'overline', 'line-through']),
-  component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  component: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   align: PropTypes.oneOf(['left', 'right', 'center', 'justify']),
   breakWord: PropTypes.oneOf(['break-all', 'break-word', 'keep-all', 'normal']),
   children: PropTypes.node,

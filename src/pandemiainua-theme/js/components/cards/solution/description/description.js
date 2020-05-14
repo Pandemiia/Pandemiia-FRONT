@@ -26,7 +26,7 @@ const CardDescription = ({ className, description, definition, instruction, ...p
           {description}
         </Text>
       </Box>
-      <Box fullWidth bottom="m" justify="start" align="start" direction="column">
+      <Box fullWidth justify="start" align="start" direction="column">
         <Text size="m" bold align="left" bottom="s">
           {i18n.t('solutions.instruction')}
         </Text>

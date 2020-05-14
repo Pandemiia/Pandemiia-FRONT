@@ -1,0 +1,70 @@
+@import "~@pinua/themes/variables";
+
+.general {
+  word-break: break-word;
+  font-weight: 300;
+  padding-top: $spaces-xs;
+  padding-bottom: $spaces-xs;
+  padding-left: $spaces-s;
+  padding-right: $spaces-s;
+  border-radius: $border-s;
+}
+
+.primary {
+  background: $b-color-btn2;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $b-color-btn6;
+  color: $b-color-txt2;
+}
+
+.secondary {
+  background: $b-color-btn4;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $b-color-btn7;
+  color: $b-color-txt4;
+}
+
+.close {
+  width: $spaces-m;;
+  max-width: $spaces-m;
+  height: $spaces-m;
+  max-height: $spaces-m;
+}
+
+.s {
+  font-size: $font-14px;
+}
+
+.m {
+  font-size: $font-18px;
+}
+
+.l {
+  font-size: $font-24px;
+}
+
+.xl {
+  font-size: $font-30px;
+}
+
+.xxl {
+  font-size: $font-36px;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
