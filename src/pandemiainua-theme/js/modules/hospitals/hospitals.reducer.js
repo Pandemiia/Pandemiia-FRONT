@@ -51,10 +51,11 @@ const handleHospitals = (state, { payload }) => {
   };
 };
 
-const handleHospital = (state, { payload }) => {
+const handleHospital = (state, { payload = {} }) => {
+  const { data } = payload;
   return {
     ...state,
-    selected: normalizeHospital(payload)
+    selected: normalizeHospital(data)
   };
 };
 
