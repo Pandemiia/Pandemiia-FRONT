@@ -57,7 +57,17 @@ export default {
     }
   },
   footer: {
-    copyright: '© Pandemia, 2020-2021'
+    copyright: '© Pandemia, 2020-2021',
+    hospitals: 'Потреби',
+    solutions: 'Каталог рішень',
+    about: 'Про проект',
+    contacts: 'Контакти',
+    login: 'Особистий кабінет',
+    rights: 'Політика конфіденційності',
+    social: {
+      facebook: 'Facebook спільнота',
+      git: 'GitHub репозиторій'
+    }
   },
   notfaund: {
     error: '404',
