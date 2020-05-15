@@ -6,7 +6,13 @@
   width: 100%;
   margin: 16px;
   padding: 64px 144px 44px;
+  box-sizing: content-box;
   border-radius: 8px;
+}
+.footerLogo {
+    font-size: $font-16px;
+    color: $b-color-txt1;
+    font-weight: 300; 
 }
 .footerLinks {
     color: $b-color-txt1;
@@ -15,11 +21,65 @@
     font-size: $font-13px;
     font-weight: 500;    
 }
+.footerLinks:hover {
+    color: #007EFF;
+}
+.footerLinksWrapper {
+    margin: 0 auto;
+}
 .footerLinksWrapper a {
     width: 33.33%;
+}
+.footerSocialLinkMargin {
+    margin-bottom: 1em;
+}
+.iconMargin {
+    margin-right: 1em;
 }
 .copyright {
     font-size: $font-13px;
     color: $b-color-txt1;
     font-weight: 300; 
+}
+.license {
+    width: 100%;
+    margin-top: 2em;
+    font-size: $font-13px;
+    color: $b-color-txt1;
+    font-weight: 500;
+    text-align: center;    
+}
+.licenseLink {
+    color: $b-color-txt1;
+    text-decoration: none;
+    cursor: pointer;    
+}
+@media screen and (max-width: $desktop-min-width){
+    .itemWrapper {
+        flex-direction: column;
+        align-items: center;        
+    }
+    .footerLinksWrapper {        
+        align-items: center;
+        margin: 0 0 30px;
+    }
+    .footerLinksWrapper a {
+        width: 50%;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    .footerLogo {
+        margin-bottom: 30px;
+    } 
+}
+@media screen and (max-width: $tablet-min-width){
+    .itemWrapper {        
+        padding: 44px 50px;
+    }
+    .footerLinksWrapper {
+        flex-direction: column;        
+    }
+    .footerLinksWrapper a {
+        width: unset;        
+    }      
 }
