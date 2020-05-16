@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Cards, HospitalCard } from 'components';
 import { Layout, Filter, MobileTopFilter, MobileSidebarFilter } from '@pinua/common/components';
 import { Box, Text, Search } from '@pinua/uikit';
+import DropdownList from '@pinua/uikit/dropdown';
 import { Media, TABLET_MAX_WIDTH } from '@pinua/utils';
 import _toLower from 'lodash/toLower';
 
@@ -146,6 +147,7 @@ const Hospitals = ({
                           {dataHospitals.length} {i18n.t('hospitals.results')}
                         </Text>
                       </Box>
+                      <DropdownList />
                       <Search
                         onChange={handleSearch}
                         className={styles.search}
