@@ -16,6 +16,8 @@ const devConfig = Object.assign({}, baseConfig, {
 
   devtool: 'source-map',
 
+  stats: 'minimal',
+
   entry: {
     main: ['@babel/polyfill', './js/main']
   },

@@ -1,0 +1,31 @@
+@import "~@pinua/themes/variables";
+
+.filter {
+    border: 1px solid $b-color-txt2;
+    border-radius: $border-s;
+}
+
+.button {
+    padding: 0;
+    min-width: 50%;
+    border-radius: 0;
+    color: $b-color-txt2;
+    font-size: $font-16px;
+
+    &.active {
+        color: $b-color-txt5;
+
+        .icon {
+            color: $b-color-txt5;
+        }
+    }
+
+    &:first-child {
+        border-right: 1px solid $b-color-txt2;
+    }
+}
+
+.icon {
+    color: $b-color-txt2;
+    margin-left: $spaces-s;
+}

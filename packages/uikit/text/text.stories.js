@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
 import { jsxDecorator } from 'storybook-addon-jsx';
 
-import Text, { types, sizes } from './text';
+import Text, { colors, sizes } from './text';
 
 import TextReadme from './README.md';
 
@@ -28,7 +28,7 @@ storiesOf('Uikit/Text', module)
           right={select('marginRight', sizes, 's')}
           bottom={select('marginBottom', sizes, 's')}
           left={select('marginLeft', sizes, 's')}
-          color={select('color', types, 'primary')}
+          color={select('color', colors, 'primary')}
           size={select('sizes', sizes, 'm')}
         >
           {text('text', 'Default text')}

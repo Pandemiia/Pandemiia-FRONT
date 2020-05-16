@@ -1,8 +1,9 @@
 import i18n from 'i18n';
 
 import Home from './home';
-import Needs from './needs';
-import Goods from './goods';
+import Hospital from './hospital';
+import Hospitals from './hospitals';
+import Solutions from './solutions';
 import About from './about';
 import Contacts from './contacts';
 
@@ -14,16 +15,22 @@ const routes = [
     component: Home
   },
   {
-    path: '/needs',
-    name: i18n.t('sidebar.needs'),
+    path: '/hospitals',
+    name: i18n.t('sidebar.hospitals'),
     permission: ['guest'],
-    component: Needs
+    component: Hospitals
   },
   {
-    path: '/goods',
-    name: i18n.t('sidebar.goods'),
+    path: '/hospitals/:id',
+    name: null,
     permission: ['guest'],
-    component: Goods
+    component: Hospital
+  },
+  {
+    path: '/solutions',
+    name: i18n.t('sidebar.solutions'),
+    permission: ['guest'],
+    component: Solutions
   },
   {
     path: '/about',

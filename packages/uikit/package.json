@@ -15,6 +15,7 @@
     "@pinua/themes": "^1.0.0",
     "eslint": "^5.8.0",
     "prettier-stylelint": "^0.4.2",
+    "rc-checkbox": "^2.2.0",
     "react-icons": "^3.9.0",
     "react-rangeslider": "^2.2.0",
     "stylelint": "^9.1.3"

@@ -20,7 +20,7 @@ const routes = require('../routes/index');
 const compiler = webpack(webpackConfig);
 
 const PORT = process.env.PORT || 3000;
-const APP_STATIC_PATH = path.join(__dirname, '../static/');
+const APP_STATIC_PATH = path.join(__dirname, `../static/${process.env.ACTIVE_THEME || 'pandemiainua-theme'}`);
 
 log4js.configure({
   appenders: { server: { type: 'file', filename: 'server.log' } },

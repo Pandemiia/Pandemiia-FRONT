@@ -1,0 +1,38 @@
+@import "~@pinua/themes/variables";
+
+.solutionCard {
+  width: 100%;
+}
+
+.content {
+  display: none;
+  border-top: 1px solid $b-color-ui9;
+  position: relative;
+}
+
+.open {
+  display: flex;
+}
+
+.left,
+.right {
+  width: 50%;
+  position: relative;
+}
+
+.images {
+  width: 100%;
+  min-height: 300px;
+}
+
+.image {
+  width: 100%;
+}
+
+.source {
+  text-decoration: none;
+}
+
+.sourceIcon {
+  margin-right: $spaces-s;
+}

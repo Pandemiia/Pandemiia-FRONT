@@ -1,0 +1,32 @@
+@import "~@pinua/themes/variables";
+
+.searchInputWrapper {
+  position: relative;
+  color: $b-color-txt3;
+
+  &::after {
+    content: '\26b2';
+    position: absolute;
+    transform: rotate(-45deg);
+    font-size: 24px;
+    top: 5px;
+    right: 12px;
+  }
+
+  input {
+    font-size: $font-16px;
+    font-weight: 300;
+    line-height: 20px;
+    display: block;
+    background-color: $b-color-ui2;
+    padding: 6px 30px 6px 12px;
+    width: inherit;
+    height: $spaces-xl;
+    border-radius: $border-s;
+    border-width: 0;
+
+    &:focus {
+      outline:0;
+    }
+  }
+}

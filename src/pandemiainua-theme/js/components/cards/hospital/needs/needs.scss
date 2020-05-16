@@ -1,0 +1,21 @@
+@import "~@pinua/themes/variables";
+
+.item {
+  background-color: $b-color-ui1;
+}
+
+.colored {
+  background-color: $b-color-ui2;
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+}
+
+.received {
+  font-weight: 400;
+}

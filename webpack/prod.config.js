@@ -28,7 +28,7 @@ const config = THEMES_LIST.map(function(theme) {
     output: {
       path: globalVariables.DIST_PATH,
       filename: '[name].min.[hash].js',
-      publicPath: '/' + theme + '/'
+      publicPath: '/'
     },
 
     resolve: {

@@ -1,0 +1,22 @@
+@import "~@pinua/themes/variables";
+
+.sidebar {
+    height: 100vh;
+    overflow-y: auto;
+    padding-bottom: $spaces-xl;
+    z-index: $index-l;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.icon {
+    color: $b-color-txt1;
+    font-size: $font-28px;
+    transition: all 300ms;
+
+    &:hover {
+        transform: rotate(180deg);
+    }
+}
