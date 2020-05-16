@@ -17,16 +17,16 @@ const MainFooter = () => {
           <Text className={cn(styles.copyright)}>{i18n.t('footer.copyright')}</Text>
         </Box>
         <Box className={cn(styles.footerLinksWrapper)} wrap="wrap">
-          <a href="#" className={cn(styles.footerLinks)}>
+          <a href="/hospitals" className={cn(styles.footerLinks)}>
             {i18n.t('footer.hospitals')}
           </a>
-          <a href="#" className={cn(styles.footerLinks)}>
+          <a href="/solutions" className={cn(styles.footerLinks)}>
             {i18n.t('footer.solutions')}
           </a>
-          <a href="#" className={cn(styles.footerLinks)}>
+          <a href="/about" className={cn(styles.footerLinks)}>
             {i18n.t('footer.about')}
           </a>
-          <a href="#" className={cn(styles.footerLinks)}>
+          <a href="/contacts" className={cn(styles.footerLinks)}>
             {i18n.t('footer.contacts')}
           </a>
           <a href="#" className={cn(styles.footerLinks)}>
