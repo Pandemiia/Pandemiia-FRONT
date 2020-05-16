@@ -21,7 +21,7 @@ const Hospital = ({ id, data, loadHospital, ...props }) => {
         <Box direction="column" fullWidth>
           <Box fullWidth>
             <Text size="m">
-              Детальна <b>сторинка закладу</b> знаходиться на стадіії розробки...
+              Детальна <b>сторінка закладу</b> знаходиться на стадіії розробки...
             </Text>
           </Box>
         </Box>

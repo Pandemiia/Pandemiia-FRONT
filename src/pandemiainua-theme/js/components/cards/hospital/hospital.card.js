@@ -45,7 +45,15 @@ const HospitalCard = ({ id, name, contacts, address, categories, className, need
       </Box>
       <Box className={styles.main} fullWidth wrap>
         <Box className={styles.info} direction="column">
-          <Text component={Link} bold size="m" color="primary" bottom="m" to={`/hospitals/${id}/`}>
+          <Text
+            className={styles.title}
+            component={Link}
+            bold
+            size="m"
+            color="primary"
+            bottom="m"
+            to={`/hospitals/${id}/`}
+          >
             {name}
           </Text>
           <Address city={city} line1={line1} region={region} zipCode={zipCode} bottom="m" />
