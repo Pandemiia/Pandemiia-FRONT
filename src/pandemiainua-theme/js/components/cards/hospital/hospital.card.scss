@@ -22,6 +22,14 @@
   margin-left: $spaces-s;
 }
 
+.title {
+  text-decoration: none;
+}
+
+.chip {
+  margin-bottom: $spaces-s;
+}
+
 .fullList {
   border-radius: 0;
   padding: 0;
@@ -38,6 +46,10 @@
 @media screen  and (min-width: $tablet-min-width) {
   .hospitalCard {
     min-width: $column-4xl;
+  }
+
+  .chip {
+    margin-bottom: 0;
   }
 
   .info,
