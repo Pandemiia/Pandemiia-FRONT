@@ -1,10 +1,10 @@
 import React from 'react';
-import cn from 'classnames';
 import { Box, Text } from '@pinua/uikit';
 import { Footer, Logo } from '@pinua/common/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import i18n from 'i18n';
+import cn from 'classnames';
 
 import styles from './footer.scss';
 
