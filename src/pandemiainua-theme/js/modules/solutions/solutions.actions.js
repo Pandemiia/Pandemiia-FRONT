@@ -13,9 +13,12 @@ export const loadSolutionsTools = createAction('LOAD_SOLUTIONS_TOOLS', () => ({ 
   return client.get('/solutions/tools/');
 });
 
-export const loadSolutions = createAction('LOAD_SOLUTIONS', ({ categories, materials, tools } = {}) => ({ client }) => {
-  return client.get(`/solutions/?${stringify({ solution_type: categories, materials, tools })}`);
-});
+export const loadSolutions = createAction(
+  'LOAD_SOLUTIONS',
+  ({ categories, materials, tools, page } = {}) => ({ client }) => {
+    return client.get(`/solutions/?${stringify({ solution_type: categories, materials, tools, page })}`);
+  }
+);
 
 export default {
   loadSolutions,
