@@ -1,0 +1,50 @@
+.dropDown {
+  width: 200px;
+  height: 44px;
+  border: none;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+}
+
+.selectWrapper {
+  display: block;
+  background: #f4f5f7;
+  border-radius: 4px;
+  position: relative;
+  height: 44px;
+  width: 200px;
+
+  & > svg {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    font-size: 13px;
+    color: #8C8C8C;
+    right: 11px;
+  }
+
+  & > select {
+    position: absolute;
+    z-index: 2;
+    background: none;
+  }
+}
+
+select {
+  padding-left: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+option {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+}

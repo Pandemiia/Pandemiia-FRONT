@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout } from '@pinua/common/components';
 import { Text } from '@pinua/uikit';
-
 import styles from './home.scss';
 
 const Home = () => {
