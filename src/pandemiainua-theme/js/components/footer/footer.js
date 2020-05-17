@@ -1,6 +1,5 @@
 import React from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
 import { useHistory, Link } from 'react-router-dom';
 import { Box, Text } from '@pinua/uikit';
 import { Footer, Logo } from '@pinua/common/components';
@@ -18,12 +17,12 @@ const MainFooter = () => {
   }
   return (
     <Footer>
-      <Box className={cn(styles.itemWrapper)} wrap="wrap">
+      <Box className={cn(styles.itemWrapper)} wrap={true}>
         <Box className={cn(styles.footerLogo)} direction="column">
           <Logo onClick={handleClick} />
           <Text className={cn(styles.copyright)}>{i18n.t('footer.copyright')}</Text>
         </Box>
-        <Box className={cn(styles.footerLinksWrapper)} wrap="wrap">
+        <Box className={cn(styles.footerLinksWrapper)} wrap={true}>
           <Link to="/hospitals" className={cn(styles.footerLinks)}>
             {i18n.t('footer.hospitals')}
           </Link>
@@ -66,7 +65,5 @@ const MainFooter = () => {
     </Footer>
   );
 };
-MainFooter.propTypes = {
-  history: PropTypes.object
-};
+
 export default MainFooter;
