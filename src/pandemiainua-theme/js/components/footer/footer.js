@@ -1,5 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
+import PropTypes from 'prop-types';
+import { useHistory, Link } from 'react-router-dom';
 import { Box, Text } from '@pinua/uikit';
 import { Footer, Logo } from '@pinua/common/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,51 +11,62 @@ import i18n from 'i18n';
 import styles from './footer.scss';
 
 const MainFooter = () => {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push('/');
+  }
   return (
     <Footer>
       <Box className={cn(styles.itemWrapper)} wrap="wrap">
         <Box className={cn(styles.footerLogo)} direction="column">
-          <Logo />
+          <Logo onClick={handleClick} />
           <Text className={cn(styles.copyright)}>{i18n.t('footer.copyright')}</Text>
         </Box>
         <Box className={cn(styles.footerLinksWrapper)} wrap="wrap">
-          <a href="/hospitals" className={cn(styles.footerLinks)}>
+          <Link to="/hospitals" className={cn(styles.footerLinks)}>
             {i18n.t('footer.hospitals')}
-          </a>
-          <a href="/solutions" className={cn(styles.footerLinks)}>
+          </Link>
+          <Link to="/solutions" className={cn(styles.footerLinks)}>
             {i18n.t('footer.solutions')}
-          </a>
-          <a href="/about" className={cn(styles.footerLinks)}>
+          </Link>
+          <Link to="/about" className={cn(styles.footerLinks)}>
             {i18n.t('footer.about')}
-          </a>
-          <a href="/contacts" className={cn(styles.footerLinks)}>
+          </Link>
+          <Link to="/contacts" className={cn(styles.footerLinks)}>
             {i18n.t('footer.contacts')}
-          </a>
-          <a href="#" className={cn(styles.footerLinks)}>
+          </Link>
+          <Link to="#" className={cn(styles.footerLinks)}>
             {i18n.t('footer.login')}
-          </a>
-          <a href="#" className={cn(styles.footerLinks)}>
+          </Link>
+          <Link to="#" className={cn(styles.footerLinks)}>
             {i18n.t('footer.rights')}
-          </a>
+          </Link>
         </Box>
         <Box direction="column">
-          <a href="#" className={cn(styles.footerLinks, styles.footerSocialLinkMargin)}>
+          <Link to="#" className={cn(styles.footerLinks, styles.footerSocialLinkMargin)}>
             <FontAwesomeIcon icon={faFacebook} className={cn(styles.iconMargin)} />
             {i18n.t('footer.social.facebook')}
-          </a>
-          <a href="#" className={cn(styles.footerLinks)}>
+          </Link>
+          <Link to="#" className={cn(styles.footerLinks)}>
             <FontAwesomeIcon icon={faGithub} className={cn(styles.iconMargin)} />
             {i18n.t('footer.social.git')}
-          </a>
+          </Link>
         </Box>
         <Box className={cn(styles.license)} justify="center">
-          <a href="#" className={cn(styles.licenseLink)}>
-            {i18n.t('footer.license')}
-          </a>
+          <Text className={cn(styles.license)}>
+            {i18n.t('footer.license')} &nbsp;
+            <Link to="#" className={cn(styles.licenseLink)}>
+              {i18n.t('footer.licenseLink')}
+            </Link>
+            {i18n.t('footer.licenseSub')}
+          </Text>
         </Box>
       </Box>
     </Footer>
   );
 };
-
+MainFooter.propTypes = {
+  history: PropTypes.object
+};
 export default MainFooter;

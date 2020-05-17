@@ -65,8 +65,9 @@ export default {
     contacts: 'Контакти',
     login: 'Особистий кабінет',
     rights: 'Політика конфіденційності',
-    license:
-      'Весь контент доступний за ліцензією Creative Commons Attribution 4.0 International license, якщо не зазначено',
+    license: 'Весь контент доступний за ліцензією',
+    licenseSub: ', якщо не зазначено',
+    licenseLink: 'Creative Commons Attribution 4.0 International license',
     social: {
       facebook: 'Facebook спільнота',
       git: 'GitHub репозиторій'

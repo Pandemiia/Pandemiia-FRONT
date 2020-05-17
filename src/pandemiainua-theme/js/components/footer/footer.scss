@@ -10,36 +10,32 @@
   border-radius: 8px;
 }
 
-.footerLogo {
-  font-size: $font-16px;
-  color: $b-color-txt1;
-  font-weight: 300;
+.footer {
+  &Logo {
+    font-size: $font-16px;
+    color: $b-color-txt1;
+    font-weight: 300;
+  }
+  &Links {
+    color: $b-color-txt1;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: $font-13px;
+    font-weight: 500;
+    &:hover {
+      color: #007eff;
+    }
+    &Wrapper {
+      margin: 0 auto;
+      a {
+        width: 33.33%;
+      }
+    }
+  }
+  &SocialLinkMargin {
+    margin-bottom: 1em;
+  }
 }
-
-.footerLinks {
-  color: $b-color-txt1;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: $font-13px;
-  font-weight: 500;
-}
-
-.footerLinks:hover {
-  color: #007eff;
-}
-
-.footerLinksWrapper {
-  margin: 0 auto;
-}
-
-.footerLinksWrapper a {
-  width: 33.33%;
-}
-
-.footerSocialLinkMargin {
-  margin-bottom: 1em;
-}
-
 .iconMargin {
   margin-right: 1em;
 }
@@ -53,14 +49,14 @@
 .license {
   width: 100%;
   margin-top: 2em;
-  font-size: $font-13px;
+  font-size: $font-14px;
   color: $b-color-txt1;
   font-weight: 500;
   text-align: center;
 }
 
 .licenseLink {
-  color: $b-color-txt1;
+  color: $b-color-txt2;
   text-decoration: none;
   cursor: pointer;
 }
@@ -71,19 +67,19 @@
     align-items: center;
   }
 
-  .footerLinksWrapper {
-    align-items: center;
-    margin: 0 0 30px;
-  }
-
-  .footerLinksWrapper a {
-    width: 50%;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-
-  .footerLogo {
-    margin-bottom: 30px;
+  .footer {
+    &LinksWrapper {
+      align-items: center;
+      margin: 0 0 30px;
+      a {
+        width: 50%;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+    }
+    &Logo {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -92,11 +88,13 @@
     padding: 44px 50px;
   }
 
-  .footerLinksWrapper {
-    flex-direction: column;
-  }
+  .footer {
+    &LinksWrapper {
+      flex-direction: column;
 
-  .footerLinksWrapper a {
-    width: unset;
+      a {
+        width: unset;
+      }
+    }
   }
 }
