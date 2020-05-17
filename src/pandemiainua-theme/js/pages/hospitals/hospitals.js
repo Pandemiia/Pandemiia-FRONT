@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Cards, HospitalCard } from 'components';
 import { Layout, Filter, MobileTopFilter, MobileSidebarFilter } from '@pinua/common/components';
-import { Box, Text, Search } from '@pinua/uikit';
+import { Box, Text, Search, Pagination } from '@pinua/uikit';
 import DropdownList from '@pinua/uikit/dropdown';
 import { Media, TABLET_MAX_WIDTH } from '@pinua/utils';
 import _toLower from 'lodash/toLower';
@@ -85,6 +85,15 @@ const Hospitals = ({
     [loadHospitals, params]
   );
 
+  const handlePage = useCallback(
+    selected => {
+      const [regions, types, needs] = params;
+
+      loadHospitals({ regions, types, needs, page: selected });
+    },
+    [loadHospitals, params]
+  );
+
   const renderFilters = useCallback(() => {
     return (
       <Box direction="column" right="m">
@@ -161,6 +170,7 @@ const Hospitals = ({
             }
           </Media>
         </Box>
+        <Pagination onPageChange={handlePage} />
       </Box>
     </Layout>
   );
