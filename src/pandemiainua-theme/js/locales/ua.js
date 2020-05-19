@@ -1,15 +1,14 @@
 export default {
   header: {
-    login: 'Особистий кабінет',
-    register: 'Заповнити заявку'
+    login: 'Авторизація',
+    register: 'Створити заявку'
   },
   sidebar: {
     home: 'Головна',
     hospitals: 'Потреби',
     solutions: 'Каталог рішень',
     about: 'Про проект',
-    contacts: 'Контакти',
-    intro: 'Ласкаво просимо на сайт pandemiia.in.ua'
+    contacts: 'Контакти'
   },
   hospitals: {
     title: 'Актуальні потреби',
