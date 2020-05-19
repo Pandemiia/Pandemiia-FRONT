@@ -1,0 +1,47 @@
+.input {
+  width: 100%;
+  height: var(--b-size-l);
+  line-height: var(--b-line-height-xxl);
+  border: var(--b-border-width-l) solid;
+  border-radius: var(--b-border-radius-s);
+  background-color: var(--b-color-body6);
+  padding: calc(var(--b-spacing-s) - var(--b-border-width-l)) calc(var(--b-spacing-m) - var(--b-border-width-l));
+  outline: none;
+
+  &[disabled] {
+    background-color: var(--b-color-body5);
+    opacity: 0.3;
+  }
+
+  &::placeholder {
+    color: var(--b-color-body3);
+  }
+}
+
+.default {
+  border-color: var(--b-color-body4);
+}
+
+.default:hover:not([disabled]),
+.default:focus:not([disabled]),
+.default:active:not([disabled]) {
+  border-color: var(--b-color-nav);
+}
+
+.success,
+.success:focus:not([disabled]),
+.success:active:not([disabled]) {
+  border-color: var(--b-color-succ);
+}
+
+.warning,
+.warning:focus:not([disabled]),
+.warning:active:not([disabled]) {
+  border-color: var(--b-color-warn);
+}
+
+.danger,
+.danger:focus:not([disabled]),
+.danger:active:not([disabled]) {
+  border-color: var(--b-color-dang);
+}

@@ -42,6 +42,8 @@ export default {
     fullList: 'Повний список',
     apply: 'Застосувати',
     source: 'Джерело',
+    attachment: 'Завантажити',
+    instruction: 'Інструкція',
     download: 'Завантажити',
     showPhone: 'Переглянути номер телефону'
   },

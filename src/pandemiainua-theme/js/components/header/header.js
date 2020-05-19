@@ -15,8 +15,8 @@ const MainHeader = ({ history, location: { pathname }, links, onClose, isMenuOpe
   };
 
   const handleLogin = useCallback(() => {
-    console.log('login pressed');
-  }, []);
+    history.push('/login');
+  }, [history]);
 
   const handleSignUp = useCallback(() => {
     console.log('sign up pressed');

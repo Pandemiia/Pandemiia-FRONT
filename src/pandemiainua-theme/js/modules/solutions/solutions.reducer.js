@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-
+import _get from 'lodash/get';
 import {
   loadSolutionsMaterials,
   loadSolutionsTools,
@@ -42,9 +42,13 @@ const handleSolutionsTools = (state, { payload }) => {
 };
 
 const handleSolutions = (state, { payload }) => {
+  const results = _get(payload, 'data.results', []);
+  const count = _get(payload, 'data.count', 0);
+
   return {
     ...state,
-    solutions: normalizeSolutions(payload)
+    solutions: normalizeSolutions(results),
+    total: count
   };
 };
 

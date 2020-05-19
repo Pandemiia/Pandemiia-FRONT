@@ -1,0 +1,17 @@
+import { handleActions } from 'redux-actions'
+import { load<%= namePascalCase %> } from './<%= name %>.actions'
+<% if (normalizer) { %>import { normalize<%= namePascalCase %> } from './<%= name %>.normalizers'<% }%>
+
+const initialState = {}
+
+const handleLoad<%= namePascalCase %> = (state, { payload }) => ({
+  ...state,
+  <% if (normalizer) { %>...normalize<%= namePascalCase %>(payload)<% } else { %>...payload<% } %>
+})
+
+export default handleActions(
+  {
+    [load<%= namePascalCase %>]: handleLoad<%= namePascalCase %>
+  },
+  initialState
+)

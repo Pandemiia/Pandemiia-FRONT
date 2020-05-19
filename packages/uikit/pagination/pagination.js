@@ -7,7 +7,8 @@ import styles from './pagination.scss';
 class Pagination extends PureComponent {
   static propTypes = {
     onPageChange: PropTypes.func,
-    pageCount: PropTypes.number
+    perPage: PropTypes.number,
+    total: PropTypes.number
   };
 
   handlePageClick = ({ selected }) => {
@@ -15,8 +16,12 @@ class Pagination extends PureComponent {
     const data = selected + 1;
     onPageChange && onPageChange(data);
   };
+
   render() {
-    const { pageCount } = this.props;
+    const { perPage, total } = this.props;
+
+    const pageCount = Math.ceil(total / perPage);
+
     return (
       <Box direction="row" justify="center">
         <ReactPaginate
@@ -27,7 +32,7 @@ class Pagination extends PureComponent {
           breakClassName={styles.brake}
           pageCount={pageCount}
           marginPagesDisplayed={1}
-          pageRangeDisplayed={3}
+          pageRangeDisplayed={perPage}
           onPageChange={this.handlePageClick}
           containerClassName={styles.pagination}
           pageClassName={styles.paginationPage}

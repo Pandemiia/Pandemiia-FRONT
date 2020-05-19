@@ -10,11 +10,12 @@ const { toggleFilter } = appActions;
 const { getFilterStatus } = appSelectors;
 
 const { loadSolutionsTools, loadSolutionsCategories, loadSolutionsMaterials, loadSolutions } = solutionsActions;
-const { getDataToArray, getSolutions } = solutionsSelectors;
+const { getDataToArray, getSolutions, getTotalSolutionsCount } = solutionsSelectors;
 
 const mapStateToProps = state => ({
   filterOpen: getFilterStatus(state),
   solutions: getSolutions(state),
+  total: getTotalSolutionsCount(state),
   tools: getDataToArray(state, 'tools'),
   categories: getDataToArray(state, 'categories'),
   materials: getDataToArray(state, 'materials')

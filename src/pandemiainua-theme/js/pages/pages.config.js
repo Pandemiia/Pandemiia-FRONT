@@ -6,6 +6,7 @@ import Hospitals from './hospitals';
 import Solutions from './solutions';
 import About from './about';
 import Contacts from './contacts';
+import Login from './login';
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     name: i18n.t('sidebar.contacts'),
     permission: ['guest'],
     component: Contacts
+  },
+  {
+    path: '/login',
+    permission: ['guest'],
+    component: Login
   }
 ];
 
