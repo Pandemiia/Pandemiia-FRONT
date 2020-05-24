@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { select, boolean, text } from '@storybook/addon-knobs';
 import PasswordInput from './password-input';
 
-storiesOf('Uikit/Input/PasswordInput', module).add('PasswordInput', () => (
+storiesOf('Uikit/PasswordInput', module).add('PasswordInput', () => (
   <PasswordInput
     disabled={boolean('disabled', false)}
     intent={select('intent', {}, 'default')}
