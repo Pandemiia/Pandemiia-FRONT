@@ -1,5 +1,5 @@
-const Generator = require('yeoman-generator')
-const _ = require('lodash')
+const Generator = require('yeoman-generator');
+const _ = require('lodash');
 
 module.exports = class extends Generator {
   async prompting() {
@@ -15,11 +15,11 @@ module.exports = class extends Generator {
         message: 'Would you like to add a module normalizer?',
         default: false
       }
-    ])
+    ]);
   }
 
   writing() {
-    const { name, normalizer } = this.answers
+    const { name, normalizer } = this.answers;
 
     const arr = [
       { tpl: 'module.actions.ejs', filename: `${name}.actions.js` },
@@ -32,25 +32,25 @@ module.exports = class extends Generator {
         skip: !normalizer
       },
       { tpl: 'index.ejs', filename: 'index.js' }
-    ]
+    ];
 
     arr.forEach(item => {
-      if (typeof item.skip !== 'undefined' && item.skip) return
-      this.copyTplWithParams(item.tpl, item.filename)
-    })
+      if (typeof item.skip !== 'undefined' && item.skip) return;
+      this.copyTplWithParams(item.tpl, item.filename);
+    });
   }
 
   copyTplWithParams(tpl, filename) {
-    if (!tpl) return
+    if (!tpl) return;
 
-    const { name, normalizer } = this.answers
+    const { name, normalizer } = this.answers;
 
-    const nameCamelCase = _.camelCase(name)
-    const namePascalCase = _.upperFirst(nameCamelCase)
+    const nameCamelCase = _.camelCase(name);
+    const namePascalCase = _.upperFirst(nameCamelCase);
     const nameSnakeCase = _.chain(name)
       .snakeCase(name)
       .toUpper()
-      .value()
+      .value();
 
     this.fs.copyTpl(this.templatePath(tpl), this.destinationPath(`${this.contextRoot}/${name}/${filename}`), {
       name,
@@ -58,8 +58,8 @@ module.exports = class extends Generator {
       namePascalCase,
       nameSnakeCase,
       normalizer
-    })
+    });
   }
 
   install() {}
-}
+};

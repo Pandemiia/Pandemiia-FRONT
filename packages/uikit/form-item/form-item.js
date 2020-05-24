@@ -1,12 +1,12 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { Field as FormikField } from 'formik'
-import classNames from 'classnames'
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { Field as FormikField } from 'formik';
+import classNames from 'classnames';
 
-import Input from '@pinua/uikit/input'
-import Text from '@pinua/uikit/text'
+import Input from '@pinua/uikit/input';
+import Text from '@pinua/uikit/text';
 
-import styles from './form-item.scss'
+import styles from './form-item.scss';
 
 class FormItem extends PureComponent {
   static propTypes = {
@@ -26,17 +26,17 @@ class FormItem extends PureComponent {
     labelRight: PropTypes.node,
     wrapClassName: PropTypes.string,
     wrapComponent: PropTypes.string
-  }
+  };
 
   static defaultProps = {
     component: Input,
     wrapComponent: 'div',
     onBlur() {}
-  }
+  };
 
   static contextTypes = {
     formik: PropTypes.object
-  }
+  };
 
   render() {
     const {
@@ -54,29 +54,24 @@ class FormItem extends PureComponent {
       wrapClassName,
       wrapComponent: WrapComponent,
       ...props
-    } = this.props
+    } = this.props;
 
     return (
       <FormikField
         name={props.name}
         {...fieldProps}
         render={({ field, form }) => {
-          const { errors = {}, touched = {} } = form
-          const error =
-            errorMessage || (touched[props.name] && errors[props.name])
-          const success =
-            touched[props.name] &&
-            !errors[props.name] &&
-            (successMessage || isSuccess)
-          const intent = error ? 'danger' : success ? 'success' : defaultIntent
-          const message =
-            error || ((success && successMessage) || defaultMessage)
+          const { errors = {}, touched = {} } = form;
+          const error = errorMessage || (touched[props.name] && errors[props.name]);
+          const success = touched[props.name] && !errors[props.name] && (successMessage || isSuccess);
+          const intent = error ? 'danger' : success ? 'success' : defaultIntent;
+          const message = error || (success && successMessage) || defaultMessage;
 
           const classes = classNames(styles.formItem, wrapClassName, {
             [styles.disabled]: props.disabled,
             [styles.row]: labelRight,
             [styles[intent]]: !!intent
-          })
+          });
 
           return (
             <WrapComponent className={classes} htmlFor={props.id}>
@@ -93,8 +88,8 @@ class FormItem extends PureComponent {
                 {...props}
                 {...componentProps}
                 onBlur={e => {
-                  field.onBlur(e)
-                  props.onBlur(e)
+                  field.onBlur(e);
+                  props.onBlur(e);
                 }}
                 intent={intent}
               />
@@ -106,20 +101,16 @@ class FormItem extends PureComponent {
               )}
 
               {message && (
-                <Text
-                  className={styles.message}
-                  intent={!success || !isSuccess ? intent : undefined}
-                  size="s"
-                >
+                <Text className={styles.message} intent={!success || !isSuccess ? intent : undefined} size="s">
                   {message}
                 </Text>
               )}
             </WrapComponent>
-          )
+          );
         }}
       />
-    )
+    );
   }
 }
 
-export default FormItem
+export default FormItem;

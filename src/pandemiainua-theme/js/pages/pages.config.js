@@ -7,6 +7,7 @@ import Solutions from './solutions';
 import About from './about';
 import Contacts from './contacts';
 import Login from './login';
+import Register from './register';
 
 const routes = [
   {
@@ -49,6 +50,11 @@ const routes = [
     path: '/login',
     permission: ['guest'],
     component: Login
+  },
+  {
+    path: '/register',
+    permission: ['guest'],
+    component: Register
   }
 ];
 

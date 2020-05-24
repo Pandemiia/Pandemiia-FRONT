@@ -1,5 +1,5 @@
-'use strict'
-const Generator = require('yeoman-generator')
+'use strict';
+const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
   async prompting() {
@@ -15,7 +15,7 @@ module.exports = class extends Generator {
         message: 'Would you like to add storybook?',
         default: true
       }
-    ])
+    ]);
   }
 
   writing() {
@@ -23,9 +23,9 @@ module.exports = class extends Generator {
       this.answers.name.charAt(0).toUpperCase() +
       this.answers.name
         .replace(/-([a-z])/g, function(g) {
-          return g[1].toUpperCase()
+          return g[1].toUpperCase();
         })
-        .slice(1)
+        .slice(1);
 
     const arr = [
       { tpl: 'component.ejs', filename: `${this.answers.name}.js` },
@@ -40,16 +40,16 @@ module.exports = class extends Generator {
         skip: !this.answers.storybook
       },
       { tpl: 'index.ejs', filename: 'index.js' }
-    ]
+    ];
 
     arr.forEach(item => {
-      if (typeof item.skip !== 'undefined' && item.skip) return
-      this.copyTplWithParams(item.tpl, item.filename)
-    })
+      if (typeof item.skip !== 'undefined' && item.skip) return;
+      this.copyTplWithParams(item.tpl, item.filename);
+    });
   }
 
   copyTplWithParams(tpl, filename) {
-    if (!tpl) return
+    if (!tpl) return;
 
     this.fs.copyTpl(
       this.templatePath(tpl),
@@ -58,10 +58,10 @@ module.exports = class extends Generator {
         name: this.answers.name,
         namePascalCase: this.namePascalCase
       }
-    )
+    );
   }
 
   install() {
     // this.installDependencies();
   }
-}
+};

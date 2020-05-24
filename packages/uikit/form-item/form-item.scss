@@ -1,3 +1,5 @@
+@import "~@pinua/themes/variables";
+
 .formItem {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
   cursor: pointer;
 
   & + & {
-    margin-top: var(--b-spacing-l);
+    margin-top: $spaces-l;
   }
 
   &.row {
@@ -15,33 +17,33 @@
 }
 
 .message {
-  margin-top: var(--b-spacing-xs);
-  font-size: var(--b-font-size-s);
-  line-height: var(--b-line-height-l);
-  color: var(--b-color-body2);
+  margin-top: $spaces-xs;
+  font-size: $font-14px;
+  line-height: $font-14px;
+  color: $b-color-txt1;
 
   .danger & {
-    color: var(--b-color-dang);
+    color: $b-color-txt4;
   }
 }
 
 .label {
-  color: var(--b-color-body1);
-  font-size: var(--b-font-size-m);
-  line-height: var(--b-line-height-l);
-  font-weight: var(--b-font-weight-semibold);
-  margin-bottom: var(--b-spacing-s);
+  color: $b-color-txt3;
+  font-size: $font-13px;
+  line-height: $font-13px;
+  font-weight: 400;
+  margin-bottom: $spaces-s;
 
   svg {
     vertical-align: top;
-    width: var(--b-icon-size-s);
-    height: var(--b-icon-size-s);
-    margin-left: var(--b-spacing-xs);
-    color: var(--b-color-body2);
+    width: 64px;
+    height: 64px;
+    margin-left: $spaces-xs;
+    color: $b-color-txt1;
   }
 }
 
 .labelRight {
-  color: var(--b-color-body1);
+  color: $b-color-txt1;
   margin: 0 0 0 12px;
 }

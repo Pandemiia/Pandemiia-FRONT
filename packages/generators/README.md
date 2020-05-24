@@ -2,7 +2,7 @@
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-dreamteam using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-pinua using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 yarn global add yo
@@ -26,4 +26,4 @@ Then generate your new component or module:
 
 ## License
 
-UNLICENSED © DreamTeam.gg, 2018
+UNLICENSED © Pandemia.in.ua, 2020

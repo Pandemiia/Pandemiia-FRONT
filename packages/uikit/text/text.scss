@@ -25,6 +25,16 @@
   color: $b-color-txt4;
 }
 
+.dashed {
+  text-decoration: none;
+  color: $b-color-txt2;
+  border-bottom: 1px dashed $b-color-txt2;
+}
+
+.dashed:hover {
+  border-bottom-color: transparent;
+}
+
 .left {
   text-align: left;
 }
