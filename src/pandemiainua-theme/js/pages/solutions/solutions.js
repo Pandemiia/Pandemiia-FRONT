@@ -12,6 +12,7 @@ import styles from './solutions.scss';
 
 const Solutions = ({
   solutions,
+  total,
   materials,
   categories,
   tools,
@@ -148,7 +149,7 @@ const Solutions = ({
             }
           </Media>
         </Box>
-        <Pagination onPageChange={handlePage} />
+        {total > 10 && <Pagination onPageChange={handlePage} total={total} perPage={10} />}
       </Box>
     </Layout>
   );
@@ -162,6 +163,7 @@ Solutions.defaultProps = {
 
 Solutions.propTypes = {
   solutions: PropTypes.array,
+  total: PropTypes.number,
   materials: PropTypes.array,
   categories: PropTypes.array,
   tools: PropTypes.array,

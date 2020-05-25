@@ -1,0 +1,10 @@
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+
+import <%= namePascalCase %> from './<%= name %>.container'
+
+storiesOf('<%= namePascalCase %>', module)
+  .addWithJSX('default', () => (
+    <<%= namePascalCase %> />
+  ), { skip: 1 })
+

@@ -13,6 +13,7 @@ import styles from './hospitals.scss';
 
 const Hospitals = ({
   hospitals,
+  total,
   regions,
   types,
   needs,
@@ -170,7 +171,7 @@ const Hospitals = ({
             }
           </Media>
         </Box>
-        <Pagination onPageChange={handlePage} />
+        {total > 3 && <Pagination onPageChange={handlePage} total={total} perPage={3} />}
       </Box>
     </Layout>
   );
@@ -186,6 +187,7 @@ Hospitals.propTypes = {
   history: PropTypes.object,
   regions: PropTypes.array,
   hospitals: PropTypes.array,
+  total: PropTypes.number,
   types: PropTypes.array,
   needs: PropTypes.array,
   filterOpen: PropTypes.bool,

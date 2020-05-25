@@ -6,6 +6,9 @@ import Hospitals from './hospitals';
 import Solutions from './solutions';
 import About from './about';
 import Contacts from './contacts';
+import Login from './login';
+import Register from './register';
+import PasswordReset from './password-reset';
 
 const routes = [
   {
@@ -43,6 +46,21 @@ const routes = [
     name: i18n.t('sidebar.contacts'),
     permission: ['guest'],
     component: Contacts
+  },
+  {
+    path: '/login',
+    permission: ['guest'],
+    component: Login
+  },
+  {
+    path: '/register',
+    permission: ['guest'],
+    component: Register
+  },
+  {
+    path: '/reset-password',
+    permission: ['guest'],
+    component: PasswordReset
   }
 ];
 

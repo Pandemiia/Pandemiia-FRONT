@@ -1,0 +1,17 @@
+{
+  "name": "@pinua/generator-react",
+  "version": "1.0.0",
+  "description": "Yeoman Generators",
+  "main": "index.js",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^2.0.1",
+    "yosay": "^2.0.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "license": "UNLICENSED"
+}

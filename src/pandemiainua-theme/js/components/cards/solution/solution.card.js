@@ -1,15 +1,15 @@
 import React, { memo, useCallback, useState } from 'react';
+import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { Box, Text } from '@pinua/uikit';
 import { Card, Grid } from '@pinua/common/components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileArchive } from '@fortawesome/free-solid-svg-icons';
 
 import i18n from 'i18n';
 
 import Title, { titleProps } from './title';
 import Description, { descriptionProps } from './description';
 import Configuration, { configurationProps } from './configuration';
+import Attachment from './attachment';
 
 import styles from './solution.card.scss';
 
@@ -21,6 +21,8 @@ const SolutionCard = ({
   code,
   definition,
   images,
+  source,
+  manufacturingOptions,
   instruction,
   mainImage,
   materials,
@@ -57,23 +59,12 @@ const SolutionCard = ({
               <Grid>{renderImages()}</Grid>
             </Box>
             <Configuration tools={tools} materials={materials} approvedBy={approvedBy} />
-            <Text
-              className={styles.source}
-              top="s"
-              size="s"
-              color="navigational"
-              component="a"
-              target="_blank"
-              href={attachment}
-            >
-              <Box padding="s">
-                <FontAwesomeIcon className={styles.sourceIcon} icon={faFileArchive} />
-                {i18n.t('common.download')}
-              </Box>
-            </Text>
+            <Attachment href={source} text={i18n.t('common.source')} type="source" />
+            <Attachment href={attachment} text={i18n.t('common.attachment')} type="attachment" />
+            <Attachment href={instruction} text={i18n.t('common.instruction')} type="instruction" />
           </Box>
           <Box className={styles.right} direction="column">
-            <Description description={description} definition={description} instruction={instruction} />
+            <Description description={description} definition={description} instruction={manufacturingOptions} />
             <Box fullWidth bottom="m" justify="start" align="start" direction="column" padding="s">
               <Text size="m" bold align="left" bottom="s">
                 {i18n.t('solutions.comment')}
@@ -92,7 +83,10 @@ const SolutionCard = ({
 SolutionCard.propTypes = {
   ...titleProps,
   ...descriptionProps,
-  ...configurationProps
+  ...configurationProps,
+  source: PropTypes.string,
+  attachment: PropTypes.string,
+  manufacturingOptions: PropTypes.string
 };
 
 export default memo(SolutionCard);
