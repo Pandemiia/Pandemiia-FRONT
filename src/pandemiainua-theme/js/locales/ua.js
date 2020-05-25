@@ -1,7 +1,9 @@
 export default {
   header: {
     login: 'Авторизація',
-    register: 'Створити заявку'
+    register: 'Створити заявку',
+    account: 'Особистий кабінет',
+    application: 'Заповнити заявку'
   },
   sidebar: {
     home: 'Головна',

@@ -9,6 +9,8 @@ import Contacts from './contacts';
 import Login from './login';
 import Register from './register';
 import PasswordReset from './password-reset';
+import Account from './account';
+import Application from './application';
 
 const routes = [
   {
@@ -61,6 +63,16 @@ const routes = [
     path: '/reset-password',
     permission: ['guest'],
     component: PasswordReset
+  },
+  {
+    path: '/account',
+    permission: ['user'],
+    component: Account
+  },
+  {
+    path: '/application',
+    permission: ['user'],
+    component: Application
   }
 ];
 

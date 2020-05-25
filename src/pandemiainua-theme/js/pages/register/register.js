@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { Box, Text } from '@pinua/uikit';
 import { Layout } from '@pinua/common/components';
 import { Step1, Step2 } from 'components/forms/register';
@@ -10,7 +11,7 @@ import styles from './register.scss';
 
 const steps = [Step1, Step2];
 
-const Register = ({ activeStep, setActiveStep, ...props }) => {
+const Register = ({ activeStep, setActiveStep, isLoggedIn, ...props }) => {
   const [step, setStep] = useState(activeStep);
 
   const handleSubmitSuccess = useCallback(
@@ -27,7 +28,9 @@ const Register = ({ activeStep, setActiveStep, ...props }) => {
     return <Step onSubmitSuccess={handleSubmitSuccess} />;
   }, [handleSubmitSuccess, step]);
 
-  return (
+  return isLoggedIn ? (
+    <Redirect to="/" />
+  ) : (
     <Layout className={styles.page}>
       <Box className={styles.register} justify="center" align="center" direction="column" fullWidth>
         <Box className={styles.title} justify="center" align="center" direction="column" bottom="l">
@@ -46,6 +49,7 @@ const Register = ({ activeStep, setActiveStep, ...props }) => {
 
 Register.propTypes = {
   activeStep: PropTypes.number,
+  isLoggedIn: PropTypes.bool,
   setActiveStep: PropTypes.func
 };
 

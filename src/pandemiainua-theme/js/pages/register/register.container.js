@@ -6,10 +6,11 @@ import { withRouter } from 'react-router-dom';
 import Register from './register';
 
 const { setActiveStep } = authActions;
-const { getStep } = authSelectors;
+const { getStep, isLoggedIn } = authSelectors;
 
 const mapStateToProps = state => ({
-  activeStep: getStep(state)
+  activeStep: getStep(state),
+  isLoggedIn: isLoggedIn(state)
 });
 
 const mapDispatchToProp = {

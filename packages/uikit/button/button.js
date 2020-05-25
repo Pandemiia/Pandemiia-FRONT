@@ -118,7 +118,7 @@ Button.propTypes = {
   premium: PropTypes.bool,
   size: PropTypes.oneOf(sizes),
   type: PropTypes.oneOf(['button', 'reset', 'submit']),
-  component: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  component: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   loading: PropTypes.bool,
   iconLeft: PropTypes.element,
   iconTop: PropTypes.element,
