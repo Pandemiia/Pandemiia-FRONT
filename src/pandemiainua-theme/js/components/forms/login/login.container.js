@@ -35,15 +35,16 @@ const enhance = compose(
     validateOnChange: false,
     handleSubmit: async (values, { props, setSubmitting }) => {
       let isError = false;
-
+      const { logIn, onSubmitSuccess } = props;
+      const { email, password } = values;
       try {
-        await props.logIn(values);
+        await logIn({ email, password });
       } catch (error) {
-        console.log('error', error);
+        isError = true;
       }
 
       if (!isError) {
-        props.onSubmitSuccess();
+        onSubmitSuccess();
       }
       setSubmitting(false);
     },

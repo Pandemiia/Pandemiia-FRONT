@@ -1,16 +1,21 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { authActions } from 'modules/auth';
+import { authActions, authSelectors } from 'modules/auth';
 import { withRouter } from 'react-router-dom';
 
 import Register from './register';
 
-const { register } = authActions;
+const { setActiveStep } = authActions;
+const { getStep } = authSelectors;
+
+const mapStateToProps = state => ({
+  activeStep: getStep(state)
+});
 
 const mapDispatchToProp = {
-  register
+  setActiveStep
 };
 
-const enhance = compose(withRouter, connect(null, mapDispatchToProp));
+const enhance = compose(withRouter, connect(mapStateToProps, mapDispatchToProp));
 
 export default enhance(Register);

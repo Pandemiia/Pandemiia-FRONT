@@ -10,20 +10,15 @@ import styles from './register.scss';
 
 const steps = [Step1, Step2];
 
-const Register = ({ register, ...props }) => {
-  const [step, setStep] = useState(0);
-
-  let data = {};
+const Register = ({ activeStep, setActiveStep, ...props }) => {
+  const [step, setStep] = useState(activeStep);
 
   const handleSubmitSuccess = useCallback(
-    ({ step, fieldsData }) => {
+    ({ step }) => {
       setStep(step);
-      data = { ...fieldsData };
-      if (step === 1) {
-        register(data);
-      }
+      setActiveStep(step);
     },
-    [data, register]
+    [setActiveStep]
   );
 
   const renderStep = useCallback(() => {
@@ -50,7 +45,8 @@ const Register = ({ register, ...props }) => {
 };
 
 Register.propTypes = {
-  register: PropTypes.func.isRequired
+  activeStep: PropTypes.number,
+  setActiveStep: PropTypes.func
 };
 
 export default Register;

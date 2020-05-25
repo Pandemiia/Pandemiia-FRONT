@@ -17,7 +17,7 @@ const RegisterStep1 = ({ handleSubmit, isSubmitting, ...props }) => {
 
       <Box fullWidth justify="between" top="m">
         <FormItem
-          name="remember"
+          name="agreement"
           component={Checkbox}
           componentProps={{
             label: (
@@ -25,7 +25,7 @@ const RegisterStep1 = ({ handleSubmit, isSubmitting, ...props }) => {
                 <Text left="s" size="s">
                   {i18n.t('register.agreement')}
                 </Text>
-                <Text left="s" component={Link} to="/reset-password" size="s" color="dashed">
+                <Text left="s" component={Link} to="/privacy-policy" size="s" color="dashed">
                   {i18n.t('register.policy')}
                 </Text>
               </>

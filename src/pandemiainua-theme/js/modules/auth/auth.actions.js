@@ -16,7 +16,10 @@ export const register = createAction('REGISTER_USER', ({ email, password1, passw
   })
 );
 
+export const setActiveStep = createAction('SET_STEP', step => step);
+
 export default {
   logIn,
-  register
+  register,
+  setActiveStep
 };

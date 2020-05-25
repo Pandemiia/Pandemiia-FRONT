@@ -1,17 +1,25 @@
 import { handleActions } from 'redux-actions';
-import { loadAuth } from './auth.actions';
+import { logIn, setActiveStep } from './auth.actions';
 import { normalizeAuth } from './auth.normalizers';
 
-const initialState = {};
+const initialState = {
+  step: 0
+};
 
-const handleLoadAuth = (state, { payload }) => ({
+const handleLogin = (state, { payload }) => ({
   ...state,
   ...normalizeAuth(payload)
 });
 
+const handleStep = (state, { payload }) => ({
+  ...state,
+  step: payload
+});
+
 export default handleActions(
   {
-    [loadAuth]: handleLoadAuth
+    [logIn]: handleLogin,
+    [setActiveStep]: handleStep
   },
   initialState
 );
