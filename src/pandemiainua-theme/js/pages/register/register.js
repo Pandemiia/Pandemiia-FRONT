@@ -31,7 +31,7 @@ const Register = ({ activeStep, setActiveStep, ...props }) => {
     <Layout className={styles.page}>
       <Box className={styles.register} justify="center" align="center" direction="column" fullWidth>
         <Box className={styles.title} justify="center" align="center" direction="column" bottom="l">
-          <Text component="h3" size="xl">
+          <Text component="h3" size="xl" align="center">
             {i18n.t(`register.step${step}.title`)}
           </Text>
           <Text top="m" size="s" color="info" align="center">

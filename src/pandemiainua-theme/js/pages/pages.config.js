@@ -8,6 +8,7 @@ import About from './about';
 import Contacts from './contacts';
 import Login from './login';
 import Register from './register';
+import PasswordReset from './password-reset';
 
 const routes = [
   {
@@ -55,6 +56,11 @@ const routes = [
     path: '/register',
     permission: ['guest'],
     component: Register
+  },
+  {
+    path: '/reset-password',
+    permission: ['guest'],
+    component: PasswordReset
   }
 ];
 

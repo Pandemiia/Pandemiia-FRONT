@@ -1,2 +1,3 @@
-export { default as LoginForm } from './login';
+export { LoginForm } from './login';
+export { ResetForm } from './reset';
 export { Step1, Step2 } from './register';
