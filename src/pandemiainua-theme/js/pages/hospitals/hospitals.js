@@ -2,8 +2,8 @@ import React, { memo, useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Cards, HospitalCard } from 'components';
 import { Layout, Filter, MobileTopFilter, MobileSidebarFilter } from '@pinua/common/components';
-import { Box, Text, Search } from '@pinua/uikit';
-import DropdownList from '@pinua/uikit/dropdown';
+import { Box, Text, Search, Pagination } from '@pinua/uikit';
+// import DropdownList from '@pinua/uikit/dropdown';
 import { Media, TABLET_MAX_WIDTH } from '@pinua/utils';
 import _toLower from 'lodash/toLower';
 
@@ -13,6 +13,7 @@ import styles from './hospitals.scss';
 
 const Hospitals = ({
   hospitals,
+  total,
   regions,
   types,
   needs,
@@ -85,6 +86,15 @@ const Hospitals = ({
     [loadHospitals, params]
   );
 
+  const handlePage = useCallback(
+    selected => {
+      const [regions, types, needs] = params;
+
+      loadHospitals({ regions, types, needs, page: selected });
+    },
+    [loadHospitals, params]
+  );
+
   const renderFilters = useCallback(() => {
     return (
       <Box direction="column" right="m">
@@ -147,7 +157,7 @@ const Hospitals = ({
                           {dataHospitals.length} {i18n.t('hospitals.results')}
                         </Text>
                       </Box>
-                      <DropdownList />
+                      {/* <DropdownList /> */}
                       <Search
                         onChange={handleSearch}
                         className={styles.search}
@@ -161,6 +171,7 @@ const Hospitals = ({
             }
           </Media>
         </Box>
+        {total > 3 && <Pagination onPageChange={handlePage} total={total} perPage={3} />}
       </Box>
     </Layout>
   );
@@ -176,6 +187,7 @@ Hospitals.propTypes = {
   history: PropTypes.object,
   regions: PropTypes.array,
   hospitals: PropTypes.array,
+  total: PropTypes.number,
   types: PropTypes.array,
   needs: PropTypes.array,
   filterOpen: PropTypes.bool,

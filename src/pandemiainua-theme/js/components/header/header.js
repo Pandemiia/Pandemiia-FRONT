@@ -8,19 +8,20 @@ import HeaderButtons from './buttons';
 
 import styles from './header.scss';
 
-const MainHeader = ({ history, location: { pathname }, links, onClose, isMenuOpen, toggleMenu, ...props }) => {
+const MainHeader = ({
+  history,
+  location: { pathname },
+  isLoggedIn,
+  links,
+  onClose,
+  isMenuOpen,
+  toggleMenu,
+  ...props
+}) => {
   const toggleMobileMenu = toggle => () => {
     toggleMenu(toggle);
     onClose && onClose();
   };
-
-  const handleLogin = useCallback(() => {
-    console.log('login pressed');
-  }, []);
-
-  const handleSignUp = useCallback(() => {
-    console.log('sign up pressed');
-  }, []);
 
   const handleNavigateHome = useCallback(() => {
     history.push('/');
@@ -35,10 +36,10 @@ const MainHeader = ({ history, location: { pathname }, links, onClose, isMenuOpe
             onBurgerMenuPress={toggleMobileMenu(true)}
             right={
               <HeaderButtons
+                isLoggedIn={isLoggedIn}
+                onClose={onClose}
                 sizes="s"
                 direction="row"
-                onLogin={handleLogin}
-                onRegister={handleSignUp}
                 className={styles.tabletButtons}
               />
             }
@@ -48,7 +49,7 @@ const MainHeader = ({ history, location: { pathname }, links, onClose, isMenuOpe
                 <Logo onClick={handleNavigateHome} />
               </Box>
               <MobileMenu path={pathname} onClose={toggleMobileMenu(false)} isOpen={isMenuOpen} links={links}>
-                <HeaderButtons sizes="s" direction="column" onLogin={handleLogin} onRegister={handleSignUp} />
+                <HeaderButtons onClose={onClose} isLoggedIn={isLoggedIn} sizes="s" direction="column" />
               </MobileMenu>
             </>
           </Header>
@@ -56,7 +57,7 @@ const MainHeader = ({ history, location: { pathname }, links, onClose, isMenuOpe
           <Box top="m">
             <Header
               left={<Logo onClick={handleNavigateHome} />}
-              right={<HeaderButtons sizes="s" direction="row" onLogin={handleLogin} onRegister={handleSignUp} />}
+              right={<HeaderButtons onClose={onClose} isLoggedIn={isLoggedIn} sizes="s" direction="row" />}
             >
               <DesktopMenu path={pathname} links={links} />
             </Header>
@@ -68,6 +69,7 @@ const MainHeader = ({ history, location: { pathname }, links, onClose, isMenuOpe
 };
 
 MainHeader.propTypes = {
+  isLoggedIn: PropTypes.bool,
   location: PropTypes.object,
   history: PropTypes.object,
   links: PropTypes.array,

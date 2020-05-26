@@ -28,10 +28,12 @@
 
 .paginationPageLink:hover {
   background-color: #c9ecffba;
+  border-color: #c9ecffba;
 }
 
 .paginationPageLinkActive {
-  background-color: #0083ff;
+  background-color: $b-color-txt2;
+  color: $b-color-txt5;
 }
 
 .previousBtn {

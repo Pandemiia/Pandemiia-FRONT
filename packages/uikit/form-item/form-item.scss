@@ -1,0 +1,49 @@
+@import "~@pinua/themes/variables";
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+
+  & + & {
+    margin-top: $spaces-l;
+  }
+
+  &.row {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.message {
+  margin-top: $spaces-xs;
+  font-size: $font-14px;
+  line-height: $font-14px;
+  color: $b-color-txt1;
+
+  .danger & {
+    color: $b-color-txt4;
+  }
+}
+
+.label {
+  color: $b-color-txt3;
+  font-size: $font-13px;
+  line-height: $font-13px;
+  font-weight: 400;
+  margin-bottom: $spaces-s;
+
+  svg {
+    vertical-align: top;
+    width: 64px;
+    height: 64px;
+    margin-left: $spaces-xs;
+    color: $b-color-txt1;
+  }
+}
+
+.labelRight {
+  color: $b-color-txt1;
+  margin: 0 0 0 12px;
+}

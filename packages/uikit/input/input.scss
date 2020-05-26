@@ -1,0 +1,38 @@
+@import "~@pinua/themes/variables";
+
+.input {
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid;
+  border-radius: $border-s;
+  background-color: $b-color-ui2;
+  padding: $spaces-s $spaces-m;
+  box-sizing: border-box;
+  outline: none;
+
+  &[disabled] {
+    background-color: $b-color-ui5;
+    opacity: 0.3;
+  }
+
+  &::placeholder {
+    color: $b-color-txt3;
+  }
+}
+
+.default {
+  border-color: $b-color-ui2;
+}
+
+.default:hover:not([disabled]),
+.default:focus:not([disabled]),
+.default:active:not([disabled]) {
+  border-color: $b-color-ui2;
+}
+
+.danger,
+.danger:focus:not([disabled]),
+.danger:active:not([disabled]) {
+  border-color: $b-color-txt4;
+}

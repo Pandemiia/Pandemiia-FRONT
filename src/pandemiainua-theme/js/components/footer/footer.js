@@ -47,17 +47,22 @@ const MainFooter = () => {
             <FontAwesomeIcon icon={faFacebook} className={cn(styles.iconMargin)} />
             {i18n.t('footer.social.facebook')}
           </Link>
-          <Link to="#" className={cn(styles.footerLinks)}>
+          <a href="https://github.com/Pandemiia" target="_blank" rel="noreferrer" className={cn(styles.footerLinks)}>
             <FontAwesomeIcon icon={faGithub} className={cn(styles.iconMargin)} />
             {i18n.t('footer.social.git')}
-          </Link>
+          </a>
         </Box>
         <Box className={cn(styles.license)} justify="center">
           <Text className={cn(styles.license)}>
             {i18n.t('footer.license')} &nbsp;
-            <Link to="#" className={cn(styles.licenseLink)}>
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noreferrer"
+              className={cn(styles.licenseLink)}
+            >
               {i18n.t('footer.licenseLink')}
-            </Link>
+            </a>
             {i18n.t('footer.licenseSub')}
           </Text>
         </Box>

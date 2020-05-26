@@ -3,15 +3,16 @@ import i18n from 'i18n';
 import PropTypes from 'prop-types';
 import { Cards, SolutionCard } from 'components';
 import { Layout, Filter, MobileTopFilter, MobileSidebarFilter } from '@pinua/common/components';
-import { Box, Search, Text } from '@pinua/uikit';
+import { Box, Pagination, Search, Text } from '@pinua/uikit';
 import { Media, TABLET_MAX_WIDTH } from '@pinua/utils';
 import _toLower from 'lodash/toLower';
 
-import DropdownList from '@pinua/uikit/dropdown';
+// import DropdownList from '@pinua/uikit/dropdown';
 import styles from './solutions.scss';
 
 const Solutions = ({
   solutions,
+  total,
   materials,
   categories,
   tools,
@@ -63,6 +64,15 @@ const Solutions = ({
 
       setParams(arr);
       loadSolutions({ categories, materials, tools });
+    },
+    [loadSolutions, params]
+  );
+
+  const handlePage = useCallback(
+    selected => {
+      const [categories, materials, tools] = params;
+
+      loadSolutions({ categories, materials, tools, page: selected });
     },
     [loadSolutions, params]
   );
@@ -125,7 +135,7 @@ const Solutions = ({
                           {dataSolutions.length} {i18n.t('solutions.results')}
                         </Text>
                       </Box>
-                      <DropdownList />
+                      {/* <DropdownList /> */}
                       <Search
                         onChange={handleSearch}
                         className={styles.search}
@@ -139,6 +149,7 @@ const Solutions = ({
             }
           </Media>
         </Box>
+        {total > 10 && <Pagination onPageChange={handlePage} total={total} perPage={10} />}
       </Box>
     </Layout>
   );
@@ -152,6 +163,7 @@ Solutions.defaultProps = {
 
 Solutions.propTypes = {
   solutions: PropTypes.array,
+  total: PropTypes.number,
   materials: PropTypes.array,
   categories: PropTypes.array,
   tools: PropTypes.array,

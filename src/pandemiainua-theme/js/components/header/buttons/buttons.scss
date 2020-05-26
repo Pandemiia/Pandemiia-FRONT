@@ -11,6 +11,7 @@
 
   .button {
     margin-bottom: $spaces-s;
+    padding: $spaces-s $spaces-m;
   }
 }
 
@@ -29,5 +30,11 @@
     letter-spacing: 0.6px;
     margin-right: 0;
     margin-bottom: $spaces-s;
+  }
+}
+
+@media screen and (min-width: $mobile-min-width) and (max-width: 769px) {
+  .button:first-child {
+    margin-right: 0;
   }
 }

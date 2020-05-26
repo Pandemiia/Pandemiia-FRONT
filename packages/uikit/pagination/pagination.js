@@ -1,21 +1,27 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import ReactPaginate from 'react-paginate';
 import { Box } from '@pinua/uikit';
 import styles from './pagination.scss';
 
-class Pagination extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: ['a', 'b', 'a', 'b'],
-      offset: 0,
-      perPage: 3
-    };
-  }
-  handlePageClick = data => {
-    this.setState({ data });
+class Pagination extends PureComponent {
+  static propTypes = {
+    onPageChange: PropTypes.func,
+    perPage: PropTypes.number,
+    total: PropTypes.number
   };
+
+  handlePageClick = ({ selected }) => {
+    const { onPageChange } = this.props;
+    const data = selected + 1;
+    onPageChange && onPageChange(data);
+  };
+
   render() {
+    const { perPage, total } = this.props;
+
+    const pageCount = Math.ceil(total / perPage);
+
     return (
       <Box direction="row" justify="center">
         <ReactPaginate
@@ -24,9 +30,9 @@ class Pagination extends Component {
           breakLabel={'...'}
           breakLinkClassName={styles.brakeLink}
           breakClassName={styles.brake}
-          pageCount={20}
+          pageCount={pageCount}
           marginPagesDisplayed={1}
-          pageRangeDisplayed={3}
+          pageRangeDisplayed={perPage}
           onPageChange={this.handlePageClick}
           containerClassName={styles.pagination}
           pageClassName={styles.paginationPage}

@@ -8,6 +8,7 @@ const normalizeSolution = ({
   images,
   main_image,
   attachment,
+  manufacturing_options,
   instruction,
   materials,
   tools,
@@ -25,6 +26,7 @@ const normalizeSolution = ({
     mainImage: main_image,
     images,
     attachment,
+    manufacturingOptions: manufacturing_options,
     instruction,
     materials,
     tools,
@@ -115,9 +117,8 @@ export const normalizeSolutionsCategories = ({ data }) => {
   );
 };
 
-export const normalizeSolutions = ({ data }) => {
-  const { results } = data;
-  return results.reduce((memo, current) => {
+export const normalizeSolutions = (data = []) => {
+  return data.reduce((memo, current) => {
     const id = memo.length;
     const solution = normalizeSolution({ ...current, id });
     memo = [...memo, solution];

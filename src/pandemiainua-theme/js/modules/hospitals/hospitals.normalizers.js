@@ -122,9 +122,8 @@ export const normalizeHospitalNeedsCategories = ({ data }) => {
   );
 };
 
-export const normalizeHospitals = ({ data = {} }) => {
-  const { results } = data;
-  return results.reduce((memo, current) => {
+export const normalizeHospitals = (data = []) => {
+  return data.reduce((memo, current) => {
     const hospital = normalizeHospital(current);
     memo = [...memo, hospital];
     return memo;

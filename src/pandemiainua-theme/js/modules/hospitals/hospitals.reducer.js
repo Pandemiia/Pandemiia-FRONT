@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-
+import _get from 'lodash/get';
 import {
   loadHospitalRegions,
   loadHospitalTypes,
@@ -45,9 +45,12 @@ const handleHospitalNeedsCategories = (state, { payload }) => {
 };
 
 const handleHospitals = (state, { payload }) => {
+  const results = _get(payload, 'data.results', []);
+  const count = _get(payload, 'data.count', 0);
   return {
     ...state,
-    hospitals: normalizeHospitals(payload)
+    hospitals: normalizeHospitals(results),
+    total: count
   };
 };
 

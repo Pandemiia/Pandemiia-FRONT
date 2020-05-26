@@ -3,10 +3,10 @@
 .sidebar {
   position: fixed;
   top: 0;
-  width: 300px;
+  width: 100%;
   height: 100%;
   z-index: $index-xl;
-  background-color: $b-color-ui2;
+  background-color: $b-color-ui1;
   transition: all 300ms ease-in-out;
 }
 

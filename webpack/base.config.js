@@ -6,7 +6,6 @@ const Dotenv = require('dotenv-webpack');
 /** MODULES **/
 const babelLoader = require('./modules/babel-loader-module');
 const imageLoader = require('./modules/image-loader-module');
-const svgLoader = require('./modules/svg-loader-module');
 const eslintLoader = require('./modules/eslint-loader-module');
 
 /** PLUGINS **/
@@ -34,7 +33,7 @@ module.exports = {
   },
 
   module: {
-    rules: [eslintLoader, imageLoader, babelLoader, svgLoader]
+    rules: [eslintLoader, imageLoader, babelLoader]
   },
 
   performance: {

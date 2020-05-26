@@ -10,11 +10,12 @@ const { toggleFilter } = appActions;
 const { getFilterStatus } = appSelectors;
 
 const { loadHospitalRegions, loadHospitalNeedsCategories, loadHospitalTypes, loadHospitals } = hospitalsActions;
-const { getDataToArray, getHospitals } = hospitalsSelectors;
+const { getDataToArray, getHospitals, getTotalHospitalsCount } = hospitalsSelectors;
 
 const mapStateToProps = state => ({
   filterOpen: getFilterStatus(state),
   hospitals: getHospitals(state),
+  total: getTotalHospitalsCount(state),
   regions: getDataToArray(state, 'regions'),
   types: getDataToArray(state, 'types'),
   needs: getDataToArray(state, 'needs')
