@@ -34,14 +34,22 @@ const MainHeader = ({
           <Header
             showBurgerMenu
             onBurgerMenuPress={toggleMobileMenu(true)}
-            right={<HeaderButtons isLoggedIn={isLoggedIn} sizes="s" direction="row" className={styles.tabletButtons} />}
+            right={
+              <HeaderButtons
+                isLoggedIn={isLoggedIn}
+                onClose={onClose}
+                sizes="s"
+                direction="row"
+                className={styles.tabletButtons}
+              />
+            }
           >
             <>
               <Box fullWidth justify="center" align="center">
                 <Logo onClick={handleNavigateHome} />
               </Box>
               <MobileMenu path={pathname} onClose={toggleMobileMenu(false)} isOpen={isMenuOpen} links={links}>
-                <HeaderButtons isLoggedIn={isLoggedIn} sizes="s" direction="column" />
+                <HeaderButtons onClose={onClose} isLoggedIn={isLoggedIn} sizes="s" direction="column" />
               </MobileMenu>
             </>
           </Header>
@@ -49,7 +57,7 @@ const MainHeader = ({
           <Box top="m">
             <Header
               left={<Logo onClick={handleNavigateHome} />}
-              right={<HeaderButtons isLoggedIn={isLoggedIn} sizes="s" direction="row" />}
+              right={<HeaderButtons onClose={onClose} isLoggedIn={isLoggedIn} sizes="s" direction="row" />}
             >
               <DesktopMenu path={pathname} links={links} />
             </Header>

@@ -10,8 +10,7 @@ export default {
     hospitals: 'Потреби',
     solutions: 'Каталог рішень',
     about: 'Про проект',
-    contacts: 'Контакти',
-    intro: 'Ласкаво просимо на сайт pandemiia.in.ua'
+    contacts: 'Контакти'
   },
   hospitals: {
     title: 'Актуальні потреби',

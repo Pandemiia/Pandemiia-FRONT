@@ -5,6 +5,7 @@
   font-size: $font-16px;
   margin: $spaces-m 0;
   text-decoration: none;
+  font-weight: 500;
 
   &:hover {
     color: $b-color-txt2;
@@ -21,6 +22,7 @@
 
 .close {
   cursor: pointer;
+  margin-bottom: 60px;
 }
 
 .icon {
@@ -31,4 +33,12 @@
   &:hover {
     transform: rotate(180deg);
   }
+}
+
+.logo {
+  margin-left: 5em;
+}
+
+.itemsMargin {
+  margin-bottom: 30px;
 }

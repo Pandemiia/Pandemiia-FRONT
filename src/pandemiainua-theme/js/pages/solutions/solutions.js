@@ -7,7 +7,7 @@ import { Box, Pagination, Search, Text } from '@pinua/uikit';
 import { Media, TABLET_MAX_WIDTH } from '@pinua/utils';
 import _toLower from 'lodash/toLower';
 
-import DropdownList from '@pinua/uikit/dropdown';
+// import DropdownList from '@pinua/uikit/dropdown';
 import styles from './solutions.scss';
 
 const Solutions = ({
@@ -135,7 +135,7 @@ const Solutions = ({
                           {dataSolutions.length} {i18n.t('solutions.results')}
                         </Text>
                       </Box>
-                      <DropdownList />
+                      {/* <DropdownList /> */}
                       <Search
                         onChange={handleSearch}
                         className={styles.search}
